@@ -46,6 +46,15 @@
             box-shadow: 0 0 25px rgba(239, 68, 68, 0.3);
             border: 2px solid #ef4444;
         }
+        .matrix-banner-img {
+            max-width: 900px;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+            border: 2px solid #3b82f6;
+            margin-top: 20px;
+        }
         h1 {
             color: #3b82f6;
             font-size: 2.8rem;
@@ -165,40 +174,98 @@
             margin: 0;
         }
 
+        /* NEW FOOTER & MULTI-BUTTON ECOSYSTEM */
         .cta-section {
             text-align: center;
             margin: 60px 0;
+            background-color: #111827;
+            padding: 40px 20px;
+            border-radius: 12px;
+            border: 1px solid #1f2937;
         }
-        .cta-btn {
-            background-color: #2563eb;
+        /* REQUESTED GREEN OVERDRIVE CTA BUTTON */
+        .cta-btn-green {
+            display: inline-block;
+            background-color: #059669;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            padding: 15px 40px;
+            padding: 18px 45px;
             text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
-            transition: background 0.3s;
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(5, 150, 105, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+            border: 2px solid #34d399;
         }
-        .cta-btn:hover {
-            background-color: #1d4ed8;
+        .cta-btn-green:hover {
+            background-color: #047857;
+            box-shadow: 0 0 35px rgba(52, 211, 153, 0.6);
+            transform: translateY(-2px);
+        }
+        .link-heading {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .shop-btn {
+            background-color: #1f2937;
+            color: #f3f4f6;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 1px solid #4b5563;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+        .shop-btn:hover {
+            background-color: #374151;
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+        .social-btn {
+            background-color: #0f172a;
+            color: #9ca3af;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            border: 1px solid #334155;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .social-btn:hover {
+            background-color: #1e293b;
+            border-color: #ef4444;
+            color: #ef4444;
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. TOP SECTION: Branding & Upper Banners -->
+    <!-- 1. TOP SECTION: Branding & Three Core Upper Banners -->
     <div class="hero-section">
         <div class="banner-container">
             <img src="hero-banner.png" alt="PEP Engine Core Breakdown Blueprint" class="hero-banner-img">
             <img src="comparison-banner.png" alt="PEP Engine Before vs After Comparison" class="comparison-banner-img">
         </div>
-                <!-- COMPATIBILITY MATRIX BANNER COMPONENT -->
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h2 style="color: #3b82f6; border-bottom: 1px solid #374151; padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px;">System Compatibility</h2>
-            <img src="compatibility-matrix.png" alt="PEP Engine Compatibility Matrix" style="max-width: 900px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 25px rgba(59, 130, 246, 0.3); border: 2px solid #3b82f6;">
-        </div>
-
+        
+        <!-- NEW COMPATIBILITY MATRIX PLACEMENT -->
+        <img src="compatibility-matrix.png" alt="PEP Engine Ecosystem Compatibility Matrix" class="matrix-banner-img">
+        
         <h1>PEP Player with PEP Engine</h1>
         <p class="subtitle">Flagship Display Calibration & Software Tuning Service for Budget Projector Series</p>
     </div>
@@ -214,7 +281,7 @@
             <div class="test-block">
                 <div class="block-title">1. Ultra Micro-Contrast Test</div>
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster1.png" alt="Ready or Not Movie Poster"></div>
+                    <div class="poster-container"><img src="poster1.jpg" alt="Ready or Not Movie Poster"></div>
                     <div class="slide-container"><img src="slide1.png" alt="Extreme Close-Up Calibration"></div>
                 </div>
                 <p class="test-description">Forces hidden fine details like iris reflections and individual eyelashes to render with sharp clarity from the movie <em>Ready or Not</em>.</p>
@@ -225,20 +292,19 @@
             <div class="test-block">
                 <div class="block-title">2. Teal & Orange Separation</div>
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster2.png" alt="Ready or Not Movie Poster"></div>
+                    <div class="poster-container"><img src="poster1.jpg" alt="Ready or Not Movie Poster"></div>
                     <div class="slide-container"><img src="slide2.png" alt="Teal & Orange Calibration"></div>
                 </div>
                 <p class="test-description">Isolates conflicting Hollywood dual color temperatures flawlessly without distorting natural skin tones.</p>
                 <span class="pep-badge">Dual Temp Balance</span>
-            </div>
-                        <!-- Block 3 -->
+            <!-- Block 3 -->
             <div class="test-block">
                 <div class="block-title">3. Texture Mapping Test</div>
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster3.png" alt="The Death of Robin Hood Poster"></div>
+                    <div class="poster-container"><img src="poster2.jpg" alt="Vikings Valhalla Poster"></div>
                     <div class="slide-container"><img src="slide3.png" alt="Texture Mapping Calibration"></div>
                 </div>
-                <p class="test-description">Recovers skin depth and fine gray-to-white hair resolution from Robin Hood in <em>The Death of Robin Hood</em> that usually merges into a flat blur on default firmware.</p>
+                <p class="test-description">Recovers skin depth and fine gray-to-white hair resolution from King Sweyn in <em>Vikings: Valhalla</em> that usually merges into a flat blur on default firmware.</p>
                 <span class="pep-badge">Texture Recovery</span>
             </div>
 
@@ -246,10 +312,10 @@
             <div class="test-block">
                 <div class="block-title">4. Chroma Isolation Test</div>
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster4.png" alt="My Royal Nemesis Poster"></div>
+                    <div class="poster-container"><img src="poster3.jpg" alt="Squid Game Poster"></div>
                     <div class="slide-container"><img src="slide4.png" alt="Chroma Isolation Calibration"></div>
                 </div>
-                <p class="test-description">Pushes vibrant neon blues from Shin Seo-ri tracking suit in <em>My Royal Nemesis</em> while keeping the human face perfectly warm, lifelike, and isolated.</p>
+                <p class="test-description">Pushes vibrant neon blues from Sae-byeok's tracking suit in <em>Squid Game</em> while keeping the human face perfectly warm, lifelike, and isolated.</p>
                 <span class="pep-badge">Chroma Separation</span>
             </div>
 
@@ -257,10 +323,10 @@
             <div class="test-block">
                 <div class="block-title">5. Subtitle Edge Anti-Aliasing (480p Stress Test)</div>
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster5.png" alt="SLine Poster"></div>
+                    <div class="poster-container"><img src="poster4.jpg" alt="Sweet Home Poster"></div>
                     <div class="slide-container"><img src="slide5.png" alt="Subtitle Edge Calibration"></div>
                 </div>
-                <p class="test-description">Completely removes jagged pixel edges from yellow and white streaming text from Arin scene in <em>SLine</em> at a low-res 480p source.</p>
+                <p class="test-description">Completely removes jagged pixel edges from yellow and white streaming text from Park Gyu-young's scene in <em>Sweet Home</em> at a low-res 480p source.</p>
                 <span class="pep-badge">Anti-Aliasing</span>
             </div>
 
@@ -268,30 +334,30 @@
             <div class="test-block">
                 <div class="block-title">6. Highlight Clipping Protection (480p Stress Test)</div>
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster6.png" alt="K-Drama Poster"></div>
+                    <div class="poster-container"><img src="poster5.jpg" alt="K-Drama Poster"></div>
                     <div class="slide-container"><img src="slide6.png" alt="Highlight Protection Calibration"></div>
                 </div>
-                <p class="test-description">Prevents bright misty and foggy daylight backdrops from washing out facial gradients in low-resolution K-Drama formats (Arin).</p>
+                <p class="test-description">Prevents bright misty and foggy daylight backdrops from washing out facial gradients in low-resolution K-Drama formats (Kim Ji-won).</p>
                 <span class="pep-badge">Highlight Control</span>
             </div>
 
             <div class="test-block">
                 <div class="block-title">7. Moreno/Olive Skin Recovery (480p Stress Test)</div>
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster7.png" alt="Cidel Poster"></div>
+                    <div class="poster-container"><img src="poster6.jpg" alt="The Matrix Resurrections Poster"></div>
                     <div class="slide-container"><img src="slide7.png" alt="Moreno Skin Recovery Calibration"></div>
                 </div>
-                <p class="test-description">Ensures rich, warm tan tones remain perfectly natural under harsh daylight exposure from Priyanka Chopra's close-up in <em>Citadel</em>.</p>
+                <p class="test-description">Ensures rich, warm tan tones remain perfectly natural under harsh daylight exposure from Priyanka Chopra's close-up in <em>The Matrix Resurrections</em>.</p>
                 <span class="pep-badge">Tone Restoration</span>
             </div>
 
             <div class="test-block">
                 <div class="block-title">8. Cold Light Gradient (480p Stress Test)</div>
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster8.png" alt="Disclosure Day Poster"></div>
+                    <div class="poster-container"><img src="poster7.jpg" alt="The Fall Guy Poster"></div>
                     <div class="slide-container"><img src="slide8.png" alt="Cold Light Calibration"></div>
                 </div>
-                <p class="test-description">Maintains dynamic range separation even under a heavily blue/cyan-graded cinematic atmosphere from Margaret Fairchild scene in <em>Disclosure Day</em>.</p>
+                <p class="test-description">Maintains dynamic range separation even under a heavily blue/cyan-graded cinematic atmosphere from Hannah Waddingham's scene in <em>The Fall Guy</em>.</p>
                 <span class="pep-badge">Micro-Contrast</span>
             </div>
 
@@ -308,7 +374,7 @@
 
                 <div class="tech-item">
                     <h3>2. Intelligent Chroma Isolation</h3>
-                    <p>Instead of scaling all colors globally (which causes green/blue tint artifacts), our optimization suite isolates high-saturation environment tones (like Hollywood Teal or My Royal Nemesis Neon Blue) while locking the native warm hue matrix of the human face.</p>
+                    <p>Instead of scaling all colors globally (which causes green/blue tint artifacts), our optimization suite isolates high-saturation environment tones (like Hollywood Teal or Squid Game Neon Blue) while locking the native warm hue matrix of the human face.</p>
                 </div>
 
                 <div class="tech-item">
@@ -324,15 +390,32 @@
             </div>
         </div>
 
+        <!-- NEW AUTOMATED COMMERCIAL FOOTER SECTION -->
         <div class="cta-section">
             <h2>Ready to Unlock Your Projector's True Potential?</h2>
             <p style="margin-bottom: 30px; color: #9ca3af;">Stop enduring foggy, pale factory configurations. Elevate your home theater today.</p>
-            <a href="https://www.tiktok.com/@diskartetechph" class="cta-btn" target="_blank">Get PEP Engine Optimization Now</a>
+            
+            <!-- REQUESTED GREEN OVERDRIVE CTA BUTTON -->
+            <a href="https://tiktok.com" class="cta-btn-green" target="_blank">Get PEP Engine Optimization Pack Now</a>
+
+            <!-- OFFICIAL SHOPS ECOSYSTEM -->
+            <div class="link-heading">Official Digital Shops</div>
+            <div class="btn-group">
+                <a href="https://raket.ph" class="shop-btn" target="_blank">Raket.ph Shop</a>
+                <a href="https://ko-fi.com" class="shop-btn" target="_blank">Ko-fi Shop</a>
+            </div>
+
+            <!-- OFFICIAL SOCIAL MEDIA HUBS -->
+            <div class="link-heading">Connect With Us</div>
+            <div class="btn-group">
+                <a href="https://facebook.com" class="social-btn" target="_blank">Facebook Page</a>
+                <a href="https://tiktok.com" class="social-btn" target="_blank">TikTok Profile</a>
+                <a href="https://youtube.com" class="social-btn" target="_blank">YouTube Channel</a>
+            </div>
         </div>
 
     </div>
 
 </body>
-</html>
-
-            
+    </html>
+                    
