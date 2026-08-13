@@ -453,43 +453,144 @@
             </div>
         </div>
             
-<!-- PEP ENGINE INSTALLATION GUIDE SECTION -->
-<div style="max-width: 900px; margin: 50px auto; padding: 30px; background-color: #1e293b; border-radius: 8px; border: 1px solid #334155; text-align: left;">
+<div class="guide-container">
     
-    <h2 style="color: #38bdf8; font-size: 24px; margin-bottom: 5px; text-align: center;">⚙️ PEP ENGINE v2.6 - STEP-BY-STEP INSTALLATION GUIDE</h2>
-    <p style="color: #94a3b8; font-size: 15px; margin-bottom: 25px; text-align: center;">Official system-level implementation parameters for optimized budget projectors.</p>
-
-    <div style="display: flex; flex-direction: column; gap: 20px; color: #ffffff; font-size: 15px; line-height: 1.6;">
-        
-        <!-- STEP 1 -->
-        <div style="background-color: #0f172a; padding: 15px; border-radius: 6px; border-left: 4px solid #ef4444;">
-            <strong style="color: #fbbf24; font-size: 16px;">STEP 1: Download & Extract the Configuration Vault</strong>
-            <p style="margin: 5px 0 0 0;">Pagkatapos ng iyong secure checkout sa Raket.ph o Ko-fi, i-download ang iyong official <code>.zip</code> configuration package. Buksan ang <strong>ZArchiver</strong> app sa iyong Android system at i-extract ang files upang lumabas ang core configuration documents.</p>
-        </div>
-
-        <!-- STEP 2 -->
-        <div style="background-color: #0f172a; padding: 15px; border-radius: 6px; border-left: 4px solid #38bdf8;">
-            <strong style="color: #fbbf24; font-size: 16px;">STEP 2: Deploy to System Storage Folder</strong>
-            <p style="margin: 5px 0 0 0;">Gamit ang file manager, i-copy ang extracted configuration elements at i-paste ito nang direkta sa iyong local target system storage tree (<em>Android / Media / Player configuration hierarchy</em>). Siguraduhing tugma ang internal directory parameters.</p>
-        </div>
-
-        <!-- STEP 3 -->
-        <div style="background-color: #0f172a; padding: 15px; border-radius: 6px; border-left: 4px solid #22c55e;">
-            <strong style="color: #fbbf24; font-size: 16px;">STEP 3: Device OSD Initialization</strong>
-            <p style="margin: 5px 0 0 0;">Isaksak ang iyong local media USB Flashdrive sa budget projector (Allwinner H713 / Rockchip RK3128). Pagka-boot up ng video loop, lalabas ang real-time engineering banner prompt: <span style="color: #22c55e; font-family: monospace;">"PEP-ENGINE v2.6-RELEASE INITIALIZATION ACTIVE"</span>.</p>
-        </div>
-
-        <!-- STEP 4 -->
-        <div style="background-color: #0f172a; padding: 15px; border-radius: 6px; border-left: 4px solid #a855f7;">
-            <strong style="color: #fbbf24; font-size: 16px;">STEP 4: Appground IO Bluetooth Remote Setup</strong>
-            <p style="margin: 5px 0 0 0;">Buksan ang <strong>Bluetooth Keyboard & Mouse (Appground IO)</strong> app sa iyong mobile device at i-pair ito sa projector. Ang master keys (`/`, `*`, `Backspace`) ay awtomatikong magsisilbing switch control loops para sa Dynamic at Cinematic modes nang walang kahit anong system lag.</p>
-        </div>
-
+    <!-- Header -->
+    <div class="guide-header">
+        <h2>⚙️ PEP ENGINE v2.6 - STEP-BY-STEP INSTALLATION GUIDE</h2>
+        <p>Official system-level implementation parameters for optimized budget projectors.</p>
     </div>
 
-    <!-- SAFETY WARNING NOTICE -->
-    <div style="margin-top: 25px; padding: 15px; background-color: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 6px; color: #f87171; font-size: 14px;">
-        <strong>⚠️ MAINTENANCE NOTICE:</strong> Do not modify the inner script values to prevent system execution errors. If a display loop glitch occurs, press the mapped master shortcut key to execute the native <span style="color: #fff; font-family: monospace;">"PEP-ENGINE: MASTER RESET DONE"</span> recovery script immediately.
+    <!-- Step 1 -->
+    <div class="step-card">
+        <div class="step-title">STEP 1: CHOOSE AND INSTALL YOUR APP VERSION</div>
+        <div class="step-content">
+            We provide specialized versions of PEP Player. Please choose and install <span class="highlight-text">ONLY ONE (1)</span> version that best fits your viewing setup:
+            
+            <div class="option-block">
+                <div class="option-title">📺 OPTION A: PEP-Player-ONLINE.apk (Recommended)</div>
+                <ul>
+                    <li><strong>Best For:</strong> Users who stream movies via the Internet (using 1DM, IPTV, free movie websites, or direct web links).</li>
+                    <li><strong>Key Benefit:</strong> Advanced buffer optimization for faster online loading.</li>
+                </ul>
+
+                <div class="option-title">💾 OPTION B: PEP-Player-OFFLINE.apk</div>
+                <ul>
+                    <li><strong>Best For:</strong> Users who watch downloaded movies directly from a USB flash drive, external hard drive, or local storage.</li>
+                    <li><strong>Key Benefit:</strong> Pure hardware decoding for stutter-free local playback.</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 14px;">
+                <strong>👉 AFTER INSTALLATION:</strong>
+                <ol style="margin: 6px 0 0 20px; padding: 0;">
+                    <li>Open the app <strong>ONCE</strong> to let the system initialize its internal directories.</li>
+                    <li><strong>CLOSE</strong> the app completely before proceeding to Step 2.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-card">
+        <div class="step-title">STEP 2: ACTIVATE REMOTES & SHORTCUT KEYS (INPUT.CONF)</div>
+        <div class="step-content">
+            <div class="alert-text-step">
+                👉 Download this first: Bluetooth Keyboard & Mouse by Appground IO
+            </div>
+            
+            <div style="margin-bottom: 16px; font-weight: bold; color: #ffffff;">
+                📋 HOW TO PASTE CONFIGURATION USING THE PC KEYBOARD REMOTE
+            </div>
+            <p style="margin: 0 0 14px 0; font-size: 0.9rem; color: #94a3b8;">
+                Follow these straightforward steps to easily copy and paste your configuration using the remote application layout:
+            </p>
+
+            <div style="margin-bottom: 12px;">
+                <strong style="color: #eab308; display: block; margin-bottom: 4px;">Step 1: Copy the Code from your Phone</strong>
+                <ol style="margin: 0; padding-left: 20px;">
+                    <li>Open the 'INPUT.txt' file on your phone using any standard text viewer.</li>
+                    <li>Press <strong>Ctrl + A</strong> on the remote app keyboard view to highlight and select all text.</li>
+                    <li>Press <strong>Ctrl + C</strong> on the remote app keyboard view to copy the selected code configuration.</li>
+                </ol>
+            </div>
+
+            <div>
+                <strong style="color: #eab308; display: block; margin-bottom: 4px;">Step 2: Paste the Code into PEP PLAYER</strong>
+                <ol style="margin: 0; padding-left: 20px;">
+                    <li>Launch the PEP PLAYER application on your projector or Android TV Box device.</li>
+                    <li>Click on the Settings Icon (⚙️) located at the top configuration area of the screen.</li>
+                    <li>Look for and click on the <strong>"Pro Cinema Tweak"</strong> option within the menu.</li>
+                    <li>Select and open the designated <strong>"input.conf"</strong> setup section.</li>
+                    <li>Using the PC Keyboard layout view on your remote app, press <strong>Ctrl + V</strong> to execute the text paste action directly into the configuration input area.</li>
+                    <li>Click <strong>SAVE</strong> or <strong>APPLY</strong> to successfully bind and secure your updated system settings.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recommended App Layout Box -->
+    <div class="step-card blue-border">
+        <div class="step-title">📋 RECOMMENDED BLUETOOTH REMOTE APP</div>
+        <div class="step-content">
+            To use your phone as a remote control for PEP PLAYER and PEP-ENGINE, download this app from the Google Play Store:
+            <ul style="margin: 8px 0 14px 24px;">
+                <li><strong>App Name:</strong> Bluetooth Keyboard & Mouse</li>
+                <li><strong>Developer:</strong> Appground IO</li>
+                <li><strong>How to find:</strong> Open the Google Play Store on your Android phone and search for "Bluetooth Keyboard & Mouse".</li>
+            </ul>
+
+            <strong>🚀 HOW TO USE AND CONNECT:</strong>
+            <ol style="margin: 6px 0 0 20px; padding: 0;">
+                <li>Open the app on your phone and follow the prompts to activate its keyboard profile.</li>
+                <li>Go to your TV Box/Projector Bluetooth Settings and pair your phone.</li>
+                <li>Open PEP PLAYER. The pre-mapped hotkeys (Brightness, Sharpness, Master Reset) will now work automatically using your phone's remote app layout!</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Maintenance Red Box -->
+    <div class="maintenance-notice">
+        <span class="maintenance-title">⚠️ MAINTENANCE NOTICE:</span> Do not modify the inner script values to prevent system execution errors. If a display loop glitch occurs, press the mapped master shortcut key to execute the native "PEP-ENGINE: MASTER RESET DONE" recovery script immediately.
+    </div>
+
+    <!-- MOVED TO PINAKA-BABA: TV Box & Smart Projector Bypass -->
+    <div style="border: 1px solid #38bdf8; border-radius: 4px; padding: 16px; margin-top: 30px; background-color: rgba(13, 22, 45, 0.6);">
+        <div style="color: #38bdf8; font-weight: bold; font-size: 0.95rem; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.5px;">
+            📺 TV BOX & SMART PROJECTOR BYPASS & INSTALLATION GUIDE
+        </div>
+        <div style="font-size: 0.9rem; line-height: 1.6; color: #cbd5e1;">
+            <p style="margin: 0 0 14px 0;">Since PEP Player is a premium customized application bundle and not hosted directly on the official Play Store, you must grant your device permission to install "Unknown Apps" first. Follow the applicable method below based on your device model:</p>
+            
+            <div style="margin-top: 14px;">
+                <strong style="color: #ffffff; display: block; margin-bottom: 4px;">METHOD 1: ENABLING "UNKNOWN SOURCES" (Standard TV Boxes & Projectors)</strong>
+                <p style="margin: 0 0 6px 0; font-size: 0.85rem; color: #94a3b8;">Execute this setup utilizing your default File Manager or installation tool:</p>
+                <ol style="margin: 0 0 14px 0; padding-left: 20px;">
+                    <li>Navigate to the main 'SETTINGS' (⚙️ Icon) on your TV Box or Smart Projector interface.</li>
+                    <li>Select 'DEVICE PREFERENCES' or 'APPS' from the menu panel.</li>
+                    <li>Locate and enter 'SECURITY & RESTRICTIONS' or 'SPECIAL APP ACCESS'.</li>
+                    <li>Click on 'INSTALL UNKNOWN APPS' or 'UNKNOWN SOURCES'.</li>
+                    <li>Find your File Manager, USB storage browser, or Downloader application from the directory list and toggle it to ON (Enabled).</li>
+                    <li>Return to your file directory path and trigger the "PEP-Player.apk" installation.</li>
+                </ol>
+            </div>
+
+            <div style="margin-top: 14px;">
+                <strong style="color: #ffffff; display: block; margin-bottom: 4px;">METHOD 2: DISABLING GOOGLE PLAY PROTECT (For Official Google TV / Chromecast)</strong>
+                <p style="margin: 0 0 6px 0; font-size: 0.85rem; color: #94a3b8;">If your modern projector or system operates via a stock Google TV profile layout:</p>
+                <ol style="margin: 0 0 14px 0; padding-left: 20px;">
+                    <li>Click your account PROFILE AVATAR located at the upper right portion of the screen view.</li>
+                    <li>Go to 'SETTINGS' ➡️ select 'PRIVACY' ➡️ and click on the 'SECURITY' segment.</li>
+                    <li>Open the 'PLAY PROTECT' management window.</li>
+                    <li>Toggle OFF the configuration switch designated for "Scan apps with Play Protect".</li>
+                    <li>Run and execute your PEP Player APK setup file.</li>
+                </ol>
+            </div>
+
+            <div style="background-color: rgba(56, 189, 248, 0.1); border-left: 3px solid #38bdf8; padding: 8px 12px; margin-top: 14px; color: #e0f2fe; font-size: 0.85rem;">
+                💡 <strong>SECURITY REMINDER:</strong> Once PEP Player is successfully initialized and working, you can safely turn the Play Protect toggles back ON to preserve overall system security.
+            </div>
+        </div>
     </div>
 
 </div>
