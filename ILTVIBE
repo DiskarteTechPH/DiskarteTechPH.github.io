@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ILTVIBE — I LIKE THE VIBE. Original songs, CodeVibe, Cyber-Anito and modern OPM.">
+<title>ILTVIBE — I LIKE THE VIBE</title>
+<style>
+:root{
+  --bg:#07080d;--panel:#10121a;--panel2:#151824;--text:#f5f7fb;--muted:#9ca3b3;
+  --line:#262b3a;--accent:#b99cff;--accent2:#68e1d0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+radial-gradient(circle at 80% 10%,rgba(185,156,255,.15),transparent 28%),
+radial-gradient(circle at 10% 40%,rgba(104,225,208,.08),transparent 25%),var(--bg);
+color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;backdrop-filter:blur(18px);background:rgba(7,8,13,.72);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{max-width:1120px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;letter-spacing:.16em;font-size:15px}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:22px;font-size:14px;color:#c9ccda}
+.nav-links a:hover{color:#fff}
+.menu{display:none;background:none;border:0;color:white;font-size:22px}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:120px 22px 70px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(185,156,255,.16);border-radius:50%;animation:pulse 7s ease-in-out infinite}
+.hero:after{content:"";position:absolute;width:780px;height:780px;border:1px solid rgba(104,225,208,.08);border-radius:50%}
+.hero-content{position:relative;z-index:1;max-width:850px}
+.eyebrow{text-transform:uppercase;letter-spacing:.3em;color:var(--accent2);font-size:12px;font-weight:800;margin-bottom:20px}
+h1{font-size:clamp(58px,13vw,142px);line-height:.9;letter-spacing:-.07em}
+.tagline{font-size:clamp(20px,3vw,30px);margin:24px 0 12px;font-weight:700}
+.hero p{color:var(--muted);max-width:650px;margin:0 auto 32px;font-size:16px}
+.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{padding:13px 22px;border:1px solid var(--line);border-radius:999px;font-weight:800;font-size:14px;background:var(--panel)}
+.btn.primary{background:#fff;color:#08090d;border-color:#fff}
+.btn:hover{transform:translateY(-2px)}
+section{max-width:1120px;margin:auto;padding:92px 22px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px}
+.kicker{color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:.22em;font-weight:900}
+h2{font-size:clamp(32px,5vw,52px);letter-spacing:-.04em;line-height:1.05}
+.section-head p{max-width:470px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:24px;padding:24px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:#454b61}
+.card .num{font-size:12px;color:var(--accent2);font-weight:900;letter-spacing:.15em}
+.card h3{font-size:25px;margin:10px 0 7px}
+.card p{color:var(--muted);font-size:14px}
+.badges{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}
+.badge{font-size:11px;border:1px solid var(--line);border-radius:999px;padding:5px 9px;color:#cdd1df}
+.music{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}
+.feature{min-height:330px;display:flex;flex-direction:column;justify-content:flex-end;background:
+linear-gradient(180deg,rgba(185,156,255,.08),rgba(16,18,26,.96)),
+radial-gradient(circle at 70% 25%,rgba(104,225,208,.18),transparent 28%);
+}
+.feature h3{font-size:42px;line-height:1}
+.feature p{margin-top:10px}
+.tracklist{display:grid;gap:10px}
+.track{display:flex;align-items:center;gap:15px;padding:15px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.025)}
+.play{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#090a0e;font-weight:900}
+.track small{display:block;color:var(--muted)}
+.code{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px}
+.code-box{min-height:360px;border-radius:28px;padding:35px;background:
+linear-gradient(145deg,rgba(185,156,255,.18),rgba(104,225,208,.05)),#10121a;border:1px solid #34384b;display:flex;flex-direction:column;justify-content:center}
+.code-box .bigcode{font-size:clamp(50px,8vw,90px);font-weight:950;letter-spacing:.05em;line-height:1}
+.code-box p{color:#c2c5d2;margin-top:18px}
+.quote{font-size:20px;font-weight:700;margin:20px 0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.about .card{min-height:250px}
+.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.social{padding:11px 16px;border:1px solid var(--line);border-radius:999px;font-size:13px}
+footer{border-top:1px solid var(--line);padding:35px 22px;color:var(--muted);text-align:center}
+footer strong{color:#fff}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.5}}
+@media(max-width:800px){
+.nav-links{display:none}.menu{display:block}.grid{grid-template-columns:1fr}.music,.code,.about{grid-template-columns:1fr}
+.section-head{display:block}.section-head p{margin-top:12px}.hero{min-height:92vh}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#home">ILTVIBE<span>®</span></a>
+    <div class="nav-links">
+      <a href="#music">Music</a><a href="#codevibe">CodeVibe</a><a href="#sound">Cyber-Anito</a><a href="#about">About</a>
+    </div>
+    <button class="menu" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">☰</button>
+  </div>
+</nav>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">I LIKE THE VIBE</div>
+    <h1>ILTVIBE</h1>
+    <div class="tagline">Original songs. Hidden codes. New vibes.</div>
+    <p>A Filipino music project built around original stories, coded love songs, modern OPM energy, and the evolving Cyber-Anito sound.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#music">Explore Music</a>
+      <a class="btn" href="#codevibe">Decode the Vibe</a>
+    </div>
+  </div>
+</section>
+
+<section id="music">
+  <div class="section-head">
+    <div><div class="kicker">Selected release</div><h2>Music</h2></div>
+    <p>From playful OPM pop-rock to futuristic bittersweet grooves, every track is part of the ILTVIBE collection.</p>
+  </div>
+  <div class="music">
+    <div class="card feature">
+      <div class="num">01 / CODEVIBE</div>
+      <h3>1004</h3>
+      <p>The reworked Cyber-Anito main version — cleaner, groovier, and built around a hypnotic sub-bass pocket.</p>
+      <div class="badges"><span class="badge">Cyber-Anito</span><span class="badge">102 BPM</span><span class="badge">Original Song</span></div>
+    </div>
+    <div class="tracklist">
+      <a class="track" href="#music"><div class="play">▶</div><div><b>Sinta</b><small>AFTER THE VIBE • Sweet OPM Pop Rock</small></div></a>
+      <a class="track" href="#music"><div class="play">▶</div><div><b>ONSRA</b><small>BEYOND THE VIBE • Alternative OPM</small></div></a>
+      <a class="track" href="#music"><div class="play">▶</div><div><b>IG OFFICIAL</b><small>AFTER THE VIBE • Emotional Alternative Rock</small></div></a>
+      <a class="track" href="#music"><div class="play">▶</div><div><b>Saranghae</b><small>CodeVibe • Reworked Version</small></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="codevibe">
+  <div class="section-head">
+    <div><div class="kicker">Decode the message</div><h2>CodeVibe</h2></div>
+    <p>Numbers become lyrics. Lyrics become clues. The listener completes the story.</p>
+  </div>
+  <div class="code">
+    <div class="code-box">
+      <div class="kicker">Love Code</div>
+      <div class="bigcode">143</div>
+      <p>Three numbers. One message.<br><b>“I love you.”</b></p>
+    </div>
+    <div class="card">
+      <div class="num">THE IDEA</div>
+      <h3>Every number has a secret.</h3>
+      <div class="quote">“Bawat bilang may lihim na mensahe.”</div>
+      <p>ILTVIBE turns familiar love codes and original number sequences into song titles, lyrical clues, and little puzzles for listeners to discover.</p>
+      <div class="badges"><span class="badge">143</span><span class="badge">520</span><span class="badge">1004</span><span class="badge">1314</span><span class="badge">831</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="sound">
+  <div class="section-head">
+    <div><div class="kicker">The evolving sound</div><h2>Cyber-Anito</h2></div>
+    <p>A signature production direction built from texture, groove, atmosphere and natural-feeling vocals.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="num">01</div><h3>Guitar</h3><p>Atmospheric clean electric guitar creates the melodic and textural layer.</p></div>
+    <div class="card"><div class="num">02</div><h3>Sub-Bass</h3><p>A glitchy, muted low-end groove creates the pocket and gives the track its movement.</p></div>
+    <div class="card"><div class="num">03</div><h3>Vocals</h3><p>Raw natural male vocals with a light, subtle echo keep the performance intimate and spacious.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div><div class="kicker">Albums & EP</div><h2>The ILTVIBE Collection</h2></div>
+    <p>Four chapters. One evolving vibe.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="num">EP VIBE</div><h3>EP VIBE</h3><p>The beginning of the ILTVIBE collection — the first chapter of the sound and identity.</p></div>
+    <div class="card"><div class="num">ALBUM 02</div><h3>AFTER THE VIBE</h3><p>A romantic chapter filled with playful chemistry, sweetness and kilig.</p></div>
+    <div class="card"><div class="num">ALBUM 03</div><h3>BEYOND THE VIBE</h3><p>The next chapter, expanding the emotional and sonic world of ILTVIBE.</p></div>
+    <div class="card"><div class="num">ALBUM 04</div><h3>THE NEXT VIBE</h3><p>The continuing evolution of ILTVIBE into its next musical chapter.</p></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-head">
+    <div><div class="kicker">About</div><h2>I LIKE THE VIBE.</h2></div>
+    <p>More than a channel name — a creative identity.</p>
+  </div>
+  <div class="about">
+    <div class="card">
+      <h3>What is ILTVIBE?</h3>
+      <p>ILTVIBE is an independent AI-assisted music project focused on original songwriting, concepts, coded love stories, visual identity and experimental production.</p>
+    </div>
+    <div class="card">
+      <h3>Where to listen</h3>
+      <p>Find new releases, Shorts, music clips and future chapters through the official social channels.</p>
+      <div class="socials">
+        <a class="social" href="https://www.youtube.com/" target="_blank">YouTube ↗</a>
+        <a class="social" href="https://www.tiktok.com/" target="_blank">TikTok ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p><strong>ILTVIBE — I LIKE THE VIBE</strong></p>
+  <p>Original songs • CodeVibe • Cyber-Anito</p>
+  <p>© <span id="year"></span> ILTVIBE. All vibes reserved.</p>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
