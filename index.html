@@ -1,18 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PEP Engine - Flagship Projector Calibration</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TMWTLVQG3H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-TMWTLVQG3H');
-</script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TMWTLVQG3H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TMWTLVQG3H');
+    </script>
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,13 +24,16 @@
             padding: 0;
             line-height: 1.6;
         }
-        /* TOP SECTION: Premium Branding & Upper Banners */
+
+        /* TOP SECTION */
+
         .hero-section {
             text-align: center;
             background: linear-gradient(135deg, #0f172a, #020617);
             padding: 50px 20px;
             border-bottom: 3px solid #3b82f6;
         }
+
         .banner-container {
             display: flex;
             flex-wrap: wrap;
@@ -39,6 +44,7 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .hero-banner-img {
             max-width: 480px;
             width: 100%;
@@ -47,6 +53,7 @@
             box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
             border: 2px solid #3b82f6;
         }
+
         .comparison-banner-img {
             max-width: 550px;
             width: 100%;
@@ -55,6 +62,7 @@
             box-shadow: 0 0 25px rgba(239, 68, 68, 0.3);
             border: 2px solid #ef4444;
         }
+
         .matrix-banner-img {
             max-width: 900px;
             width: 100%;
@@ -64,6 +72,7 @@
             border: 2px solid #3b82f6;
             margin-top: 20px;
         }
+
         h1 {
             color: #3b82f6;
             font-size: 2.8rem;
@@ -71,25 +80,29 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
+
         .subtitle {
             font-size: 1.3rem;
             color: #9ca3af;
             max-width: 800px;
             margin: 0 auto;
         }
+
         .container {
             max-width: 1100px;
             margin: 40px auto;
             padding: 0 20px;
         }
-        
-        /* MIDDLE SECTION: Grid for Live Screen Shots */
+
+        /* MIDDLE SECTION */
+
         .showcase-list {
             display: flex;
             flex-direction: column;
             gap: 40px;
             margin-bottom: 60px;
         }
+
         .test-block {
             background-color: #111827;
             border: 1px solid #374151;
@@ -97,6 +110,7 @@
             overflow: hidden;
             padding: 20px;
         }
+
         .block-title {
             font-size: 1.3rem;
             font-weight: bold;
@@ -106,32 +120,38 @@
             border-left: 4px solid #3b82f6;
             padding-left: 10px;
         }
+
         .media-group {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 20px;
         }
+
         @media (max-width: 768px) {
             .media-group {
                 grid-template-columns: 1fr;
             }
         }
+
         .poster-container img {
             width: 100%;
             height: auto;
             border-radius: 6px;
             border: 1px solid #4b5563;
         }
+
         .slide-container img {
             width: 100%;
             height: auto;
             border-radius: 6px;
             border: 1px solid #3b82f6;
         }
+
         .test-description {
             margin-top: 15px;
             color: #d1d5db;
         }
+
         .pep-badge {
             display: inline-block;
             background-color: #065f46;
@@ -144,7 +164,8 @@
             text-transform: uppercase;
         }
 
-        /* BOTTOM SECTION: Technical Explanation Box */
+        /* TECHNICAL EXPLANATION */
+
         .technical-box {
             background-color: #111c30;
             padding: 35px;
@@ -153,6 +174,7 @@
             margin-top: 50px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
+
         .tech-heading {
             color: #ef4444;
             font-size: 1.8rem;
@@ -161,29 +183,138 @@
             margin-bottom: 20px;
             letter-spacing: 1px;
         }
+
         .tech-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
+
         @media (max-width: 768px) {
             .tech-grid {
                 grid-template-columns: 1fr;
             }
         }
+
         .tech-item h3 {
             color: #3b82f6;
             margin-top: 0;
             font-size: 1.2rem;
             text-transform: uppercase;
         }
+
         .tech-item p {
             color: #9ca3af;
             font-size: 0.95rem;
             margin: 0;
         }
 
-        /* NEW FOOTER & MULTI-BUTTON ECOSYSTEM */
+        /* INSTALLATION GUIDE */
+
+        .pep-installation-guide {
+            margin: 50px 0;
+        }
+
+        .installation-guide,
+        .setup-complete,
+        .optional-setup {
+            background-color: #111827;
+            border: 1px solid #374151;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .installation-guide h2,
+        .setup-complete h2,
+        .optional-setup h2 {
+            color: #3b82f6;
+            margin-top: 0;
+            border-bottom: 1px solid #374151;
+            padding-bottom: 12px;
+        }
+
+        .installation-guide h3 {
+            color: #60a5fa;
+            font-size: 1rem;
+            margin-top: 25px;
+        }
+
+        .installation-guide p,
+        .setup-complete p,
+        .optional-setup p {
+            color: #d1d5db;
+        }
+
+        .info-box,
+        .video-box,
+        .optional-note,
+        .zip-info,
+        .quick-check {
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 18px;
+            margin-top: 18px;
+        }
+
+        .info-box strong,
+        .video-box strong,
+        .zip-info strong {
+            color: #60a5fa;
+        }
+
+        .quick-check h3 {
+            color: #34d399;
+            margin-top: 0;
+        }
+
+        .quick-check ul {
+            padding-left: 20px;
+            color: #d1d5db;
+        }
+
+        .quick-check li {
+            margin-bottom: 8px;
+        }
+
+        /* ABOUT THE DEVELOPER */
+
+        .developer-story {
+            padding: 40px 25px;
+            margin: 50px 0;
+            background: linear-gradient(145deg, #111827, #0f172a);
+            color: #fff;
+            border: 1px solid #374151;
+            border-top: 4px solid #ffcc00;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        }
+
+        .developer-story h2 {
+            color: #ffcc00;
+            font-size: 2rem;
+            margin: 0 0 25px;
+            text-align: center;
+        }
+
+        .developer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            color: #d1d5db;
+        }
+
+        .developer-content p {
+            margin-bottom: 18px;
+        }
+
+        .developer-content strong {
+            color: #f3f4f6;
+        }
+
+        /* CTA & FOOTER */
+
         .cta-section {
             text-align: center;
             margin: 60px 0;
@@ -192,7 +323,7 @@
             border-radius: 12px;
             border: 1px solid #1f2937;
         }
-        /* REQUESTED GREEN OVERDRIVE CTA BUTTON */
+
         .cta-btn-green {
             display: inline-block;
             background-color: #059669;
@@ -209,11 +340,13 @@
             margin-bottom: 40px;
             border: 2px solid #34d399;
         }
+
         .cta-btn-green:hover {
             background-color: #047857;
             box-shadow: 0 0 35px rgba(52, 211, 153, 0.6);
             transform: translateY(-2px);
         }
+
         .link-heading {
             font-size: 1.1rem;
             color: #9ca3af;
@@ -222,6 +355,7 @@
             margin-bottom: 15px;
             margin-top: 25px;
         }
+
         .btn-group {
             display: flex;
             justify-content: center;
@@ -229,6 +363,7 @@
             gap: 15px;
             margin-bottom: 20px;
         }
+
         .shop-btn {
             background-color: #1f2937;
             color: #f3f4f6;
@@ -240,11 +375,13 @@
             transition: all 0.2s;
             font-size: 0.95rem;
         }
+
         .shop-btn:hover {
             background-color: #374151;
             border-color: #3b82f6;
             color: #3b82f6;
         }
+
         .social-btn {
             background-color: #0f172a;
             color: #9ca3af;
@@ -256,335 +393,621 @@
             transition: all 0.2s;
             font-size: 0.9rem;
         }
+
         .social-btn:hover {
             background-color: #1e293b;
             border-color: #ef4444;
             color: #ef4444;
         }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .technical-box {
+                padding: 22px;
+            }
+
+            .developer-story {
+                padding: 30px 20px;
+            }
+
+            .developer-story h2 {
+                font-size: 1.6rem;
+            }
+
+            .cta-btn-green {
+                font-size: 1rem;
+                padding: 15px 20px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <!-- 1. TOP SECTION: Branding & Three Core Upper Banners -->
+    <!-- 1. TOP SECTION: BRANDING & BANNERS -->
+
     <div class="hero-section">
+
         <div class="banner-container">
-            <img src="hero-banner.png" alt="PEP Engine Core Breakdown Blueprint" class="hero-banner-img">
-            <img src="comparison-banner.png" alt="PEP Engine Before vs After Comparison" class="comparison-banner-img">
+            <img src="hero-banner.png"
+                 alt="PEP Engine Core Breakdown Blueprint"
+                 class="hero-banner-img">
+
+            <img src="comparison-banner.png"
+                 alt="PEP Engine Before vs After Comparison"
+                 class="comparison-banner-img">
         </div>
-        
-        <!-- NEW COMPATIBILITY MATRIX PLACEMENT -->
-        <img src="compatibility-matrix.png" alt="PEP Engine Ecosystem Compatibility Matrix" class="matrix-banner-img">
-        
+
+        <img src="compatibility-matrix.png"
+             alt="PEP Engine Ecosystem Compatibility Matrix"
+             class="matrix-banner-img">
+
         <h1>Upgrade Your HY300 Unbranded Projector with PEP Player & PEP Engine</h1>
-        <p class="subtitle">Professional calibration and software tuning made for budget projectors</p>
-    </div>        <!-- FLAGSHIP TECHNICAL DATA & QUICK CHECKOUT HUBS -->
-        <div style="background-color: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 25px; max-width: 900px; margin: 25px auto 10px auto; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.4); font-family: 'Segoe UI', sans-serif;">
-            
-            <h3 style="color: #34d399; margin-top: 0; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #1f2937; padding-bottom: 12px; margin-bottom: 25px; text-align: center; font-weight: 800;">⚡ SYSTEM TUNING & OPTIMIZATION</h3>
-            
-            <!-- FLEX GRID FOR DUAL SCREEN READABILITY -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-                
-                <!-- COLUMN A: THE ADVANCED KEY FEATURES -->
-                <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 18px; max-height: 420px; overflow-y: auto;">
-                    <h4 style="color: #3b82f6; margin-top: 0; font-size: 1rem; text-transform: uppercase; border-bottom: 1px solid #334155; padding-bottom: 5px; margin-bottom: 12px;">Main Features</h4>
-                    <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🎨 Color Profiles:</strong> Cycle instantly between Dynamic, Vivid, Standard, Cinematic, and Black & White Modes.</p>
-                    <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🌓 Environment Switcher:</strong> Quick-toggle presets calibrated for Ambient Daylight and Night room conditions.</p>
-                    <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">⚡ Lag-Free Performance:</strong> The system runs smoothly, ensuring no delays or interruptions in audio and video.</p>
-                    <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🔎 Clearer & Sharper:</strong> It sharpens the details of the show so the image isn't blurry.</p>
-                    <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🎬 HDR Tone-Mapping:</strong> The lighting and shadows are adjusted so that details remain visible even in dark scenes.</p>
-                    <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🔊 Audio Compressor:</strong> Boosts built-in sound up to 150% with custom soft-clipping equalization.</p>
-                    <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">💛 Subtitle Engine:</strong> Hardcoded high-contrast Yellow with solid borders for absolute readability.</p>
-                    <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">📐 Dynamic Keystone:</strong> Shift, pan, and zoom display coordinates dynamically using your remote control inside active video playback.</p>
-                    <p style="margin: 0 0 5px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🔄 Master Reset:</strong> Instantly restores everything back to the default golden calibration setup.</p>
-                </div>
-                
-                <!-- COLUMN B: THE SYSTEM METADATA & MATRIX REQUIREMENT -->
-                <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 18px; max-height: 420px; overflow-y: auto;">
-                    <h4 style="color: #ef4444; margin-top: 0; font-size: 1rem; text-transform: uppercase; border-bottom: 1px solid #334155; padding-bottom: 5px; margin-bottom: 12px;">Technical Details</h4>
-                    
-                    <p style="margin: 0 0 10px 0; font-size: 0.85rem; color: #9ca3af; line-height: 1.4;"><strong style="color: #f3f4f6;">📢 IMPORTANT REMINDER:</strong> This applies only to content watched via USB or streaming sites within the PEP Player. It will NOT work on the actual Netflix, YouTube, or Disney+ apps.</p>
-                    
-                    <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: #d1d5db;"><strong style="color: #fca5a5;">🕹️ Supported Hardware:</strong> Magcubic HY Series (HY300, HY300 Pro, HY320, HY350), Coalus, Transpeed, Salange, and generic Android lifestyle panels.</p>
-                    <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: #d1d5db;"><strong style="color: #fca5a5;">🧠 Target SOC / RAM:</strong> Allwinner H713, Amlogic S905, Rockchip RK3128 / RK3229. Fully optimized for resource-constrained 1GB setups.</p>
-                    
-                    <p style="margin: 12px 0 6px 0; font-size: 0.85rem; color: #f3f4f6; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">🛠️ Free Apps Needed (Get on Play Store):</p>
-                    <p style="margin: 0 0 4px 0; font-size: 0.82rem; color: #cbd5e1;">• <strong style="color: #38bdf8;">For ZIP Extraction:</strong> ZArchiver or AnExplorer (To extract the download pack).</p>
-                    <p style="margin: 0 0 4px 0; font-size: 0.82rem; color: #cbd5e1;">• <strong style="color: #38bdf8;">For Text Viewing:</strong> FX File Explorer or QuickEdit (To select & copy your configuration code).</p>
-                    <p style="margin: 0 0 10px 0; font-size: 0.82rem; color: #cbd5e1;">• <strong style="color: #38bdf8;">Remote Control App:</strong> Bluetooth Keyboard & Mouse by Appground IO.</p>
-                    
-                    <p style="margin: 12px 0 0 0; font-size: 0.8rem; color: #64748b; border-top: 1px solid #334155; padding-top: 8px; font-style: italic;">Build: PEP-ENGINE v2.6-RELEASE | 100% Hardware Safe | Non-Commercial Research & Development Suite.</p>
-                </div>
-                
-            </div>
-            
-            <!-- RESPONSIVE MOBILE ADJUSTMENT (BREAK GRID ON SMARTPHONES) -->
-            <style>
-                @media (max-width: 768px) {
-                    div[style*="grid-template-columns: 1fr 1fr"] {
-                        grid-template-columns: 1fr !important;
-                        gap: 20px !important;
-                    }
-                }
-            </style>
 
-            <!-- CENTRAL HIGH-CONVERTING QUICK BUY GATEWAYS -->
-            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; border-top: 2px solid #1f2937; padding-top: 22px; margin-top: 25px;">
-                <a href="https://raket.ph/diskartetechph" target="_blank" style="padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; transition: all 0.2s; letter-spacing: 0.5px; text-align: center; background-color: #059669; color: white; border: 2px solid #34d399; box-shadow: 0 0 15px rgba(5, 150, 105, 0.3);">🛒 Buy via Raket-PH (₱499)</a>
-                <a href="https://ko-fi.com/diskartetechofficialpepenginestore" target="_blank" style="padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; transition: all 0.2s; letter-spacing: 0.5px; text-align: center; background-color: #2563eb; color: white; border: 2px solid #3b82f6; box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);">☕ Buy via Ko-fi ($9.99)</a>
+        <p class="subtitle">
+            Professional calibration and software tuning made for budget projectors
+        </p>
+
+    </div>
+
+    <!-- FLAGSHIP TECHNICAL DATA & QUICK CHECKOUT HUBS -->
+
+    <div style="background-color: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 25px; max-width: 900px; margin: 25px auto 10px auto; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.4); font-family: 'Segoe UI', sans-serif;">
+
+        <h3 style="color: #34d399; margin-top: 0; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #1f2937; padding-bottom: 12px; margin-bottom: 25px; text-align: center; font-weight: 800;">
+            ⚡ SYSTEM TUNING & OPTIMIZATION
+        </h3>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+
+            <!-- COLUMN A -->
+
+            <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 18px; max-height: 420px; overflow-y: auto;">
+
+                <h4 style="color: #3b82f6; margin-top: 0; font-size: 1rem; text-transform: uppercase; border-bottom: 1px solid #334155; padding-bottom: 5px; margin-bottom: 12px;">
+                    Main Features
+                </h4>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🎨 Color Profiles:</strong> Cycle instantly between Dynamic, Vivid, Standard, Cinematic, and Black & White Modes.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🌓 Environment Switcher:</strong> Quick-toggle presets calibrated for Ambient Daylight and Night room conditions.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">⚡ Lag-Free Performance:</strong> The system runs smoothly, ensuring no delays or interruptions in audio and video.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🔎 Clearer & Sharper:</strong> It sharpens the details of the show so the image isn't blurry.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🎬 HDR Tone-Mapping:</strong> The lighting and shadows are adjusted so that details remain visible even in dark scenes.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🔊 Audio Compressor:</strong> Boosts built-in sound up to 150% with custom soft-clipping equalization.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">💛 Subtitle Engine:</strong> Hardcoded high-contrast Yellow with solid borders for absolute readability.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">📐 Dynamic Keystone:</strong> Shift, pan, and zoom display coordinates dynamically using your remote control inside active video playback.</p>
+
+                <p style="margin: 0 0 5px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🔄 Master Reset:</strong> Instantly restores everything back to the default golden calibration setup.</p>
+
             </div>
+
+            <!-- COLUMN B -->
+
+            <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 18px; max-height: 420px; overflow-y: auto;">
+
+                <h4 style="color: #ef4444; margin-top: 0; font-size: 1rem; text-transform: uppercase; border-bottom: 1px solid #334155; padding-bottom: 5px; margin-bottom: 12px;">
+                    Technical Details
+                </h4>
+
+                <p style="margin: 0 0 10px 0; font-size: 0.85rem; color: #9ca3af; line-height: 1.4;"><strong style="color: #f3f4f6;">📢 IMPORTANT REMINDER:</strong> This applies only to content watched via USB or streaming sites within the PEP Player. It will NOT work on the actual Netflix, YouTube, or Disney+ apps.</p>
+
+                <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: #d1d5db;"><strong style="color: #fca5a5;">🕹️ Supported Hardware:</strong> Magcubic HY Series (HY300, HY300 Pro, HY320, HY350), Coalus, Transpeed, Salange, and generic Android lifestyle panels.</p>
+
+                <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: #d1d5db;"><strong style="color: #fca5a5;">🧠 Target SOC / RAM:</strong> Allwinner H713, Amlogic S905, Rockchip RK3128 / RK3229. Fully optimized for resource-constrained 1GB setups.</p>
+
+                <p style="margin: 12px 0 6px 0; font-size: 0.85rem; color: #f3f4f6; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">🛠️ Free Apps Needed (Get on Play Store):</p>
+
+                <p style="margin: 0 0 4px 0; font-size: 0.82rem; color: #cbd5e1;">• <strong style="color: #38bdf8;">For ZIP Extraction:</strong> ZArchiver or AnExplorer (To extract the download pack).</p>
+
+                <p style="margin: 0 0 4px 0; font-size: 0.82rem; color: #cbd5e1;">• <strong style="color: #38bdf8;">For Text Viewing:</strong> FX File Explorer or QuickEdit (To select & copy your configuration code).</p>
+
+                <p style="margin: 0 0 10px 0; font-size: 0.82rem; color: #cbd5e1;">• <strong style="color: #38bdf8;">Remote Control App:</strong> Bluetooth Keyboard & Mouse by Appground IO.</p>
+
+                <p style="margin: 12px 0 0 0; font-size: 0.8rem; color: #64748b; border-top: 1px solid #334155; padding-top: 8px; font-style: italic;">
+                    Build: PEP-ENGINE v2.6-RELEASE | 100% Hardware Safe | Non-Commercial Research & Development Suite.
+                </p>
+
+            </div>
+
         </div>
 
+        <style>
+            @media (max-width: 768px) {
+                div[style*="grid-template-columns: 1fr 1fr"] {
+                    grid-template-columns: 1fr !important;
+                    gap: 20px !important;
+                }
+            }
+        </style>
+
+        <!-- QUICK BUY BUTTONS -->
+
+        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; border-top: 2px solid #1f2937; padding-top: 22px; margin-top: 25px;">
+
+            <a href="https://raket.ph/diskartetechph"
+               target="_blank"
+               rel="noopener noreferrer"
+               style="padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; transition: all 0.2s; letter-spacing: 0.5px; text-align: center; background-color: #059669; color: white; border: 2px solid #34d399; box-shadow: 0 0 15px rgba(5, 150, 105, 0.3);">
+                🛒 Buy via Raket-PH (₱499)
+            </a>
+
+            <a href="https://ko-fi.com/diskartetechofficialpepenginestore"
+               target="_blank"
+               rel="noopener noreferrer"
+               style="padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; transition: all 0.2s; letter-spacing: 0.5px; text-align: center; background-color: #2563eb; color: white; border: 2px solid #3b82f6; box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);">
+                ☕ Buy via Ko-fi ($9.99)
+            </a>
+
+        </div>
+
+    </div>
 
     <div class="container">
-        
-        <!-- 2. MIDDLE SECTION: Live Screen Shots & Hardware Stress Tests -->
-        <h2 style="color: #3b82f6; border-bottom: 1px solid #374151; padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px;">Live Hardware Stress Tests</h2>
+
+        <!-- 2. LIVE HARDWARE STRESS TESTS -->
+
+        <h2 style="color: #3b82f6; border-bottom: 1px solid #374151; padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px;">
+            Live Hardware Stress Tests
+        </h2>
 
         <div class="showcase-list">
-            
-            <!-- Block 1 -->
+
+            <!-- BLOCK 1 -->
+
             <div class="test-block">
                 <div class="block-title">1. Ultra Micro-Contrast Test</div>
+
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster1.png" alt="Ready or Not Movie Poster"></div>
-                    <div class="slide-container"><img src="slide1.png" alt="Extreme Close-Up Calibration"></div>
+                    <div class="poster-container">
+                        <img src="poster1.png" alt="Ready or Not Movie Poster">
+                    </div>
+
+                    <div class="slide-container">
+                        <img src="slide1.png" alt="Extreme Close-Up Calibration">
+                    </div>
                 </div>
-                <p class="test-description">Forces hidden fine details like iris reflections and individual eyelashes to render with sharp clarity from the movie <em>Ready or Not</em>.</p>
+
+                <p class="test-description">
+                    Forces hidden fine details like iris reflections and individual eyelashes to render with sharp clarity from the movie <em>Ready or Not</em>.
+                </p>
+
                 <span class="pep-badge">Sharpness Overdrive</span>
             </div>
 
-            <!-- Block 2 -->
+            <!-- BLOCK 2 -->
+
             <div class="test-block">
                 <div class="block-title">2. Teal & Orange Separation</div>
+
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster2.png" alt="Ready or Not Movie Poster"></div>
-                    <div class="slide-container"><img src="slide2.png" alt="Teal & Orange Calibration"></div>
+                    <div class="poster-container">
+                        <img src="poster2.png" alt="Ready or Not Movie Poster">
+                    </div>
+
+                    <div class="slide-container">
+                        <img src="slide2.png" alt="Teal & Orange Calibration">
+                    </div>
                 </div>
-                <p class="test-description">Isolates conflicting Hollywood dual color temperatures flawlessly without distorting natural skin tones.</p>
+
+                <p class="test-description">
+                    Isolates conflicting Hollywood dual color temperatures flawlessly without distorting natural skin tones.
+                </p>
+
                 <span class="pep-badge">Dual Temp Balance</span>
-            <!-- Block 3 -->
+            </div>
+
+            <!-- BLOCK 3 -->
+
             <div class="test-block">
                 <div class="block-title">3. Texture Mapping Test</div>
+
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster3.png" alt="The Death of Robin Hood Poster"></div>
-                    <div class="slide-container"><img src="slide3.png" alt="Texture Mapping Calibration"></div>
+                    <div class="poster-container">
+                        <img src="poster3.png" alt="The Death of Robin Hood Poster">
+                    </div>
+
+                    <div class="slide-container">
+                        <img src="slide3.png" alt="Texture Mapping Calibration">
+                    </div>
                 </div>
-                <p class="test-description">Recovers skin depth and fine gray-to-white hair resolution from Robinhood in <em>The Death of Robin Hood</em> that usually merges into a flat blur on default firmware.</p>
+
+                <p class="test-description">
+                    Recovers skin depth and fine gray-to-white hair resolution from Robinhood in <em>The Death of Robin Hood</em> that usually merges into a flat blur on default firmware.
+                </p>
+
                 <span class="pep-badge">Texture Recovery</span>
             </div>
 
-            <!-- Block 4 -->
+            <!-- BLOCK 4 -->
+
             <div class="test-block">
                 <div class="block-title">4. Chroma Isolation Test</div>
+
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster4.png" alt="My Royal Nemesis Poster"></div>
-                    <div class="slide-container"><img src="slide4.png" alt="Chroma Isolation Calibration"></div>
+                    <div class="poster-container">
+                        <img src="poster4.png" alt="My Royal Nemesis Poster">
+                    </div>
+
+                    <div class="slide-container">
+                        <img src="slide4.png" alt="Chroma Isolation Calibration">
+                    </div>
                 </div>
-                <p class="test-description">Pushes vibrant neon blues from Shin Seo-ri's tracking suit in <em>My Royal Nemesis</em> while keeping the human face perfectly warm, lifelike, and isolated.</p>
+
+                <p class="test-description">
+                    Pushes vibrant neon blues from Shin Seo-ri's tracking suit in <em>My Royal Nemesis</em> while keeping the human face perfectly warm, lifelike, and isolated.
+                </p>
+
                 <span class="pep-badge">Chroma Separation</span>
             </div>
 
-            <!-- Block 5 -->
+            <!-- BLOCK 5 -->
+
             <div class="test-block">
                 <div class="block-title">5. Subtitle Edge Anti-Aliasing (480p Stress Test)</div>
+
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster5.png" alt="SLine"></div>
-                    <div class="slide-container"><img src="slide5.png" alt="Subtitle Edge Calibration"></div>
+                    <div class="poster-container">
+                        <img src="poster5.png" alt="SLine">
+                    </div>
+
+                    <div class="slide-container">
+                        <img src="slide5.png" alt="Subtitle Edge Calibration">
+                    </div>
                 </div>
-                <p class="test-description">Completely removes jagged pixel edges from yellow and white streaming text from Arin's scene in <em>SLine</em> at a low-res 480p source.</p>
+
+                <p class="test-description">
+                    Completely removes jagged pixel edges from yellow and white streaming text from Arin's scene in <em>SLine</em> at a low-res 480p source.
+                </p>
+
                 <span class="pep-badge">Anti-Aliasing</span>
             </div>
 
-            <!-- Block 6 -->
+            <!-- BLOCK 6 -->
+
             <div class="test-block">
                 <div class="block-title">6. Highlight Clipping Protection (480p Stress Test)</div>
+
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster6.png" alt="K-Drama Poster"></div>
-                    <div class="slide-container"><img src="slide6.png" alt="Highlight Protection Calibration"></div>
+                    <div class="poster-container">
+                        <img src="poster6.png" alt="K-Drama Poster">
+                    </div>
+
+                    <div class="slide-container">
+                        <img src="slide6.png" alt="Highlight Protection Calibration">
+                    </div>
                 </div>
-                <p class="test-description">Prevents bright misty and foggy daylight backdrops from washing out facial gradients in low-resolution K-Drama formats (Arin).</p>
+
+                <p class="test-description">
+                    Prevents bright misty and foggy daylight backdrops from washing out facial gradients in low-resolution K-Drama formats (Arin).
+                </p>
+
                 <span class="pep-badge">Highlight Control</span>
             </div>
 
+            <!-- BLOCK 7 -->
+
             <div class="test-block">
                 <div class="block-title">7. Moreno/Olive Skin Recovery (480p Stress Test)</div>
+
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster7.png" alt="Citadel Poster"></div>
-                    <div class="slide-container"><img src="slide7.png" alt="Moreno Skin Recovery Calibration"></div>
+                    <div class="poster-container">
+                        <img src="poster7.png" alt="Citadel Poster">
+                    </div>
+
+                    <div class="slide-container">
+                        <img src="slide7.png" alt="Moreno Skin Recovery Calibration">
+                    </div>
                 </div>
-                <p class="test-description">Ensures rich, warm tan tones remain perfectly natural under harsh daylight exposure from Priyanka Chopra's close-up in <em>Citadel</em>.</p>
+
+                <p class="test-description">
+                    Ensures rich, warm tan tones remain perfectly natural under harsh daylight exposure from Priyanka Chopra's close-up in <em>Citadel</em>.
+                </p>
+
                 <span class="pep-badge">Tone Restoration</span>
             </div>
 
+            <!-- BLOCK 8 -->
+
             <div class="test-block">
                 <div class="block-title">8. Cold Light Gradient (480p Stress Test)</div>
+
                 <div class="media-group">
-                    <div class="poster-container"><img src="poster8.png" alt="Disclosure Day Poster"></div>
-                    <div class="slide-container"><img src="slide8.png" alt="Cold Light Calibration"></div>
+                    <div class="poster-container">
+                        <img src="poster8.png" alt="Disclosure Day Poster">
+                    </div>
+
+                    <div class="slide-container">
+                        <img src="slide8.png" alt="Cold Light Calibration">
+                    </div>
                 </div>
-                <p class="test-description">Maintains dynamic range separation even under a heavily blue/cyan-graded cinematic atmosphere from Margaret Fairchild's scene in <em>Disclosure Day</em>.</p>
+
+                <p class="test-description">
+                    Maintains dynamic range separation even under a heavily blue/cyan-graded cinematic atmosphere from Margaret Fairchild's scene in <em>Disclosure Day</em>.
+                </p>
+
                 <span class="pep-badge">Micro-Contrast</span>
             </div>
 
         </div>
-        <!-- PREMIUM NEXT PAGE NAVIGATION BUTTON -->
+
+        <!-- PAGE 2 NAVIGATION -->
+
         <div style="text-align: center; margin: 50px 0 20px 0;">
-            <a href="index2.html" style="display: inline-block; background-color: #2563eb; color: white; font-size: 1.2rem; font-weight: bold; padding: 15px 35px; text-decoration: none; border-radius: 8px; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); border: 2px solid #3b82f6; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">
+
+            <a href="index2.html"
+               style="display: inline-block; background-color: #2563eb; color: white; font-size: 1.2rem; font-weight: bold; padding: 15px 35px; text-decoration: none; border-radius: 8px; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); border: 2px solid #3b82f6; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">
                 ➡️ View More Hardware Stress Tests (Page 2)
             </a>
+
         </div>
-            
+
+        <!-- TECHNICAL EXPLANATION -->
+
         <div class="technical-box">
-            <div class="tech-heading">The Secret Behind the PEP Engine</div>
+
+            <div class="tech-heading">
+                The Secret Behind the PEP Engine
+            </div>
+
             <div class="tech-grid">
-                
+
                 <div class="tech-item">
                     <h3>1. Smart Performance Boost</h3>
-                    <p>It goes beyond the HY300's factory setting limits. It directly adjusts the system to unlock the true beauty, color, and clarity hidden within your projector.</p>
+                    <p>
+                        It goes beyond the HY300's factory setting limits. It directly adjusts the system to unlock the true beauty, color, and clarity hidden within your projector.
+                    </p>
                 </div>
 
                 <div class="tech-item">
                     <h3>2. Natural Skin Tones & Colors</h3>
-                    <p>It does not alter all colors simultaneously, thereby avoiding annoying blue or green stains on the screen. It preserves natural skin tones while making background colors vivid.</p>
+                    <p>
+                        It does not alter all colors simultaneously, thereby avoiding annoying blue or green stains on the screen. It preserves natural skin tones while making background colors vivid.
+                    </p>
                 </div>
 
                 <div class="tech-item">
                     <h3>3. Anti-Glare & Better Contrast</h3>
-                    <p>Budget projectors often suffer from glaring whites during bright scenes (such as sunlight or the sky). This feature automatically reduces excessive brightness so you can still see the details on the screen.</p>
+                    <p>
+                        Budget projectors often suffer from glaring whites during bright scenes (such as sunlight or the sky). This feature automatically reduces excessive brightness so you can still see the details on the screen.
+                    </p>
                 </div>
 
                 <div class="tech-item">
                     <h3>4. Smoother Text & Subtitles</h3>
-                    <p>When low-resolution video (such as 480p) is enlarged, the edges of text and subtitles become jagged or pixelated. The PEP Player cleans this up, making the characters smooth, rounded, and easy to read.</p>
+                    <p>
+                        When low-resolution video (such as 480p) is enlarged, the edges of text and subtitles become jagged or pixelated. The PEP Player cleans this up, making the characters smooth, rounded, and easy to read.
+                    </p>
                 </div>
 
             </div>
+
         </div>
-        
-    <!-- Header -->
-<div class="pep-installation-guide">
 
-  <section class="installation-guide">
-    <h2>📥 INSTALLATION GUIDE</h2>
+        <!-- INSTALLATION GUIDE -->
 
-    <h3>STEP 1 — INSTALL PEP PLAYER</h3>
-    <p>
-      Install the included <strong>PEP Player APK</strong> on your compatible
-      Android projector or TV Box.
-    </p>
+        <div class="pep-installation-guide">
 
-    <h3>STEP 2 — OPEN PEP PLAYER</h3>
-    <p>
-      After installation, open <strong>PEP Player</strong> and allow any
-      required permissions.
-    </p>
+            <section class="installation-guide">
 
-    <h3>STEP 3 — ADD THE PEP ENGINE INPUT CODE</h3>
-    <p>
-      The <strong>PEP Engine Input Code</strong> is included inside the ZIP package.
-    </p>
+                <h2>📥 INSTALLATION GUIDE</h2>
 
-    <div class="info-box">
-      <strong>📁 FIND THE INPUT CODE</strong>
-      <p>
-        Open the ZIP package and look for the file containing the
-        <strong>Input Code</strong>.
-      </p>
-    </div>
+                <h3>STEP 1 — INSTALL PEP PLAYER</h3>
+                <p>
+                    Install the included <strong>PEP Player APK</strong> on your compatible Android projector or TV Box.
+                </p>
 
-    <div class="video-box">
-      <strong>🎥 VIDEO INSTRUCTIONS INCLUDED</strong>
-      <p>
-        A step-by-step video is included inside the ZIP file showing exactly
-        how to copy and enter the Input Code into PEP Player.
-      </p>
-      <p>
-        <strong>Tip:</strong> Follow the video while entering the code to avoid
-        missing or changing any characters.
-      </p>
-    </div>
+                <h3>STEP 2 — OPEN PEP PLAYER</h3>
+                <p>
+                    After installation, open <strong>PEP Player</strong> and allow any required permissions.
+                </p>
 
-    <h3>STEP 4 — APPLY THE CODE</h3>
-    <p>
-      Follow the included video instructions and enter the complete
-      <strong>PEP Engine Input Code</strong> into PEP Player.
-    </p>
+                <h3>STEP 3 — ADD THE PEP ENGINE INPUT CODE</h3>
+                <p>
+                    The <strong>PEP Engine Input Code</strong> is included inside the ZIP package.
+                </p>
 
-    <h3>STEP 5 — RESTART PEP PLAYER</h3>
-    <p>
-      After applying the Input Code, close and reopen PEP Player so the
-      settings can load properly.
-    </p>
-  </section>
+                <div class="info-box">
+                    <strong>📁 FIND THE INPUT CODE</strong>
+                    <p>
+                        Open the ZIP package and look for the file containing the <strong>Input Code</strong>.
+                    </p>
+                </div>
 
+                <div class="video-box">
+                    <strong>🎥 VIDEO INSTRUCTIONS INCLUDED</strong>
+                    <p>
+                        A step-by-step video is included inside the ZIP file showing exactly how to copy and enter the Input Code into PEP Player.
+                    </p>
+                    <p>
+                        <strong>Tip:</strong> Follow the video while entering the code to avoid missing or changing any characters.
+                    </p>
+                </div>
 
-  <section class="setup-complete">
-    <h2>✅ SETUP COMPLETE</h2>
+                <h3>STEP 4 — APPLY THE CODE</h3>
+                <p>
+                    Follow the included video instructions and enter the complete <strong>PEP Engine Input Code</strong> into PEP Player.
+                </p>
 
-    <p>
-      Your PEP Player is now ready.
-    </p>
+                <h3>STEP 5 — RESTART PEP PLAYER</h3>
+                <p>
+                    After applying the Input Code, close and reopen PEP Player so the settings can load properly.
+                </p>
 
-    <div class="quick-check">
-      <h3>🔍 QUICK CHECK</h3>
+            </section>
 
-      <ul>
-        <li>✅ PEP Player opens normally</li>
-        <li>✅ Input Code has been applied</li>
-        <li>✅ Video playback works</li>
-        <li>✅ Projected image is displayed normally</li>
-      </ul>
-    </div>
-  </section>
+            <section class="setup-complete">
 
+                <h2>✅ SETUP COMPLETE</h2>
 
-  <section class="optional-setup">
-    <h2>⚙️ OPTIONAL SETUP</h2>
+                <p>Your PEP Player is now ready.</p>
 
-    <div class="optional-note">
-      <strong>💡 OPTIONAL LANG</strong>
-      <p>
-        This section is only for users who need additional setup on an
-        <strong>Android TV Box or Smart Projector</strong>.
-      </p>
+                <div class="quick-check">
 
-      <p>
-        If PEP Player is already working properly on your device,
-        <strong>you can skip this section.</strong>
-      </p>
-    </div>
+                    <h3>🔍 QUICK CHECK</h3>
 
-    <div class="zip-info">
-      <strong>📦 ADVANCED DOCUMENTATION</strong>
-      <p>
-        Additional technical documentation, advanced instructions, and
-        creator information are included inside the ZIP package.
-      </p>
-    </div>
-  </section>
+                    <ul>
+                        <li>✅ PEP Player opens normally</li>
+                        <li>✅ Input Code has been applied</li>
+                        <li>✅ Video playback works</li>
+                        <li>✅ Projected image is displayed normally</li>
+                    </ul>
 
-</div>
-                <!-- NEW AUTOMATED COMMERCIAL FOOTER SECTION -->
+                </div>
+
+            </section>
+
+            <section class="optional-setup">
+
+                <h2>⚙️ OPTIONAL SETUP</h2>
+
+                <div class="optional-note">
+
+                    <strong>💡 OPTIONAL LANG</strong>
+
+                    <p>
+                        This section is only for users who need additional setup on an <strong>Android TV Box or Smart Projector</strong>.
+                    </p>
+
+                    <p>
+                        If PEP Player is already working properly on your device,
+                        <strong>you can skip this section.</strong>
+                    </p>
+
+                </div>
+
+                <div class="zip-info">
+
+                    <strong>📦 ADVANCED DOCUMENTATION</strong>
+
+                    <p>
+                        Additional technical documentation, advanced instructions, and creator information are included inside the ZIP package.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- ABOUT THE DEVELOPER SECTION -->
+
+        <section id="developer-story" class="developer-story">
+
+            <h2>👑 Meet the Developer</h2>
+
+            <div class="developer-content">
+
+                <p>
+                    The <strong>PEP Engine</strong> is the result of more than
+                    eight months of research, development, and testing,
+                    built on a decade of hands-on Android development experience.
+                </p>
+
+                <p>
+                    The journey began in <strong>2015</strong>, when the developer
+                    started working as an independent Android Custom ROM modder
+                    on the well-known <strong>XDA Developers Forums</strong>.
+                    This included porting and optimizing Android frameworks,
+                    such as <strong>CyanogenMod 11</strong> and
+                    <strong>Sony Xperia SystemUI</strong>, for resource-constrained
+                    Broadcom devices with as little as <strong>256MB of RAM</strong>.
+                </p>
+
+                <p>
+                    That experience in system optimization, framework modification,
+                    and resource management continues to influence the development
+                    of the <strong>PEP Engine</strong> today.
+                    Its goal is to improve the capabilities and usability of
+                    budget projector hardware beyond the limitations of
+                    standard factory firmware.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- COMMERCIAL FOOTER -->
+
         <div class="cta-section">
+
             <h2>Ready to Unlock Your Projector's True Potential?</h2>
-            <p style="margin-bottom: 30px; color: #9ca3af;">Stop putting up with a blurry, washed-out screen. Turn your room into a real home theater today!</p>
-            
-            <!-- REQUESTED GREEN OVERDRIVE CTA BUTTON -->
-            <a href="" class="cta-btn-green" target="_blank">Get PEP Player & PEP Engine Optimization Pack For HY300 Projector Now</a>
 
-            <!-- OFFICIAL SHOPS ECOSYSTEM (PINALAKI AT PINATULIS ANG TEXT) -->
-            <div class="link-heading" style="font-size: 1.5rem; font-weight: 800; color: #f3f4f6; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; margin-top: 35px; border-bottom: 1px solid #1f2937; padding-bottom: 8px; display: inline-block; width: 100%; max-width: 400px;">Official Digital DISKARTETECHPH Store Shops</div>
-            <div class="btn-group">
-                <a href="https://raket.ph/diskartetechph" class="shop-btn" target="_blank">Raket-PH Shop</a>
-                <a href="https://ko-fi.com/diskartetechofficialpepenginestore" class="shop-btn" target="_blank">Ko-fi Shop</a>
+            <p style="margin-bottom: 30px; color: #9ca3af;">
+                Stop putting up with a blurry, washed-out screen. Turn your room into a real home theater today!
+            </p>
+
+            <a href=""
+               class="cta-btn-green"
+               target="_blank">
+                Get PEP Player & PEP Engine Optimization Pack For HY300 Projector Now
+            </a>
+
+            <!-- OFFICIAL SHOPS -->
+
+            <div class="link-heading"
+                 style="font-size: 1.5rem; font-weight: 800; color: #f3f4f6; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; margin-top: 35px; border-bottom: 1px solid #1f2937; padding-bottom: 8px; display: inline-block; width: 100%; max-width: 400px;">
+                Official Digital DISKARTETECHPH Store Shops
             </div>
 
-            <!-- OFFICIAL SOCIAL MEDIA HUBS (PINALAKI AT PINATULIS ANG TEXT) -->
-            <div class="link-heading" style="font-size: 1.5rem; font-weight: 800; color: #f3f4f6; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; margin-top: 35px; border-bottom: 1px solid #1f2937; padding-bottom: 8px; display: inline-block; width: 100%; max-width: 400px;">Connect With Us</div>
             <div class="btn-group">
-                <a href="" class="social-btn" target="_blank"></a>
-                <a href="" class="social-btn" target="_blank"></a>
-                <a href="https://youtube.com/@diskartetechph" class="social-btn" target="_blank">YouTube Channel</a>
+
+                <a href="https://raket.ph/diskartetechph"
+                   class="shop-btn"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Raket-PH Shop
+                </a>
+
+                <a href="https://ko-fi.com/diskartetechofficialpepenginestore"
+                   class="shop-btn"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Ko-fi Shop
+                </a>
+
             </div>
+
+            <!-- SOCIAL MEDIA -->
+
+            <div class="link-heading"
+                 style="font-size: 1.5rem; font-weight: 800; color: #f3f4f6; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; margin-top: 35px; border-bottom: 1px solid #1f2937; padding-bottom: 8px; display: inline-block; width: 100%; max-width: 400px;">
+                Connect With Us
+            </div>
+
+            <div class="btn-group">
+
+                <a href=""
+                   class="social-btn"
+                   target="_blank">
+                </a>
+
+                <a href=""
+                   class="social-btn"
+                   target="_blank">
+                </a>
+
+                <a href="https://youtube.com/@diskartetechph"
+                   class="social-btn"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    YouTube Channel
+                </a>
+
+            </div>
+
         </div>
+
+    </div>
+
+</body>
+</html>
