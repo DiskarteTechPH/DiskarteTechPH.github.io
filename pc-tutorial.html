@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Android Into Walkman PC Tutorial | DISKARTE TECH PH</title>
+  <title>Android Into Walkman — PC Tutorial | DISKARTE TECH PH</title>
 
-  <meta name="description" content="My 2023 Android PC tutorial demonstrating how I used ADB AppControl to manage and remove selected preinstalled Android applications.">
+  <meta name="description" content="Android Into Walkman PC Tutorial — a step-by-step look at the installation, setup, and transformation of an Android smartphone into a Walkman-inspired music experience. Created by DISKARTE TECH PH in 2023.">
 
-  <meta name="theme-color" content="#080b0d">
+  <meta name="theme-color" content="#080b09">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,35 +17,46 @@
 
   <style>
     :root {
-      --bg: #080b0d;
-      --panel: #101619;
-      --line: #202b30;
-      --text: #e8eeee;
-      --muted: #87969b;
-      --green: #a4ff65;
-      --cyan: #63e6e2;
+      --bg: #080b09;
+      --panel: #101713;
+      --panel2: #0c120f;
+      --green: #a5ff78;
+      --cyan: #70e9d2;
+      --text: #edf4ed;
+      --muted: #8d9b90;
+      --line: rgba(165,255,120,.15);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 30px;
+      scroll-padding-top: 25px;
     }
 
     body {
-      background:
-        linear-gradient(rgba(99,230,226,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(99,230,226,.025) 1px, transparent 1px),
-        var(--bg);
-      background-size: 36px 36px;
+      background: var(--bg);
       color: var(--text);
       font-family: 'Space Grotesk', sans-serif;
-      line-height: 1.7;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(165,255,120,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(165,255,120,.025) 1px, transparent 1px);
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
     }
 
     a {
@@ -54,223 +65,345 @@
     }
 
     .container {
-      width: min(900px, 90%);
+      width: min(1080px, 90%);
       margin: auto;
     }
 
+    .mono {
+      font-family: 'DM Mono', monospace;
+    }
+
     header {
-      padding: 22px 0;
+      padding: 23px 0;
       border-bottom: 1px solid var(--line);
     }
 
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
     .brand {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.5px;
+    }
+
+    .brand span {
       color: var(--green);
-      font-family: 'DM Mono', monospace;
-      font-size: 13px;
+    }
+
+    .nav-label {
+      color: var(--muted);
+      font-size: 10px;
       letter-spacing: 2px;
-      font-weight: 500;
+      text-align: right;
     }
 
     .hero {
-      padding: 85px 0 55px;
-    }
-
-    .eyebrow,
-    .section-label {
-      color: var(--cyan);
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 2px;
+      padding: 95px 0 65px;
     }
 
     .eyebrow {
-      margin-bottom: 18px;
+      color: var(--green);
+      font-size: 11px;
+      letter-spacing: 3px;
+      margin-bottom: 22px;
     }
 
     h1 {
-      font-size: clamp(36px, 7vw, 62px);
-      line-height: 1.08;
-      letter-spacing: -2px;
+      font-size: clamp(42px, 8vw, 85px);
+      line-height: .98;
+      letter-spacing: -4px;
+      max-width: 950px;
+      margin-bottom: 28px;
     }
 
     h1 span {
       color: var(--green);
     }
 
-    .hero p {
+    .hero-description {
       color: var(--muted);
-      max-width: 680px;
-      margin-top: 22px;
-      font-size: 16px;
+      font-size: 17px;
+      max-width: 690px;
+      margin-bottom: 32px;
     }
 
     .meta {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 25px;
       color: var(--muted);
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
+      font-size: 10px;
+      letter-spacing: 1px;
     }
 
     .meta span {
       border: 1px solid var(--line);
-      padding: 6px 11px;
-      border-radius: 4px;
+      padding: 7px 11px;
+      border-radius: 3px;
     }
 
-    section {
-      padding: 35px 0;
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 27px;
     }
 
-    .section-label {
-      color: var(--green);
-      margin-bottom: 16px;
-    }
-
-    h2 {
-      font-size: 25px;
-      margin-bottom: 14px;
-      letter-spacing: -.5px;
-    }
-
-    .description {
+    .toc a {
       color: var(--muted);
-      font-size: 15px;
-      max-width: 760px;
+      border: 1px solid var(--line);
+      padding: 7px 12px;
+      font-size: 11px;
+      border-radius: 3px;
+      transition: .2s;
     }
 
-    .video-wrap {
-      position: relative;
+    .toc a:hover {
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    .video-section {
+      padding: 25px 0 75px;
+    }
+
+    .video-frame {
       width: 100%;
       aspect-ratio: 16 / 9;
       background: #000;
       border: 1px solid var(--line);
-      border-radius: 8px;
+      box-shadow: 0 0 45px rgba(165,255,120,.05);
       overflow: hidden;
-      margin-top: 22px;
     }
 
-    .video-wrap iframe {
-      position: absolute;
-      inset: 0;
+    .video-frame iframe {
       width: 100%;
       height: 100%;
       border: 0;
     }
 
-    .detail-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 24px;
+    .video-caption {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 13px;
+      letter-spacing: 1px;
     }
 
-    .detail-card {
-      padding: 20px;
+    section.content-section {
+      padding: 68px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-number {
+      color: var(--green);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 13px;
+    }
+
+    h2 {
+      font-size: clamp(29px, 5vw, 44px);
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 23px;
+    }
+
+    h3 {
+      font-size: 19px;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .story {
+      max-width: 820px;
+      color: #c0cbc2;
+    }
+
+    .story p {
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      color: var(--green);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 25px;
+      border-radius: 5px;
+    }
+
+    .feature .tag {
+      color: var(--green);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+      counter-reset: step;
+    }
+
+    .step {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 45px 1fr;
+      gap: 18px;
+      padding: 22px;
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 5px;
     }
 
-    .detail-card h3 {
-      color: var(--cyan);
+    .step::before {
+      content: "0" counter(step);
+      color: var(--green);
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      margin-bottom: 9px;
+      font-size: 13px;
+      padding-top: 3px;
     }
 
-    .detail-card p {
+    .step p {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 14px;
+    }
+
+    .resource-list {
+      display: grid;
+      gap: 12px;
     }
 
     .resource {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 15px;
-      padding: 17px 18px;
+      padding: 17px 19px;
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: 5px;
-      margin-top: 22px;
-      transition: .2s ease;
+      border-radius: 4px;
+      transition: .2s;
     }
 
     .resource:hover {
-      border-color: var(--green);
-      transform: translateY(-2px);
+      border-color: rgba(165,255,120,.4);
+      background: var(--panel2);
     }
 
-    .resource strong {
+    .resource-info strong {
       display: block;
-      font-size: 15px;
-      font-weight: 500;
+      font-size: 14px;
+      margin-bottom: 3px;
     }
 
-    .resource small {
-      display: block;
+    .resource-info small {
       color: var(--muted);
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      margin-top: 4px;
+      font-size: 11px;
     }
 
-    .arrow {
+    .resource > a {
       color: var(--green);
-      font-size: 18px;
-      flex-shrink: 0;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      white-space: nowrap;
     }
 
-    .note {
-      margin-top: 25px;
-      padding: 17px;
-      background: var(--panel);
-      border-left: 2px solid var(--cyan);
+    .resource-group {
+      color: var(--cyan);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin: 28px 0 13px;
+    }
+
+    .credit {
       color: var(--muted);
       font-size: 13px;
     }
 
-    .back {
-      display: inline-block;
-      margin: 30px 0 55px;
+    .credit a {
       color: var(--green);
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
     }
 
-    .back:hover {
-      color: var(--cyan);
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--green);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
     }
 
     footer {
       border-top: 1px solid var(--line);
-      padding: 25px 0;
+      padding: 35px 0;
       color: var(--muted);
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 1px;
+      font-size: 11px;
     }
 
-    @media (max-width: 600px) {
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    @media (max-width: 650px) {
       .hero {
-        padding-top: 60px;
+        padding: 70px 0 45px;
       }
 
-      h2 {
-        font-size: 22px;
+      h1 {
+        letter-spacing: -2px;
       }
 
-      .detail-grid {
+      .feature-grid {
         grid-template-columns: 1fr;
       }
 
       .resource {
-        padding: 14px;
+        align-items: flex-start;
+      }
+
+      .resource > a {
+        white-space: normal;
+        text-align: right;
+      }
+
+      section.content-section {
+        padding: 50px 0;
+      }
+
+      .nav-label {
+        font-size: 9px;
       }
     }
   </style>
@@ -278,217 +411,267 @@
 
 <body>
 
-  <header>
-    <div class="container">
-      <a class="brand" href="index.html">DISKARTE TECH PH</a>
-    </div>
-  </header>
-
-  <main class="container">
-
-    <!-- HERO -->
-
-    <div class="hero">
-
-      <div class="eyebrow">
-        MY ANDROID WORK / 2023
-      </div>
-
-      <h1>
-        ANDROID INTO <span>WALKMAN</span><br>
-        PC TUTORIAL
-      </h1>
-
-      <p>
-        A PC tutorial I created in 2023, showing how I used
-        ADB AppControl to manage preinstalled applications
-        on an Android device. This tutorial documents my
-        own process and the steps I demonstrated.
-      </p>
-
-      <div class="meta">
-        <span>2023</span>
-        <span>MY TUTORIAL</span>
-        <span>ADB APPCONTROL</span>
-        <span>ANDROID</span>
-      </div>
-
-    </div>
-
-    <!-- ABOUT -->
-
-    <section>
-
-      <div class="section-label">01 / ABOUT MY WORK</div>
-
-      <h2>What I Did</h2>
-
-      <p class="description">
-        I created this tutorial to demonstrate how I managed
-        selected preinstalled applications on an Android
-        smartphone using ADB AppControl through a PC.
-
-        I installed applications directly on the phone.
-        I used ADB AppControl for a different purpose:
-        managing system applications that I no longer needed.
-      </p>
-
-      <div class="detail-grid">
-
-        <div class="detail-card">
-          <h3>APPLICATION INSTALLATION</h3>
-          <p>
-            I installed the applications directly on the
-            Android device, not through ADB AppControl.
-          </p>
-        </div>
-
-        <div class="detail-card">
-          <h3>SYSTEM APP MANAGEMENT</h3>
-          <p>
-            I used ADB AppControl on a PC to disable or
-            uninstall selected preinstalled applications.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- VIDEO -->
-
-    <section>
-
-      <div class="section-label">02 / MY VIDEO TUTORIAL</div>
-
-      <h2>ADB AppControl in Action</h2>
-
-      <p class="description">
-        In this video, I demonstrate my own process of
-        managing preinstalled Android applications using
-        ADB AppControl. I also show the option to disable
-        applications for users who are unsure about removing
-        them.
-      </p>
-
-      <div class="video-wrap">
-        <iframe
-          src="https://www.youtube.com/embed/-SRa9E0wabI"
-          title="My Android Into Walkman PC Tutorial - ADB AppControl"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-    </section>
-
-    <!-- PROCESS -->
-
-    <section>
-
-      <div class="section-label">03 / THE PROCESS</div>
-
-      <h2>How I Used ADB AppControl</h2>
-
-      <p class="description">
-        I connected the Android device to a PC and used
-        ADB AppControl to manage selected preinstalled
-        applications. In the demonstration, I showed
-        how applications could be disabled or uninstalled.
-      </p>
-
-      <div class="detail-grid">
-
-        <div class="detail-card">
-          <h3>DISABLE</h3>
-          <p>
-            An option I demonstrated for applications
-            that users may prefer to keep without actively
-            running them.
-          </p>
-        </div>
-
-        <div class="detail-card">
-          <h3>UNINSTALL</h3>
-          <p>
-            I demonstrated uninstalling selected
-            preinstalled applications that I no longer
-            needed on the device.
-          </p>
-        </div>
-
-      </div>
-
-      <div class="note">
-        Disabling an application is the safer choice when
-        you are unsure whether it is needed. Removing
-        essential system applications may affect device
-        functions.
-      </div>
-
-    </section>
-
-    <!-- TOOL -->
-
-    <section>
-
-      <div class="section-label">04 / TOOL USED</div>
-
-      <h2>ADB AppControl</h2>
-
-      <p class="description">
-        This is the PC tool I used in my tutorial to manage
-        selected Android applications through ADB.
-      </p>
-
-      <a
-        class="resource"
-        href="https://adbappcontrol.com/en/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div>
-          <strong>ADB AppControl — Official Website</strong>
-          <small>TOOL USED IN MY 2023 TUTORIAL</small>
-        </div>
-
-        <span class="arrow">↗</span>
-      </a>
-
-    </section>
-
-    <!-- PROJECT CREDIT -->
-
-    <section>
-
-      <div class="section-label">05 / PROJECT CREDIT</div>
-
-      <h2>My Work</h2>
-
-      <p class="description">
-        Tutorial demonstration and documentation:
-        <strong style="color: var(--text);">
-          DISKARTE TECH PH
-        </strong>.
-        <br><br>
-        This page documents the process I demonstrated
-        in my 2023 video. ADB AppControl is the third-party
-        tool I used; the tutorial and demonstration are my own.
-      </p>
-
-    </section>
-
-    <a class="back" href="index.html">
-      ← BACK TO MY PROJECT ARCHIVE
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      DISKARTE<span>TECH</span>PH
     </a>
 
-  </main>
-
-  <footer>
-    <div class="container">
-      © 2026 DISKARTE TECH PH — OLD DEVICES. NEW POSSIBILITIES.
+    <div class="nav-label mono">
+      PROJECT / ANDROID INTO WALKMAN
     </div>
-  </footer>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <div class="container hero">
+
+    <div class="eyebrow mono">
+      DISKARTE TECH PH / PC TUTORIAL
+    </div>
+
+    <h1>
+      ANDROID INTO
+      <span>WALKMAN.</span>
+    </h1>
+
+    <p class="hero-description">
+      A PC tutorial I created in 2023, documenting the process
+      of installing and setting up Android Into Walkman.
+      This video shows how I transformed an Android smartphone
+      into a Walkman-inspired music experience.
+    </p>
+
+    <div class="meta mono">
+      <span>CREATED: 2023</span>
+      <span>PC TUTORIAL</span>
+      <span>ANDROID SETUP</span>
+      <span>MY WORK</span>
+    </div>
+
+    <div class="toc mono">
+      <a href="#about">ABOUT</a>
+      <a href="#process">PROCESS</a>
+      <a href="#tool">PC TOOL</a>
+      <a href="#credits">CREDITS</a>
+    </div>
+
+  </div>
+
+  <!-- VIDEO -->
+  <div class="container video-section">
+
+    <div class="video-frame">
+      <iframe
+        src="https://www.youtube.com/embed/-SRa9E0wabI"
+        title="Android Into Walkman - PC Installation and Transformation Tutorial"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <p class="video-caption mono">
+      ANDROID INTO WALKMAN / PC INSTALLATION & TRANSFORMATION TUTORIAL
+    </p>
+
+  </div>
+
+  <!-- ABOUT -->
+  <section class="content-section" id="about">
+    <div class="container">
+
+      <div class="section-number">
+        01 / ABOUT THE TUTORIAL
+      </div>
+
+      <h2>From Android to Walkman.</h2>
+
+      <div class="story">
+
+        <p>
+          This tutorial documents the process of setting up
+          <span class="highlight">Android Into Walkman</span>,
+          my Android customization project.
+        </p>
+
+        <p>
+          I created this video in 2023 to show the installation
+          process and how I configured the smartphone to become
+          a Walkman-inspired music player.
+        </p>
+
+        <p>
+          The video also demonstrates how I used a PC to manage
+          selected preinstalled Android applications as part
+          of preparing the device for the setup.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="content-section" id="process">
+    <div class="container">
+
+      <div class="section-number">
+        02 / INSTALLATION & TRANSFORMATION
+      </div>
+
+      <h2>The setup process.</h2>
+
+      <p class="section-intro">
+        The tutorial follows the process of preparing the Android
+        device, installing the required components, and setting
+        up the Walkman-inspired experience.
+      </p>
+
+      <div class="feature-grid">
+
+        <div class="feature">
+          <div class="tag">STEP 01</div>
+          <h3>Prepare the Android device</h3>
+          <p>
+            Prepare the smartphone and get it ready for
+            the Android Into Walkman setup.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="tag">STEP 02</div>
+          <h3>Manage preinstalled applications</h3>
+          <p>
+            Use a PC tool to disable or uninstall selected
+            preinstalled applications that are not needed
+            for the setup.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="tag">STEP 03</div>
+          <h3>Install the required components</h3>
+          <p>
+            Install and configure the applications and
+            components needed for the Walkman experience.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="tag">FINAL SETUP</div>
+          <h3>Complete the transformation</h3>
+          <p>
+            Bring the setup together into an Android
+            smartphone with a Sony Walkman-inspired
+            music environment.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PC TOOL -->
+  <section class="content-section" id="tool">
+    <div class="container">
+
+      <div class="section-number">
+        03 / PC TOOL USED
+      </div>
+
+      <h2>ADB AppControl.</h2>
+
+      <p class="section-intro">
+        ADB AppControl was the PC tool I used to manage
+        selected preinstalled applications on the Android
+        device during the preparation process.
+      </p>
+
+      <div class="story">
+
+        <p>
+          I used ADB AppControl to uninstall selected
+          preinstalled applications from the device.
+          The tutorial also explains that applications can
+          be disabled instead if you are unsure whether
+          they should be removed.
+        </p>
+
+        <p>
+          App installation for the Walkman setup was done
+          directly on the Android smartphone. ADB AppControl
+          was used for managing preinstalled applications.
+        </p>
+
+      </div>
+
+      <div class="resource-group">SOFTWARE RESOURCE</div>
+
+      <div class="resource-list">
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>ADB AppControl</strong>
+            <small>Official website / PC application</small>
+          </div>
+          <a href="https://adbappcontrol.com/en/"
+             target="_blank" rel="noopener noreferrer">VISIT ↗</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CREDITS -->
+  <section class="content-section" id="credits">
+    <div class="container">
+
+      <div class="section-number">
+        04 / CREDITS
+      </div>
+
+      <h2>Tutorial credits.</h2>
+
+      <div class="story">
+
+        <p>
+          <strong>Android Into Walkman — PC Tutorial</strong><br>
+          Tutorial creation, installation process, and
+          demonstration:
+          <span class="highlight">DISKARTE TECH PH</span>
+        </p>
+
+        <p class="credit">
+          PC software used:
+          <a href="https://adbappcontrol.com/en/"
+             target="_blank" rel="noopener noreferrer">
+            ADB AppControl ↗
+          </a>
+        </p>
+
+      </div>
+
+      <a href="old-android-walkman.html" class="back-link">
+        ← BACK TO ANDROID INTO WALKMAN
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© 2026 DISKARTE TECH PH</div>
+    <div class="mono">OLD DEVICES. NEW POSSIBILITIES.</div>
+  </div>
+</footer>
 
 </body>
 </html>
