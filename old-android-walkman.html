@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Android Walkman Project | DiskarteTechPH</title>
+  <title>Android Into Walkman | DISKARTE TECH PH</title>
 
-  <meta name="description" content="The ZGMobile Android Walkman project: a personal Android customization experiment using APKTool M, modified launcher integrations, Sony Music and repurposed app extensions.">
+  <meta name="description" content="Android Into Walkman — an Android customization project developed by DISKARTE TECH PH in 2022. Modified APKs, Sony Music launcher integration, and repurposed Sony app extensions.">
 
   <meta name="theme-color" content="#080b09">
 
@@ -25,7 +25,6 @@
       --text: #edf4ed;
       --muted: #8d9b90;
       --line: rgba(165,255,120,.15);
-      --warning: #e7bd73;
     }
 
     * {
@@ -148,6 +147,27 @@
       border-radius: 3px;
     }
 
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 27px;
+    }
+
+    .toc a {
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 7px 12px;
+      font-size: 11px;
+      border-radius: 3px;
+      transition: .2s;
+    }
+
+    .toc a:hover {
+      color: var(--green);
+      border-color: var(--green);
+    }
+
     .video-section {
       padding: 25px 0 75px;
     }
@@ -172,27 +192,6 @@
       font-size: 11px;
       margin-top: 13px;
       letter-spacing: 1px;
-    }
-
-    .toc {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 27px;
-    }
-
-    .toc a {
-      color: var(--muted);
-      border: 1px solid var(--line);
-      padding: 7px 12px;
-      font-size: 11px;
-      border-radius: 3px;
-      transition: .2s;
-    }
-
-    .toc a:hover {
-      color: var(--green);
-      border-color: var(--green);
     }
 
     section.content-section {
@@ -330,11 +329,19 @@
       font-size: 11px;
     }
 
-    .resource a {
+    .resource > a {
       color: var(--green);
       font-family: 'DM Mono', monospace;
       font-size: 11px;
       white-space: nowrap;
+    }
+
+    .resource-group {
+      color: var(--cyan);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin: 28px 0 13px;
     }
 
     .notice {
@@ -344,15 +351,6 @@
       color: #b9c7bc;
       font-size: 13px;
       margin-top: 25px;
-    }
-
-    .warning {
-      padding: 20px;
-      background: rgba(231,189,115,.055);
-      border-left: 2px solid var(--warning);
-      color: #c9c1ad;
-      font-size: 13px;
-      margin-top: 20px;
     }
 
     .credit {
@@ -404,7 +402,7 @@
         align-items: flex-start;
       }
 
-      .resource a {
+      .resource > a {
         white-space: normal;
         text-align: right;
       }
@@ -429,7 +427,7 @@
     </a>
 
     <div class="nav-label mono">
-      PROJECT DOCUMENTATION / ZGMOBILE
+      PROJECT / ANDROID INTO WALKMAN
     </div>
   </div>
 </header>
@@ -440,34 +438,34 @@
   <div class="container hero">
 
     <div class="eyebrow mono">
-      DISKARTETECHPH / ANDROID CUSTOMIZATION
+      DISKARTE TECH PH / ANDROID PROJECT
     </div>
 
     <h1>
-      OLD PHONE.<br>
-      <span>NEW WALKMAN.</span>
+      ANDROID INTO
+      <span>WALKMAN.</span>
     </h1>
 
     <p class="hero-description">
-      Turning an Android smartphone into a Sony Walkman-style
-      music experience through APK modifications,
-      customized launcher integration, and repurposed
-      Sony app extensions.
+      An Android customization project I developed in 2022.
+      I modified existing applications and integrated Sony Music
+      as the main interface, creating a Walkman-inspired music
+      experience on an Android smartphone.
     </p>
 
     <div class="meta mono">
-      <span>ORIGINAL PROJECT: ~2022</span>
+      <span>DEVELOPED: 2022</span>
       <span>ANDROID</span>
       <span>APKTOOL M</span>
-      <span>PERSONAL EXPERIMENT</span>
+      <span>MY PROJECT</span>
     </div>
 
     <div class="toc mono">
       <a href="#about">ABOUT</a>
-      <a href="#development">HOW I BUILT IT</a>
-      <a href="#installation">INSTALLATION</a>
+      <a href="#development">MY MODIFICATIONS</a>
+      <a href="#installation">SETUP</a>
       <a href="#resources">RESOURCES</a>
-      <a href="#notes">NOTES</a>
+      <a href="#credits">CREDITS</a>
     </div>
 
   </div>
@@ -478,7 +476,7 @@
     <div class="video-frame">
       <iframe
         src="https://www.youtube.com/embed/piZDfkAYehM"
-        title="Turn Your Old Android Phone into a Walkman"
+        title="Android Into Walkman - Original Project"
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
@@ -487,112 +485,69 @@
     </div>
 
     <p class="video-caption mono">
-      ORIGINAL DISKARTETECHPH PHONE TUTORIAL
+      ANDROID INTO WALKMAN / ORIGINAL PROJECT VIDEO
     </p>
 
   </div>
 
   <!-- ABOUT -->
   <section class="content-section" id="about">
-
     <div class="container">
 
       <div class="section-number">
         01 / ABOUT THE PROJECT
       </div>
 
-      <h2>A different way to use an old smartphone.</h2>
+      <h2>Built around Sony Music.</h2>
 
       <div class="story">
 
         <p>
-          This project started with a simple idea:
-          what if an old Android smartphone could feel
-          more like a dedicated music player?
+          I developed Android Into Walkman in 2022, turning an
+          Android smartphone into a Sony Walkman-inspired
+          music player.
         </p>
 
         <p>
-          I didn't want to simply install several music
-          applications and leave them as they were.
-          I wanted to bring different functions together
-          into one customized Sony Walkman-style experience.
+          I used <span class="highlight">APKTool M</span> to
+          modify existing APK files and customize how their
+          functions worked together. I started with a
+          Spotify-based launcher and modified its music
+          integration to use Sony Music as the main interface.
         </p>
 
         <p>
-          The project involved modifying existing Android
-          applications and adapting their integrations
-          to work differently from their original purpose.
+          I also repurposed Sony's Wikipedia extension for
+          browser access and its YouTube extension for
+          YouTube Music integration.
         </p>
 
         <p>
-          I used <span class="highlight">APKTool M</span>
-          to work with existing APK files and modify
-          selected components for the setup.
+          I spent approximately <span class="highlight">two weeks</span>
+          modifying and integrating the components until I
+          achieved the setup I wanted.
         </p>
 
-        <p>
-          It took me approximately
-          <span class="highlight">two weeks</span>
-          to work on this project, around 2022.
-          The result was a Sony Music-centered Android
-          environment designed to make the phone feel
-          like a dedicated Walkman-style device.
-        </p>
-
-      </div>
-
-      <div class="notice">
-        This page documents a personal Android customization
-        project from around 2022. Some smaller development
-        details may be missing because I no longer remember
-        every modification I made.
       </div>
 
     </div>
-
   </section>
 
-  <!-- HOW I BUILT IT -->
+  <!-- DEVELOPMENT -->
   <section class="content-section" id="development">
-
     <div class="container">
 
       <div class="section-number">
-        02 / INSIDE THE BUILD
+        02 / MY MODIFICATIONS
       </div>
 
-      <h2>How I actually modified it.</h2>
+      <h2>What I changed and integrated.</h2>
 
       <p class="section-intro">
-        The interesting part of this project wasn't just
-        installing applications. It was adapting existing
-        Android apps and changing how their integrations
-        worked together.
+        I worked with existing Android applications, modified
+        their integrations, and brought the functions together
+        into one customized Sony Music-centered setup.
       </p>
-
-      <div class="story">
-
-        <p>
-          I started with an existing launcher that was
-          originally designed for a Spotify-based setup.
-          I used APKTool M to modify the existing integration
-          and redirect its music function toward Sony Music.
-        </p>
-
-        <p>
-          Rather than keeping the original Spotify-oriented
-          experience, I wanted Sony Music to become the
-          primary interface of the setup.
-        </p>
-
-        <p>
-          I also worked on existing Sony app extensions.
-          Instead of using their original functions,
-          I repurposed selected extensions to connect
-          with other applications.
-        </p>
-
-      </div>
 
       <div class="feature-grid">
 
@@ -600,10 +555,9 @@
           <div class="tag">MODIFICATION 01</div>
           <h3>Spotify Launcher → Sony Music</h3>
           <p>
-            The original launcher was designed around
-            Spotify. I modified its existing music integration
-            using APKTool M so it would work with Sony Music
-            instead.
+            I modified the original Spotify-based launcher
+            integration using APKTool M and changed its music
+            function to use Sony Music instead.
           </p>
         </div>
 
@@ -611,10 +565,8 @@
           <div class="tag">MODIFICATION 02</div>
           <h3>Wikipedia Extension → Browser</h3>
           <p>
-            I repurposed an existing Sony Wikipedia-related
-            extension and adapted it for browser integration.
-            This gave the customized interface another
-            useful function beyond music.
+            I repurposed the Sony Wikipedia extension and
+            adapted it for browser access.
           </p>
         </div>
 
@@ -622,171 +574,128 @@
           <div class="tag">MODIFICATION 03</div>
           <h3>YouTube Extension → YouTube Music</h3>
           <p>
-            I also modified an existing Sony YouTube-related
-            extension to work with YouTube Music instead.
+            I modified the Sony YouTube extension to work
+            with YouTube Music.
           </p>
         </div>
 
         <div class="feature">
           <div class="tag">FINAL INTEGRATION</div>
-          <h3>A Sony Music-centered Interface</h3>
+          <h3>Sony Music Main Interface</h3>
           <p>
-            The modified launcher and repurposed extensions
-            were brought together into a music-focused
-            Android experience, with Sony Music as its
-            primary interface.
+            I combined the modified launcher and repurposed
+            extensions into a music-focused Android setup
+            with Sony Music as its main interface.
           </p>
         </div>
 
       </div>
 
-      <div class="story" style="margin-top:32px;">
-
-        <h3>Not just an app installation</h3>
-
-        <p>
-          The main idea was to make existing applications
-          work together in a different way. I wasn't
-          developing Sony Music or the original launcher
-          from scratch. I was modifying and adapting
-          their existing integrations for my own setup.
-        </p>
-
-        <p>
-          I spent around two weeks experimenting with
-          the components until I got the experience
-          I wanted.
-        </p>
-
-        <p>
-          Looking back, this was one of those projects
-          where the process of figuring things out
-          was just as interesting as the final result.
-        </p>
-
-      </div>
-
-      <div class="notice">
-        <strong>Development note:</strong>
-        The descriptions above are based on the modifications
-        I personally remember. Exact APK structures, code changes,
-        and additional steps are not documented because this
-        project dates back to around 2022.
-      </div>
-
     </div>
-
   </section>
 
-  <!-- INSTALLATION -->
+  <!-- SETUP -->
   <section class="content-section" id="installation">
-
     <div class="container">
 
       <div class="section-number">
-        03 / INSTALLATION GUIDE
+        03 / PROJECT SETUP
       </div>
 
-      <h2>Setting up the experience.</h2>
+      <h2>Setting up Android Into Walkman.</h2>
 
       <p class="section-intro">
-        The original video is the visual reference for
-        the setup. The exact installation process can
-        depend on the Android device, app versions,
-        and compatibility.
+        The original project video shows the Android setup.
+        The applications and components used in the project
+        are listed in the resources section.
       </p>
 
       <div class="steps">
 
         <div class="step">
           <div>
-            <h3>Prepare an Android smartphone</h3>
+            <h3>Prepare the Android smartphone</h3>
             <p>
-              Start with a compatible Android device.
-              Back up important files before installing
-              or modifying applications.
+              I used an Android smartphone as the device
+              for the Walkman setup.
             </p>
           </div>
         </div>
 
         <div class="step">
           <div>
-            <h3>Prepare the required applications</h3>
+            <h3>Prepare the applications</h3>
             <p>
-              Review the original resources listed below.
-              Verify the application versions and device
-              compatibility before installation.
+              Gather the launcher, Sony Music components,
+              plugins, and supporting applications.
             </p>
           </div>
         </div>
 
         <div class="step">
           <div>
-            <h3>Set up the Walkman components</h3>
+            <h3>Modify the APK files</h3>
             <p>
-              Follow the original video for the launcher
-              and Sony Music-related components.
+              I used APKTool M to modify the existing
+              applications and their integrations.
             </p>
           </div>
         </div>
 
         <div class="step">
           <div>
-            <h3>Configure the additional extensions</h3>
+            <h3>Integrate Sony Music and extensions</h3>
             <p>
-              Set up the browser and YouTube Music
-              integrations according to the compatible
-              application versions.
+              I configured Sony Music as the main music
+              interface and adapted the additional extensions.
             </p>
           </div>
         </div>
 
         <div class="step">
           <div>
-            <h3>Test the final experience</h3>
+            <h3>Complete the Walkman setup</h3>
             <p>
-              Check the interface, music playback,
-              and additional functions on the device.
+              The modified components worked together as
+              my customized Android Walkman experience.
             </p>
           </div>
         </div>
 
       </div>
 
-      <div class="warning">
-        These are general documentation steps, not a verified
-        current installation procedure. Refer to the original
-        tutorial and check compatibility before attempting
-        the older setup.
+      <div class="notice">
+        The original video documents the setup as it was
+        demonstrated in 2022. Application compatibility may
+        vary depending on the Android device and app versions.
       </div>
 
     </div>
-
   </section>
 
   <!-- RESOURCES -->
   <section class="content-section" id="resources">
-
     <div class="container">
 
       <div class="section-number">
-        04 / ORIGINAL RESOURCES
+        04 / PROJECT RESOURCES
       </div>
 
-      <h2>Downloads & references.</h2>
+      <h2>Applications and components.</h2>
 
       <p class="section-intro">
-        Archived resources from the original ZGMobile tutorial.
-        These links are preserved for project documentation.
-        Compatibility with current Android devices is not guaranteed.
+        These are the applications, plugins, modified components,
+        and resources I used for the Android Into Walkman project.
       </p>
+
+      <div class="resource-group">LAUNCHER AND MUSIC PLAYER</div>
 
       <div class="resource-list">
 
         <div class="resource">
           <div class="resource-info">
             <strong>Walkman Launcher</strong>
-            <small>Original MEGA archive</small>
+            <small>MEGA archive</small>
           </div>
           <a href="https://mega.nz/file/kQAVHJqZ#A7xpQiJM17nhTNHwVOGYbLb7Hhd9-8FOD30A3bQk5LA"
              target="_blank" rel="noopener noreferrer">MEGA ↗</a>
@@ -795,7 +704,7 @@
         <div class="resource">
           <div class="resource-info">
             <strong>Walkman Player</strong>
-            <small>Original MEGA archive</small>
+            <small>MEGA archive</small>
           </div>
           <a href="https://mega.nz/file/IRwCwSrB#gHKYNXq04XXToAkRnRIcIrCEut7L5v9mcfcEkL3i0z8"
              target="_blank" rel="noopener noreferrer">MEGA ↗</a>
@@ -803,17 +712,32 @@
 
         <div class="resource">
           <div class="resource-info">
-            <strong>Spotify Version Reference</strong>
-            <small>External third-party source</small>
+            <strong>Spotify Premium Version</strong>
+            <small>External application source</small>
           </div>
-          <a href="https://liteapks.com/spotify-2.html"
+          <a href="https://rexdl.com/android/spotify-premium-apk.html/"
              target="_blank" rel="noopener noreferrer">VISIT ↗</a>
+        </div>
+
+      </div>
+
+      <div class="resource-group">YOUTUBE MUSIC AND MICROG</div>
+
+      <div class="resource-list">
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>MicroG</strong>
+            <small>Vanced MicroG APK</small>
+          </div>
+          <a href="https://github.com/vancedapps/vanced.to/releases/download/2025-24/vanced.to_vanced_gms_microg_v0.3.1.4.240913.apk"
+             target="_blank" rel="noopener noreferrer">DOWNLOAD ↗</a>
         </div>
 
         <div class="resource">
           <div class="resource-info">
-            <strong>YouTube Music ReVanced</strong>
-            <small>External third-party source</small>
+            <strong>YouTube Music Premium</strong>
+            <small>ReVanced resource</small>
           </div>
           <a href="https://vanced.to/revanced-youtube-music"
              target="_blank" rel="noopener noreferrer">VISIT ↗</a>
@@ -822,16 +746,22 @@
         <div class="resource">
           <div class="resource-info">
             <strong>YouTube Music Plugin ReVanced</strong>
-            <small>Original MEGA archive</small>
+            <small>MEGA archive</small>
           </div>
           <a href="https://mega.nz/file/ldpFEBpR#DnD0tr342oBE5YHwZAhWaADJ922xDcJ421wVgjjWA9c"
              target="_blank" rel="noopener noreferrer">MEGA ↗</a>
         </div>
 
+      </div>
+
+      <div class="resource-group">ADDITIONAL PLUGINS AND TOOLS</div>
+
+      <div class="resource-list">
+
         <div class="resource">
           <div class="resource-info">
             <strong>Browser Plugin</strong>
-            <small>Original MEGA archive</small>
+            <small>MEGA archive</small>
           </div>
           <a href="https://mega.nz/file/dYBFybgQ#yiL_rFmW7x3MgIVeFqYuTEfHMARDthBD0DacNe4MIsE"
              target="_blank" rel="noopener noreferrer">MEGA ↗</a>
@@ -840,7 +770,7 @@
         <div class="resource">
           <div class="resource-info">
             <strong>Music Downloader</strong>
-            <small>Original MEGA archive</small>
+            <small>MEGA archive</small>
           </div>
           <a href="https://mega.nz/file/0JImRabK#HJXHVFOQPBVAaU2CMfKse0xqBB_GGUcXh8o59AmtXVk"
              target="_blank" rel="noopener noreferrer">MEGA ↗</a>
@@ -848,8 +778,17 @@
 
         <div class="resource">
           <div class="resource-info">
-            <strong>All Apps in One ZIP</strong>
-            <small>Combined MEGA archive</small>
+            <strong>All Smartphone Apps ZIP</strong>
+            <small>Google Drive archive</small>
+          </div>
+          <a href="https://drive.google.com/file/d/1-RfN7g_L8oeltFhTQuIObzf2Mr9lJ56x/view?usp=drivesdk"
+             target="_blank" rel="noopener noreferrer">DRIVE ↗</a>
+        </div>
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>All Smartphone Apps ZIP</strong>
+            <small>MEGA archive</small>
           </div>
           <a href="https://mega.nz/file/AdAU1A6S#tQFyt0qpyFg0UZcRvIshI8IkCyrRq_tBiITdvT6noe4"
              target="_blank" rel="noopener noreferrer">MEGA ↗</a>
@@ -858,25 +797,22 @@
         <div class="resource">
           <div class="resource-info">
             <strong>Sony Walkman Force Close Fix</strong>
-            <small>Original MEGA archive</small>
+            <small>MEGA archive</small>
           </div>
           <a href="https://mega.nz/file/xIAiFKKS#URBFo0NjgERTTagZOqUWkor336BROLM_W0gt30YXwCQ"
              target="_blank" rel="noopener noreferrer">MEGA ↗</a>
         </div>
 
-        <div class="resource">
-          <div class="resource-info">
-            <strong>Sony Music for Sony Smartphones</strong>
-            <small>Original MEGA archive</small>
-          </div>
-          <a href="https://mega.nz/file/AAZmwYbA#tl7NrcEnjwzMCfT6xuqWopOkypUox-nQ5sQh-MXlXZg"
-             target="_blank" rel="noopener noreferrer">MEGA ↗</a>
-        </div>
+      </div>
+
+      <div class="resource-group">SONY MUSIC REFERENCES</div>
+
+      <div class="resource-list">
 
         <div class="resource">
           <div class="resource-info">
             <strong>Sony Music Walkman Universal Mod</strong>
-            <small>XDA Developers reference</small>
+            <small>XDA Developers thread</small>
           </div>
           <a href="https://forum.xda-developers.com/t/app-4-2-latest-sony-music-9-4-8-a-0-13-updated-9-march-2021.2728110/"
              target="_blank" rel="noopener noreferrer">XDA ↗</a>
@@ -884,85 +820,51 @@
 
         <div class="resource">
           <div class="resource-info">
-            <strong>Sony Music Walkman</strong>
-            <small>APKMirror reference</small>
+            <strong>Sony Music for Sony Smartphones</strong>
+            <small>MEGA archive</small>
           </div>
-          <a href="https://www.apkmirror.com/apk/sony-mobile-communications-inc/walkman-music/"
-             target="_blank" rel="noopener noreferrer">APKMirror ↗</a>
+          <a href="https://mega.nz/file/AAZmwYbA#tl7NrcEnjwzMCfT6xuqWopOkypUox-nQ5sQh-MXlXZg"
+             target="_blank" rel="noopener noreferrer">MEGA ↗</a>
         </div>
 
         <div class="resource">
           <div class="resource-info">
-            <strong>MicroG</strong>
-            <small>Original repository reference</small>
+            <strong>Sony Music Walkman</strong>
+            <small>APKMirror archive</small>
           </div>
-          <a href="https://github.com/vancedapps/vanced.to/releases/download/2025-24/vanced.to_vanced_gms_microg_v0.3.1.4.240913.apk"
-             target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
+          <a href="https://www.apkmirror.com/apk/sony-mobile-communications-inc/walkman-music/"
+             target="_blank" rel="noopener noreferrer">APKMIRROR ↗</a>
         </div>
 
       </div>
 
-      <div class="notice">
-        These links are preserved from the original project description
-        and later resource references. Their availability, authenticity,
-        security, and compatibility have not been independently verified.
-        Scan downloaded files before use and review third-party APK sources
-        carefully before installation.
-      </div>
-
     </div>
-
   </section>
 
-  <!-- NOTES -->
-  <section class="content-section" id="notes">
-
+  <!-- CREDITS -->
+  <section class="content-section" id="credits">
     <div class="container">
 
       <div class="section-number">
-        05 / PROJECT NOTES
+        05 / CREDITS
       </div>
 
-      <h2>About the original work.</h2>
+      <h2>Project credits.</h2>
 
       <div class="story">
-
         <p>
-          This was a personal Android customization experiment.
-          The project used existing applications and components
-          that were adapted for a different purpose.
+          <strong>Android Into Walkman</strong><br>
+          Project development, APK modifications, and
+          application integration: <span class="highlight">DISKARTE TECH PH</span>
         </p>
 
-        <p>
-          The original applications, launcher, and extensions
-          remain the work of their respective developers.
-          My contribution was modifying and combining selected
-          integrations to create this particular setup.
+        <p class="credit">
+          Original Spotify Launcher project:
+          <a href="https://github.com/joshmcarthur/spotify-launcher"
+             target="_blank" rel="noopener noreferrer">
+            Josh McArthur / GitHub ↗
+          </a>
         </p>
-
-        <p>
-          Some original downloads may no longer be available,
-          and newer Android versions may not support the same
-          components used in the original project.
-        </p>
-
-      </div>
-
-      <div class="warning">
-        <strong>Compatibility and security:</strong>
-        This is an archived project from around 2022.
-        Some linked files are third-party APKs and have not
-        been independently audited. Use caution, verify sources,
-        and back up your device before experimenting.
-      </div>
-
-      <div class="credit" style="margin-top:30px;">
-        Special thanks to
-        <a href="https://github.com/joshmcarthur/spotify-launcher"
-           target="_blank" rel="noopener noreferrer">
-          Josh McArthur
-        </a>
-        for the original Spotify Launcher project.
       </div>
 
       <a href="index.html" class="back-link">
@@ -970,7 +872,6 @@
       </a>
 
     </div>
-
   </section>
 
 </main>
