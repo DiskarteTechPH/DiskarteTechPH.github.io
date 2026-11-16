@@ -7,7 +7,7 @@
 
   <title>Android Into Walkman — PC Tutorial | DISKARTE TECH PH</title>
 
-  <meta name="description" content="Android Into Walkman PC Tutorial — a step-by-step look at the installation, setup, and transformation of an Android smartphone into a Walkman-inspired music experience. Created by DISKARTE TECH PH in 2023.">
+  <meta name="description" content="Android Into Walkman PC Tutorial by DISKARTE TECH PH. Watch the setup process and find the applications, plugins, Sony Music resources, and ADB AppControl used in the project.">
 
   <meta name="theme-color" content="#080b09">
 
@@ -214,86 +214,10 @@
       margin-bottom: 23px;
     }
 
-    h3 {
-      font-size: 19px;
-      line-height: 1.3;
-      margin-bottom: 10px;
-    }
-
     .section-intro {
       color: var(--muted);
       max-width: 760px;
       margin-bottom: 30px;
-    }
-
-    .story {
-      max-width: 820px;
-      color: #c0cbc2;
-    }
-
-    .story p {
-      margin-bottom: 18px;
-    }
-
-    .highlight {
-      color: var(--green);
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .feature {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      padding: 25px;
-      border-radius: 5px;
-    }
-
-    .feature .tag {
-      color: var(--green);
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
-    }
-
-    .feature p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .steps {
-      display: grid;
-      gap: 14px;
-      counter-reset: step;
-    }
-
-    .step {
-      counter-increment: step;
-      display: grid;
-      grid-template-columns: 45px 1fr;
-      gap: 18px;
-      padding: 22px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 5px;
-    }
-
-    .step::before {
-      content: "0" counter(step);
-      color: var(--green);
-      font-family: 'DM Mono', monospace;
-      font-size: 13px;
-      padding-top: 3px;
-    }
-
-    .step p {
-      color: var(--muted);
-      font-size: 14px;
     }
 
     .resource-list {
@@ -341,12 +265,13 @@
       font-family: 'DM Mono', monospace;
       font-size: 11px;
       letter-spacing: 2px;
-      margin: 28px 0 13px;
+      margin: 30px 0 13px;
     }
 
     .credit {
       color: var(--muted);
       font-size: 13px;
+      margin-top: 25px;
     }
 
     .credit a {
@@ -383,10 +308,6 @@
 
       h1 {
         letter-spacing: -2px;
-      }
-
-      .feature-grid {
-        grid-template-columns: 1fr;
       }
 
       .resource {
@@ -438,23 +359,22 @@
     </h1>
 
     <p class="hero-description">
-      A PC tutorial I created in 2023, documenting the process
-      of installing and setting up Android Into Walkman.
-      This video shows how I transformed an Android smartphone
-      into a Walkman-inspired music experience.
+      A PC tutorial showing how to turn an Android smartphone
+      into a Walkman-inspired music player, along with the
+      applications and tools used in the setup.
     </p>
 
     <div class="meta mono">
       <span>CREATED: 2023</span>
+      <span>ANDROID 1.5–14</span>
       <span>PC TUTORIAL</span>
-      <span>ANDROID SETUP</span>
-      <span>MY WORK</span>
+      <span>ZG MOBILE</span>
     </div>
 
     <div class="toc mono">
-      <a href="#about">ABOUT</a>
-      <a href="#process">PROCESS</a>
-      <a href="#tool">PC TOOL</a>
+      <a href="#adb">ADB APPCONTROL</a>
+      <a href="#applications">APPLICATIONS</a>
+      <a href="#sony">SONY MUSIC</a>
       <a href="#credits">CREDITS</a>
     </div>
 
@@ -466,7 +386,7 @@
     <div class="video-frame">
       <iframe
         src="https://www.youtube.com/embed/-SRa9E0wabI"
-        title="Android Into Walkman - PC Installation and Transformation Tutorial"
+        title="Android Into Walkman - PC Tutorial"
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
@@ -475,142 +395,26 @@
     </div>
 
     <p class="video-caption mono">
-      ANDROID INTO WALKMAN / PC INSTALLATION & TRANSFORMATION TUTORIAL
+      ANDROID INTO WALKMAN / PC TUTORIAL
     </p>
 
   </div>
 
-  <!-- ABOUT -->
-  <section class="content-section" id="about">
+  <!-- ADB APP CONTROL -->
+  <section class="content-section" id="adb">
     <div class="container">
 
       <div class="section-number">
-        01 / ABOUT THE TUTORIAL
-      </div>
-
-      <h2>From Android to Walkman.</h2>
-
-      <div class="story">
-
-        <p>
-          This tutorial documents the process of setting up
-          <span class="highlight">Android Into Walkman</span>,
-          my Android customization project.
-        </p>
-
-        <p>
-          I created this video in 2023 to show the installation
-          process and how I configured the smartphone to become
-          a Walkman-inspired music player.
-        </p>
-
-        <p>
-          The video also demonstrates how I used a PC to manage
-          selected preinstalled Android applications as part
-          of preparing the device for the setup.
-        </p>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="content-section" id="process">
-    <div class="container">
-
-      <div class="section-number">
-        02 / INSTALLATION & TRANSFORMATION
-      </div>
-
-      <h2>The setup process.</h2>
-
-      <p class="section-intro">
-        The tutorial follows the process of preparing the Android
-        device, installing the required components, and setting
-        up the Walkman-inspired experience.
-      </p>
-
-      <div class="feature-grid">
-
-        <div class="feature">
-          <div class="tag">STEP 01</div>
-          <h3>Prepare the Android device</h3>
-          <p>
-            Prepare the smartphone and get it ready for
-            the Android Into Walkman setup.
-          </p>
-        </div>
-
-        <div class="feature">
-          <div class="tag">STEP 02</div>
-          <h3>Manage preinstalled applications</h3>
-          <p>
-            Use a PC tool to disable or uninstall selected
-            preinstalled applications that are not needed
-            for the setup.
-          </p>
-        </div>
-
-        <div class="feature">
-          <div class="tag">STEP 03</div>
-          <h3>Install the required components</h3>
-          <p>
-            Install and configure the applications and
-            components needed for the Walkman experience.
-          </p>
-        </div>
-
-        <div class="feature">
-          <div class="tag">FINAL SETUP</div>
-          <h3>Complete the transformation</h3>
-          <p>
-            Bring the setup together into an Android
-            smartphone with a Sony Walkman-inspired
-            music environment.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PC TOOL -->
-  <section class="content-section" id="tool">
-    <div class="container">
-
-      <div class="section-number">
-        03 / PC TOOL USED
+        01 / PC TOOL
       </div>
 
       <h2>ADB AppControl.</h2>
 
       <p class="section-intro">
-        ADB AppControl was the PC tool I used to manage
-        selected preinstalled applications on the Android
-        device during the preparation process.
+        ADB AppControl is the PC tool included in this tutorial
+        for managing selected preinstalled applications on
+        an Android smartphone.
       </p>
-
-      <div class="story">
-
-        <p>
-          I used ADB AppControl to uninstall selected
-          preinstalled applications from the device.
-          The tutorial also explains that applications can
-          be disabled instead if you are unsure whether
-          they should be removed.
-        </p>
-
-        <p>
-          App installation for the Walkman setup was done
-          directly on the Android smartphone. ADB AppControl
-          was used for managing preinstalled applications.
-        </p>
-
-      </div>
-
-      <div class="resource-group">SOFTWARE RESOURCE</div>
 
       <div class="resource-list">
 
@@ -628,34 +432,200 @@
     </div>
   </section>
 
-  <!-- CREDITS -->
-  <section class="content-section" id="credits">
+  <!-- APPLICATIONS -->
+  <section class="content-section" id="applications">
     <div class="container">
 
       <div class="section-number">
-        04 / CREDITS
+        02 / APPLICATION RESOURCES
       </div>
 
-      <h2>Tutorial credits.</h2>
+      <h2>Applications and plugins.</h2>
 
-      <div class="story">
+      <p class="section-intro">
+        Applications, plugins, and supporting files for the
+        Android Into Walkman setup.
+      </p>
 
-        <p>
-          <strong>Android Into Walkman — PC Tutorial</strong><br>
-          Tutorial creation, installation process, and
-          demonstration:
-          <span class="highlight">DISKARTE TECH PH</span>
-        </p>
+      <div class="resource-group">LAUNCHER AND MUSIC PLAYER</div>
 
-        <p class="credit">
-          PC software used:
-          <a href="https://adbappcontrol.com/en/"
-             target="_blank" rel="noopener noreferrer">
-            ADB AppControl ↗
-          </a>
-        </p>
+      <div class="resource-list">
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>Walkman Launcher</strong>
+            <small>MEGA archive</small>
+          </div>
+          <a href="https://mega.nz/file/kQAVHJqZ#A7xpQiJM17nhTNHwVOGYbLb7Hhd9-8FOD30A3bQk5LA"
+             target="_blank" rel="noopener noreferrer">MEGA ↗</a>
+        </div>
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>Walkman Player</strong>
+            <small>MEGA archive</small>
+          </div>
+          <a href="https://mega.nz/file/IRwCwSrB#gHKYNXq04XXToAkRnRIcIrCEut7L5v9mcfcEkL3i0z8"
+             target="_blank" rel="noopener noreferrer">MEGA ↗</a>
+        </div>
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>Spotify Premium Version</strong>
+            <small>External application source</small>
+          </div>
+          <a href="https://rexdl.com/android/spotify-premium-apk.html/"
+             target="_blank" rel="noopener noreferrer">VISIT ↗</a>
+        </div>
 
       </div>
+
+      <div class="resource-group">YOUTUBE MUSIC AND MICROG</div>
+
+      <div class="resource-list">
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>MicroG (Updated 2025)</strong>
+            <small>Vanced MicroG APK</small>
+          </div>
+          <a href="https://github.com/vancedapps/vanced.to/releases/download/2025-24/vanced.to_vanced_gms_microg_v0.3.1.4.240913.apk"
+             target="_blank" rel="noopener noreferrer">DOWNLOAD ↗</a>
+        </div>
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>YouTube Music Premium (2025)</strong>
+            <small>Android 8–15 / ReVanced resource</small>
+          </div>
+          <a href="https://vanced.to/revanced-youtube-music"
+             target="_blank" rel="noopener noreferrer">VISIT ↗</a>
+        </div>
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>YouTube Music Plugin ReVanced (2025)</strong>
+            <small>MEGA archive</small>
+          </div>
+          <a href="https://mega.nz/file/ldpFEBpR#DnD0tr342oBE5YHwZAhWaADJ922xDcJ421wVgjjWA9c"
+             target="_blank" rel="noopener noreferrer">MEGA ↗</a>
+        </div>
+
+      </div>
+
+      <div class="resource-group">ADDITIONAL PLUGINS</div>
+
+      <div class="resource-list">
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>Browser Plugin</strong>
+            <small>MEGA archive</small>
+          </div>
+          <a href="https://mega.nz/file/dYBFybgQ#yiL_rFmW7x3MgIVeFqYuTEfHMARDthBD0DacNe4MIsE"
+             target="_blank" rel="noopener noreferrer">MEGA ↗</a>
+        </div>
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>Music Downloader</strong>
+            <small>MEGA archive</small>
+          </div>
+          <a href="https://mega.nz/file/0JImRabK#HJXHVFOQPBVAaU2CMfKse0xqBB_GGUcXh8o59AmtXVk"
+             target="_blank" rel="noopener noreferrer">MEGA ↗</a>
+        </div>
+
+      </div>
+
+      <div class="resource-group">ALL-IN-ONE APPLICATION PACKAGES</div>
+
+      <div class="resource-list">
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>All Smartphone Apps ZIP</strong>
+            <small>Google Drive archive</small>
+          </div>
+          <a href="https://drive.google.com/file/d/1-RfN7g_L8oeltFhTQuIObzf2Mr9lJ56x/view?usp=drivesdk"
+             target="_blank" rel="noopener noreferrer">DRIVE ↗</a>
+        </div>
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>All Smartphone Apps ZIP</strong>
+            <small>MEGA archive</small>
+          </div>
+          <a href="https://mega.nz/file/AdAU1A6S#tQFyt0qpyFg0UZcRvIshI8IkCyrRq_tBiITdvT6noe4"
+             target="_blank" rel="noopener noreferrer">MEGA ↗</a>
+        </div>
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>Sony Walkman Force Close Fix</strong>
+            <small>MEGA archive</small>
+          </div>
+          <a href="https://mega.nz/file/xIAiFKKS#URBFo0NjgERTTagZOqUWkor336BROLM_W0gt30YXwCQ"
+             target="_blank" rel="noopener noreferrer">MEGA ↗</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SONY MUSIC -->
+  <section class="content-section" id="sony">
+    <div class="container">
+
+      <div class="section-number">
+        03 / SONY MUSIC RESOURCES
+      </div>
+
+      <h2>Sony Music Walkman.</h2>
+
+      <p class="section-intro">
+        Sony Music applications and references included
+        with the Android Into Walkman resources.
+      </p>
+
+      <div class="resource-list">
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>Sony Music Walkman Universal Mod</strong>
+            <small>XDA Developers thread</small>
+          </div>
+          <a href="https://forum.xda-developers.com/t/app-4-2-latest-sony-music-9-4-8-a-0-13-updated-9-march-2021.2728110/"
+             target="_blank" rel="noopener noreferrer">XDA ↗</a>
+        </div>
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>Sony Music for Sony Smartphones</strong>
+            <small>MEGA archive</small>
+          </div>
+          <a href="https://mega.nz/file/AAZmwYbA#tl7NrcEnjwzMCfT6xuqWopOkypUox-nQ5sQh-MXlXZg"
+             target="_blank" rel="noopener noreferrer">MEGA ↗</a>
+        </div>
+
+        <div class="resource">
+          <div class="resource-info">
+            <strong>Sony Music Walkman</strong>
+            <small>APKMirror archive</small>
+          </div>
+          <a href="https://www.apkmirror.com/apk/sony-mobile-communications-inc/walkman-music/"
+             target="_blank" rel="noopener noreferrer">APKMIRROR ↗</a>
+        </div>
+
+      </div>
+
+      <p class="credit">
+        Original Spotify Launcher project:
+        <a href="https://github.com/joshmcarthur/spotify-launcher"
+           target="_blank" rel="noopener noreferrer">
+          Josh McArthur / GitHub ↗
+        </a>
+      </p>
 
       <a href="old-android-walkman.html" class="back-link">
         ← BACK TO ANDROID INTO WALKMAN
