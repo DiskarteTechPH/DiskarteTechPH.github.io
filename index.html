@@ -35,6 +35,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 85px;
     }
 
     body {
@@ -244,6 +245,11 @@
       border: 1px solid var(--border);
       background: var(--panel);
       min-height: 310px;
+      transition: .25s;
+    }
+
+    .featured:hover {
+      border-color: rgba(85,230,230,.6);
     }
 
     .featured-content {
@@ -618,19 +624,23 @@
 
     <section id="featured">
       <div class="container">
+
         <div class="section-heading">
           <div>
             <div class="section-label">01 / FEATURED PROJECT</div>
             <h2>Featured Work</h2>
           </div>
+
           <p>
             A closer look at a project developed through
             research, testing, and practical experimentation.
           </p>
         </div>
 
-        <a href="projector.html" class="featured">
+        <a href="diy-projector.html" class="featured">
+
           <div class="featured-content">
+
             <span class="tag">PEP ENGINE / V2.6</span>
 
             <h3>DIY Projector<br>Optimization</h3>
@@ -651,6 +661,7 @@
             <div class="project-link">
               VIEW PROJECT <span>→</span>
             </div>
+
           </div>
 
           <div class="featured-visual">
@@ -661,6 +672,7 @@
               </div>
             </div>
           </div>
+
         </a>
       </div>
     </section>
@@ -669,11 +681,13 @@
 
     <section id="projects">
       <div class="container">
+
         <div class="section-heading">
           <div>
             <div class="section-label">02 / PROJECT ARCHIVE</div>
             <h2>Explore the Work</h2>
           </div>
+
           <p>
             Different ideas. Different technologies.
             One place to document the process.
@@ -682,45 +696,102 @@
 
         <div class="project-grid">
 
+          <!-- PROJECT 001 -->
+
           <a href="diy-projector.html" class="project-card">
+
             <div class="project-number">PROJECT / 001</div>
+
             <h3>DIY Projector</h3>
+
             <p>
               Projector experiments, PEP Engine development,
               image processing, calibration, and technical
               documentation.
             </p>
-            <div class="project-link">EXPLORE PROJECT <span>→</span></div>
+
+            <div class="project-link">
+              EXPLORE PROJECT <span>→</span>
+            </div>
+
           </a>
 
-          <div class="project-card">
+          <!-- PROJECT 002 -->
+
+          <a href="old-android-walkman.html" class="project-card">
+
             <div class="project-number">PROJECT / 002</div>
-            <h3>ZGMobile</h3>
+
+            <h3>Android Into Walkman</h3>
+
             <p>
-              Android customization, mobile software experiments,
-              device modifications, and practical Android solutions.
+              A 2022 Android customization project.
+              Modified APK integrations, Sony Music,
+              and a customized Walkman-style music experience.
             </p>
-            <div class="coming">ARCHIVE IN DEVELOPMENT</div>
-          </div>
+
+            <div class="project-link">
+              VIEW PHONE TUTORIAL <span>→</span>
+            </div>
+
+          </a>
+
+          <!-- PROJECT 003 -->
+
+          <a href="pc-tutorial.html" class="project-card">
+
+            <div class="project-number">PROJECT / 003</div>
+
+            <h3>PC Tutorial</h3>
+
+            <p>
+              Computer-based tutorials, PC experiments,
+              and practical technology solutions.
+              Explore the original PC project and its documentation.
+            </p>
+
+            <div class="project-link">
+              VIEW PC TUTORIAL <span>→</span>
+            </div>
+
+          </a>
+
+          <!-- PROJECT 004 -->
 
           <div class="project-card">
-            <div class="project-number">PROJECT / 003</div>
+
+            <div class="project-number">PROJECT / 004</div>
+
             <h3>Electronics & DIY</h3>
+
             <p>
               Hardware experiments, repurposed components,
               electronics projects, and hands-on builds.
             </p>
-            <div class="coming">ARCHIVE IN DEVELOPMENT</div>
+
+            <div class="coming">
+              ARCHIVE IN DEVELOPMENT
+            </div>
+
           </div>
 
+          <!-- PROJECT 005 -->
+
           <div class="project-card">
-            <div class="project-number">PROJECT / 004</div>
+
+            <div class="project-number">PROJECT / 005</div>
+
             <h3>Software & Tools</h3>
+
             <p>
               Custom configurations, software experiments,
               useful tools, and independent development projects.
             </p>
-            <div class="coming">ARCHIVE IN DEVELOPMENT</div>
+
+            <div class="coming">
+              ARCHIVE IN DEVELOPMENT
+            </div>
+
           </div>
 
         </div>
@@ -731,13 +802,15 @@
 
     <section id="about">
       <div class="container">
+
         <div class="section-label">03 / THE IDEA</div>
 
         <div class="statement">
+
           <h2>
             Technology isn't just about buying something new.
-            It's about discovering what you can <span>build</span>
-            with what you already have.
+            It's about discovering what you can
+            <span>build</span> with what you already have.
           </h2>
 
           <p>
@@ -749,6 +822,7 @@
             software and exploring DIY hardware, every project
             starts with curiosity and the willingness to try.
           </p>
+
         </div>
       </div>
     </section>
@@ -759,7 +833,9 @@
 
   <footer>
     <div class="container">
+
       <div class="footer-inner">
+
         <div class="footer-brand">
           DISKARTE<span>TECH</span>PH
         </div>
@@ -767,13 +843,16 @@
         <div class="footer-note">
           OLD DEVICES. NEW POSSIBILITIES.
         </div>
+
       </div>
 
       <div class="footer-copy">
         © 2026 DISKARTE TECH PH. INDEPENDENT TECHNOLOGY PROJECTS.
       </div>
+
     </div>
   </footer>
 
 </body>
-</html>
+  </html>
+          
