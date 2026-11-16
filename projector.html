@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEP Engine - Flagship Projector Calibration</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TMWTLVQG3H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TMWTLVQG3H');
+    </script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* TOP SECTION */
+
+        .hero-section {
+            text-align: center;
+            background: linear-gradient(135deg, #0f172a, #020617);
+            padding: 50px 20px;
+            border-bottom: 3px solid #3b82f6;
+        }
+
+        .banner-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-banner-img,
+        .comparison-banner-img {
+            flex: 1 1 0;
+            width: 100%;
+            max-width: 440px;
+            height: 230px;
+            object-fit: contain;
+            box-sizing: border-box;
+            border-radius: 12px;
+        }
+
+        .hero-banner-img {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+            border: 2px solid #3b82f6;
+        }
+
+        .comparison-banner-img {
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.3);
+            border: 2px solid #ef4444;
+        }
+
+        .matrix-banner-img {
+            display: block;
+            width: 100%;
+            max-width: 760px;
+            max-height: 360px;
+            height: auto;
+            object-fit: contain;
+            box-sizing: border-box;
+            margin: 20px auto 0;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+            border: 2px solid #3b82f6;
+        }
+
+        h1 {
+            color: #3b82f6;
+            font-size: 2.8rem;
+            margin: 20px 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #9ca3af;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* MIDDLE SECTION */
+
+        .showcase-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .test-block {
+            background-color: #111827;
+            border: 1px solid #374151;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .block-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #3b82f6;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            border-left: 4px solid #3b82f6;
+            padding-left: 10px;
+        }
+
+        /* ALIGNED IMAGE DISPLAY */
+
+        .media-group {
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.5fr);
+            align-items: stretch;
+            gap: 20px;
+        }
+
+        .poster-container,
+        .slide-container {
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #0b1220;
+            border-radius: 6px;
+        }
+
+        .poster-container img,
+        .slide-container img {
+            display: block;
+            width: 100%;
+            height: 260px;
+            object-fit: contain;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .poster-container img {
+            border: 1px solid #4b5563;
+        }
+
+        .slide-container img {
+            border: 1px solid #3b82f6;
+        }
+
+        @media (max-width: 768px) {
+            .media-group {
+                grid-template-columns: 1fr;
+            }
+
+            .poster-container img,
+            .slide-container img {
+                height: auto;
+                max-height: 360px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-banner-img,
+            .comparison-banner-img {
+                flex: 1 1 100%;
+                max-width: 100%;
+                height: auto;
+                max-height: 220px;
+            }
+
+            .matrix-banner-img {
+                max-height: 240px;
+            }
+        }
+
+        .test-description {
+            margin-top: 15px;
+            color: #d1d5db;
+        }
+
+        .pep-badge {
+            display: inline-block;
+            background-color: #065f46;
+            color: #34d399;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        /* TECHNICAL EXPLANATION */
+
+        .technical-box {
+            background-color: #111c30;
+            padding: 35px;
+            border-radius: 12px;
+            border-top: 4px solid #ef4444;
+            margin-top: 50px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .tech-heading {
+            color: #ef4444;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tech-item h3 {
+            color: #3b82f6;
+            margin-top: 0;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .tech-item p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* INSTALLATION GUIDE */
+
+        .pep-installation-guide {
+            margin: 50px 0;
+        }
+
+        .installation-guide,
+        .setup-complete,
+        .optional-setup {
+            background-color: #111827;
+            border: 1px solid #374151;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .installation-guide h2,
+        .setup-complete h2,
+        .optional-setup h2 {
+            color: #3b82f6;
+            margin-top: 0;
+            border-bottom: 1px solid #374151;
+            padding-bottom: 12px;
+        }
+
+        .installation-guide h3 {
+            color: #60a5fa;
+            font-size: 1rem;
+            margin-top: 25px;
+        }
+
+        .installation-guide p,
+        .setup-complete p,
+        .optional-setup p {
+            color: #d1d5db;
+        }
+
+        .info-box,
+        .video-box,
+        .optional-note,
+        .zip-info,
+        .quick-check {
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 18px;
+            margin-top: 18px;
+        }
+
+        .info-box strong,
+        .video-box strong,
+        .zip-info strong {
+            color: #60a5fa;
+        }
+
+        .quick-check h3 {
+            color: #34d399;
+            margin-top: 0;
+        }
+
+        .quick-check ul {
+            padding-left: 20px;
+            color: #d1d5db;
+        }
+
+        .quick-check li {
+            margin-bottom: 8px;
+        }
+
+        /* ABOUT THE DEVELOPER */
+
+        .developer-story {
+            padding: 40px 25px;
+            margin: 50px 0;
+            background: linear-gradient(145deg, #111827, #0f172a);
+            color: #fff;
+            border: 1px solid #374151;
+            border-top: 4px solid #ffcc00;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        }
+
+        .developer-story h2 {
+            color: #ffcc00;
+            font-size: 2rem;
+            margin: 0 0 25px;
+            text-align: center;
+        }
+
+        .developer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            color: #d1d5db;
+        }
+
+        .developer-content p {
+            margin-bottom: 18px;
+        }
+
+        .developer-content strong {
+            color: #f3f4f6;
+        }
+
+        /* CTA & FOOTER */
+
+        .cta-section {
+            text-align: center;
+            margin: 60px 0;
+            background-color: #111827;
+            padding: 40px 20px;
+            border-radius: 12px;
+            border: 1px solid #1f2937;
+        }
+
+        .cta-btn-green {
+            display: inline-block;
+            background-color: #059669;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            padding: 18px 45px;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(5, 150, 105, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+            border: 2px solid #34d399;
+        }
+
+        .cta-btn-green:hover {
+            background-color: #047857;
+            box-shadow: 0 0 35px rgba(52, 211, 153, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .link-heading {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .shop-btn {
+            background-color: #1f2937;
+            color: #f3f4f6;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 1px solid #4b5563;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .shop-btn:hover {
+            background-color: #374151;
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+
+        .social-btn {
+            background-color: #0f172a;
+            color: #9ca3af;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            border: 1px solid #334155;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .social-btn:hover {
+            background-color: #1e293b;
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .technical-box {
+                padding: 22px;
+            }
+
+            .developer-story {
+                padding: 30px 20px;
+            }
+
+            .developer-story h2 {
+                font-size: 1.6rem;
+            }
+
+            .cta-btn-green {
+                font-size: 1rem;
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. TOP SECTION: BRANDING & BANNERS -->
+
+    <div class="hero-section">
+
+        <div class="banner-container">
+            <img src="hero-banner.png"
+                 alt="PEP Engine Core Breakdown Blueprint"
+                 class="hero-banner-img">
+
+            <img src="comparison-banner.png"
+                 alt="PEP Engine Before vs After Comparison"
+                 class="comparison-banner-img">
+        </div>
+
+        <img src="compatibility-matrix.png"
+             alt="PEP Engine Ecosystem Compatibility Matrix"
+             class="matrix-banner-img">
+
+        <h1>Upgrade Your HY300 Unbranded Projector with PEP Player & PEP Engine</h1>
+
+        <p class="subtitle">
+            Professional calibration and software tuning made for budget projectors
+        </p>
+
+    </div>
+
+    <!-- FLAGSHIP TECHNICAL DATA & QUICK CHECKOUT HUBS -->
+
+    <div style="background-color: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 25px; max-width: 900px; margin: 25px auto 10px auto; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.4); font-family: 'Segoe UI', sans-serif;">
+
+        <h3 style="color: #34d399; margin-top: 0; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #1f2937; padding-bottom: 12px; margin-bottom: 25px; text-align: center; font-weight: 800;">
+            ⚡ SYSTEM TUNING & OPTIMIZATION
+        </h3>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+
+            <!-- COLUMN A -->
+
+            <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 18px; max-height: 420px; overflow-y: auto;">
+
+                <h4 style="color: #3b82f6; margin-top: 0; font-size: 1rem; text-transform: uppercase; border-bottom: 1px solid #334155; padding-bottom: 5px; margin-bottom: 12px;">
+                    Main Features
+                </h4>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🎨 Color Profiles:</strong> Cycle instantly between Dynamic, Vivid, Standard, Cinematic, and Black & White Modes.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🌓 Environment Switcher:</strong> Quick-toggle presets calibrated for Ambient Daylight and Night room conditions.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">⚡ Lag-Free Performance:</strong> The system runs smoothly, ensuring no delays or interruptions in audio and video.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🔎 Clearer & Sharper:</strong> It sharpens the details of the show so the image isn't blurry.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🎬 HDR Tone-Mapping:</strong> The lighting and shadows are adjusted so that details remain visible even in dark scenes.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🔊 Audio Compressor:</strong> Boosts built-in sound up to 150% with custom soft-clipping equalization.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">💛 Subtitle Engine:</strong> Hardcoded high-contrast Yellow with solid borders for absolute readability.</p>
+
+                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">📐 Dynamic Keystone:</strong> Shift, pan, and zoom display coordinates dynamically using your remote control inside active video playback.</p>
+
+                <p style="margin: 0 0 5px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🔄 Master Reset:</strong> Instantly restores everything back to the default golden calibration setup.</p>
+
+            </div>
+
+            <!-- COLUMN B -->
+
+            <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 18px; max-height: 420px; overflow-y: auto;">
+
+                <h4 style="color: #ef4444; margin-top: 0; font-size: 1rem; text-transform: uppercase; border-bottom: 1px solid #334155; padding-bottom: 5px; margin-bottom: 12px;">
+                    Technical Details
+                </h4>
+
+                <p style="margin: 0 0 10px 0; font-size: 0.85rem; color: #9ca3af; line-height: 1.4;"><strong style="color: #f3f4f6;">📢 IMPORTANT REMINDER:</strong> This applies only to content watched via USB or streaming sites within the PEP Player. It will NOT work on the actual Netflix, YouTube, or Disney+ apps.</p>
+
+                <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: #d1d5db;"><strong style="color: #fca5a5;">🕹️ Supported Hardware:</strong> Magcubic HY Series (HY300, HY300 Pro, HY320, HY350), Coalus, Transpeed, Salange, and generic Android lifestyle panels.</p>
+
+                <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: #d1d5db;"><strong style="color: #fca5a5;">🧠 Target SOC / RAM:</strong> Allwinner H713, Amlogic S905, Rockchip RK3128 / RK3229. Fully optimized for resource-constrained 1GB setups.</p>
+
+                <p style="margin: 12px 0 6px 0; font-size: 0.85rem; color: #f3f4f6; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">🛠️ Free Apps Needed (Get on Play Store):</p>
+
+                <p style="margin: 0 0 4px 0; font-size: 0.82rem; color: #cbd5e1;">• <strong style="color: #38bdf8;">For ZIP Extraction:</strong> ZArchiver or AnExplorer (To extract the download pack).</p>
+
+                <p style="margin: 0 0 4px 0; font-size: 0.82rem; color: #cbd5e1;">• <strong style="color: #38bdf8;">For Text Viewing:</strong> FX File Explorer or QuickEdit (To select & copy your configuration code).</p>
+
+                <p style="margin: 0 0 10px 0; font-size: 0.82rem; color: #cbd5e1;">• <strong style="color: #38bdf8;">Remote Control App:</strong> Bluetooth Keyboard & Mouse by Appground IO.</p>
+
+                <p style="margin: 12px 0 0 0; font-size: 0.8rem; color: #64748b; border-top: 1px solid #334155; padding-top: 8px; font-style: italic;">
+                    Build: PEP-ENGINE v2.6-RELEASE | 100% Hardware Safe | Non-Commercial Research & Development Suite.
+                </p>
+
+            </div>
+
+        </div>
+
+        <style>
+            @media (max-width: 768px) {
+                div[style*="grid-template-columns: 1fr 1fr"] {
+                    grid-template-columns: 1fr !important;
+                    gap: 20px !important;
+                }
+            }
+        </style>
+
+        <!-- QUICK BUY BUTTONS -->
+
+        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; border-top: 2px solid #1f2937; padding-top: 22px; margin-top: 25px;">
+
+            <a href="https://raket.ph/diskartetechph"
+               target="_blank"
+               rel="noopener noreferrer"
+               style="padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; transition: all 0.2s; letter-spacing: 0.5px; text-align: center; background-color: #059669; color: white; border: 2px solid #34d399; box-shadow: 0 0 15px rgba(5, 150, 105, 0.3);">
+                🛒 Buy via Raket-PH (₱499)
+            </a>
+
+            <a href="https://ko-fi.com/diskartetechofficialpepenginestore"
+               target="_blank"
+               rel="noopener noreferrer"
+               style="padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; transition: all 0.2s; letter-spacing: 0.5px; text-align: center; background-color: #2563eb; color: white; border: 2px solid #3b82f6; box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);">
+                ☕ Buy via Ko-fi ($9.99)
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <!-- 2. LIVE HARDWARE STRESS TESTS -->
+
+        <h2 style="color: #3b82f6; border-bottom: 1px solid #374151; padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px;">
+            Live Hardware Stress Tests
+        </h2>
+
+        <div class="showcase-list">
+
+            <!-- BLOCK 1 -->
+
+            <div class="
