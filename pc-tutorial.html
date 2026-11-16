@@ -1,0 +1,532 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Android Into Walkman | DISKARTE TECH PH</title>
+  <meta name="description" content="Android Into Walkman — a ZGMobile project showing how to turn an old Android smartphone into a Walkman-inspired music player.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #080b0d;
+      --panel: #101619;
+      --line: #202b30;
+      --text: #e8eeee;
+      --muted: #87969b;
+      --green: #a4ff65;
+      --cyan: #63e6e2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        linear-gradient(rgba(99,230,226,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,230,226,.025) 1px, transparent 1px),
+        var(--bg);
+      background-size: 36px 36px;
+      color: var(--text);
+      font-family: 'Space Grotesk', sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(900px, 90%);
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      color: var(--green);
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+
+    .hero {
+      padding: 85px 0 55px;
+    }
+
+    .eyebrow,
+    .section-label {
+      color: var(--cyan);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 7vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 650px;
+      margin-top: 22px;
+      font-size: 16px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      padding: 6px 11px;
+      border-radius: 4px;
+    }
+
+    section {
+      padding: 35px 0;
+    }
+
+    .section-label {
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 25px;
+      margin-bottom: 14px;
+      letter-spacing: -.5px;
+    }
+
+    .description {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 760px;
+    }
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 22px;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .resource-group {
+      margin-top: 30px;
+    }
+
+    .resource-group h3 {
+      color: var(--cyan);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .resource-list {
+      display: grid;
+      gap: 9px;
+    }
+
+    .resource {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 14px 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      transition: .2s ease;
+    }
+
+    .resource:hover {
+      border-color: var(--green);
+      transform: translateY(-2px);
+    }
+
+    .resource strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .resource small {
+      display: block;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      margin-top: 3px;
+    }
+
+    .arrow {
+      color: var(--green);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .credit {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    .credit a {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .note {
+      margin-top: 25px;
+      padding: 17px;
+      background: var(--panel);
+      border-left: 2px solid var(--cyan);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .back {
+      display: inline-block;
+      margin: 30px 0 55px;
+      color: var(--green);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+    }
+
+    .back:hover {
+      color: var(--cyan);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 25px 0;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding-top: 60px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .resource {
+        padding: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <a class="brand" href="index.html">DISKARTE TECH PH</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="hero">
+      <div class="eyebrow">DISKARTETUCHPH / ANDROID PROJECT</div>
+
+      <h1>ANDROID INTO <span>WALKMAN</span></h1>
+
+      <p>
+        Turn your old Android smartphone into a Walkman-inspired
+        music player. A personal project built around Sony Music
+        and modified Android applications.
+      </p>
+
+      <div class="meta">
+        <span>2022</span>
+        <span>ANDROID CUSTOMIZATION</span>
+        <span>DISKARTETUCHPH</span>
+      </div>
+    </div>
+
+    <section>
+      <div class="section-label">01 / ABOUT THE PROJECT</div>
+
+      <h2>Old Phone. New Music Experience.</h2>
+
+      <p class="description">
+        I worked on modifying existing Android applications using
+        APKTool M to create a Sony Music-centered experience.
+        The Sony Music interface became the main music environment,
+        with additional integrations for browser access and
+        YouTube Music.
+      </p>
+
+      <p class="description" style="margin-top:15px;">
+        The goal was to bring different music-related functions
+        together and give an old Android smartphone a
+        Walkman-inspired experience.
+      </p>
+    </section>
+
+    <section>
+      <div class="section-label">02 / VIDEO TUTORIAL</div>
+
+      <h2>Watch the Full Tutorial</h2>
+
+      <p class="description">
+        Watch the original video to see how the
+        smartphone music player setup works.
+      </p>
+
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/-SRa9E0wabI"
+          title="Android Into Walkman Tutorial"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">03 / APPS & DOWNLOADS</div>
+
+      <h2>Applications & Resources</h2>
+
+      <p class="description">
+        App names, downloads, plugins, and references used
+        or shared with the Android Into Walkman project.
+      </p>
+
+      <div class="resource-group">
+        <h3>WALKMAN APPLICATIONS</h3>
+
+        <div class="resource-list">
+
+          <a class="resource" href="https://mega.nz/file/kQAVHJqZ#A7xpQiJM17nhTNHwVOGYbLb7Hhd9-8FOD30A3bQk5LA" target="_blank" rel="noopener">
+            <div>
+              <strong>Walkman Launcher</strong>
+              <small>MEGA DOWNLOAD</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="resource" href="https://mega.nz/file/IRwCwSrB#gHKYNXq04XXToAkRnRIcIrCEut7L5v9mcfcEkL3i0z8" target="_blank" rel="noopener">
+            <div>
+              <strong>Walkman Player</strong>
+              <small>MEGA DOWNLOAD</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="resource" href="https://rexdl.com/android/spotify-premium-apk.html/" target="_blank" rel="noopener">
+            <div>
+              <strong>Spotify Premium Version</strong>
+              <small>REXDL REFERENCE</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="resource-group">
+        <h3>YOUTUBE MUSIC & PLUGINS</h3>
+
+        <div class="resource-list">
+
+          <a class="resource" href="https://github.com/vancedapps/vanced.to/releases/download/2025-24/vanced.to_vanced_gms_microg_v0.3.1.4.240913.apk" target="_blank" rel="noopener">
+            <div>
+              <strong>MicroG</strong>
+              <small>GITHUB DOWNLOAD · UPDATED 2025</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="resource" href="https://vanced.to/revanced-youtube-music" target="_blank" rel="noopener">
+            <div>
+              <strong>YouTube Music Premium</strong>
+              <small>ANDROID 8–15 · 2025 REFERENCE</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="resource" href="https://mega.nz/file/ldpFEBpR#DnD0tr342oBE5YHwZAhWaADJ922xDcJ421wVgjjWA9c" target="_blank" rel="noopener">
+            <div>
+              <strong>YouTube Music Plugin ReVanced</strong>
+              <small>MEGA DOWNLOAD · 2025</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="resource" href="https://mega.nz/file/dYBFybgQ#yiL_rFmW7x3MgIVeFqYuTEfHMARDthBD0DacNe4MIsE" target="_blank" rel="noopener">
+            <div>
+              <strong>Browser Plugin</strong>
+              <small>MEGA DOWNLOAD</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="resource" href="https://mega.nz/file/0JImRabK#HJXHVFOQPBVAaU2CMfKse0xqBB_GGUcXh8o59AmtXVk" target="_blank" rel="noopener">
+            <div>
+              <strong>Music Downloader</strong>
+              <small>MEGA DOWNLOAD</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="resource-group">
+        <h3>ALL-IN-ONE DOWNLOADS</h3>
+
+        <div class="resource-list">
+
+          <a class="resource" href="https://drive.google.com/file/d/1-RfN7g_L8oeltFhTQuIObzf2Mr9lJ56x/view?usp=drivesdk" target="_blank" rel="noopener">
+            <div>
+              <strong>All Smartphone Apps in One ZIP</strong>
+              <small>GOOGLE DRIVE</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="resource" href="https://mega.nz/file/AdAU1A6S#tQFyt0qpyFg0UZcRvIshI8IkCyrRq_tBiITdvT6noe4" target="_blank" rel="noopener">
+            <div>
+              <strong>All Smartphone Apps in One ZIP</strong>
+              <small>MEGA DOWNLOAD</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="resource-group">
+        <h3>SONY MUSIC & FIXES</h3>
+
+        <div class="resource-list">
+
+          <a class="resource" href="https://mega.nz/file/xIAiFKKS#URBFo0NjgERTTagZOqUWkor336BROLM_W0gt30YXwCQ" target="_blank" rel="noopener">
+            <div>
+              <strong>Sony Walkman Force Close Fix</strong>
+              <small>MEGA DOWNLOAD</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="resource" href="https://forum.xda-developers.com/t/app-4-2-latest-sony-music-9-4-8-a-0-13-updated-9-march-2021.2728110/" target="_blank" rel="noopener">
+            <div>
+              <strong>Sony Music Walkman Universal Mod</strong>
+              <small>XDA DEVELOPERS</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="resource" href="https://mega.nz/file/AAZmwYbA#tl7NrcEnjwzMCfT6xuqWopOkypUox-nQ5sQh-MXlXZg" target="_blank" rel="noopener">
+            <div>
+              <strong>Sony Music for Sony Smartphones</strong>
+              <small>MEGA DOWNLOAD</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="resource" href="https://www.apkmirror.com/apk/sony-mobile-communications-inc/walkman-music/" target="_blank" rel="noopener">
+            <div>
+              <strong>Sony Music Walkman</strong>
+              <small>APKMirror REFERENCE</small>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="resource-group">
+        <h3>ORIGINAL PROJECT CREDIT</h3>
+
+        <p class="description">
+          Big thanks to Josh McArthur for the original
+          Spotify Launcher project.
+        </p>
+
+        <p class="credit">
+          <a href="https://github.com/joshmcarthur/spotify-launcher" target="_blank" rel="noopener">
+            Josh McArthur — GitHub Repository ↗
+          </a>
+        </p>
+      </div>
+
+      <div class="note">
+        <strong style="color:var(--text);">Compatibility & Safety</strong><br>
+        Android compatibility may vary depending on the device,
+        Android version, and application version. These resources
+        include third-party downloads. Review each source and
+        check compatibility before installing. Only download
+        files you trust.
+      </div>
+
+    </section>
+
+    <a class="back" href="index.html">← BACK TO PROJECT ARCHIVE</a>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 DISKARTE TECH PH — OLD DEVICES. NEW POSSIBILITIES.
+    </div>
+  </footer>
+
+</body>
+      </html>
+      
