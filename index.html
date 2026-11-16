@@ -2,1057 +2,778 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PEP Engine - Flagship Projector Calibration</title>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TMWTLVQG3H"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TMWTLVQG3H');
-    </script>
-
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        /* TOP SECTION */
-
-        .hero-section {
-            text-align: center;
-            background: linear-gradient(135deg, #0f172a, #020617);
-            padding: 50px 20px;
-            border-bottom: 3px solid #3b82f6;
-        }
-
-        .banner-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-banner-img,
-        .comparison-banner-img {
-            flex: 1 1 0;
-            width: 100%;
-            max-width: 440px;
-            height: 230px;
-            object-fit: contain;
-            box-sizing: border-box;
-            border-radius: 12px;
-        }
-
-        .hero-banner-img {
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
-            border: 2px solid #3b82f6;
-        }
-
-        .comparison-banner-img {
-            box-shadow: 0 0 25px rgba(239, 68, 68, 0.3);
-            border: 2px solid #ef4444;
-        }
-
-        .matrix-banner-img {
-            display: block;
-            width: 100%;
-            max-width: 760px;
-            max-height: 360px;
-            height: auto;
-            object-fit: contain;
-            box-sizing: border-box;
-            margin: 20px auto 0;
-            border-radius: 12px;
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
-            border: 2px solid #3b82f6;
-        }
-
-        h1 {
-            color: #3b82f6;
-            font-size: 2.8rem;
-            margin: 20px 0 10px 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            color: #9ca3af;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* MIDDLE SECTION */
-
-        .showcase-list {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .test-block {
-            background-color: #111827;
-            border: 1px solid #374151;
-            border-radius: 10px;
-            overflow: hidden;
-            padding: 20px;
-        }
-
-        .block-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #3b82f6;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            border-left: 4px solid #3b82f6;
-            padding-left: 10px;
-        }
-
-        /* ALIGNED IMAGE DISPLAY */
-
-        .media-group {
-            display: grid;
-            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.5fr);
-            align-items: stretch;
-            gap: 20px;
-        }
-
-        .poster-container,
-        .slide-container {
-            min-width: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: #0b1220;
-            border-radius: 6px;
-        }
-
-        .poster-container img,
-        .slide-container img {
-            display: block;
-            width: 100%;
-            height: 260px;
-            object-fit: contain;
-            border-radius: 6px;
-            box-sizing: border-box;
-        }
-
-        .poster-container img {
-            border: 1px solid #4b5563;
-        }
-
-        .slide-container img {
-            border: 1px solid #3b82f6;
-        }
-
-        @media (max-width: 768px) {
-            .media-group {
-                grid-template-columns: 1fr;
-            }
-
-            .poster-container img,
-            .slide-container img {
-                height: auto;
-                max-height: 360px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero-banner-img,
-            .comparison-banner-img {
-                flex: 1 1 100%;
-                max-width: 100%;
-                height: auto;
-                max-height: 220px;
-            }
-
-            .matrix-banner-img {
-                max-height: 240px;
-            }
-        }
-
-        .test-description {
-            margin-top: 15px;
-            color: #d1d5db;
-        }
-
-        .pep-badge {
-            display: inline-block;
-            background-color: #065f46;
-            color: #34d399;
-            font-size: 0.8rem;
-            font-weight: bold;
-            padding: 4px 10px;
-            border-radius: 4px;
-            margin-top: 10px;
-            text-transform: uppercase;
-        }
-
-        /* TECHNICAL EXPLANATION */
-
-        .technical-box {
-            background-color: #111c30;
-            padding: 35px;
-            border-radius: 12px;
-            border-top: 4px solid #ef4444;
-            margin-top: 50px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-
-        .tech-heading {
-            color: #ef4444;
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            margin-top: 0;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .tech-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .tech-item h3 {
-            color: #3b82f6;
-            margin-top: 0;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-        }
-
-        .tech-item p {
-            color: #9ca3af;
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        /* INSTALLATION GUIDE */
-
-        .pep-installation-guide {
-            margin: 50px 0;
-        }
-
-        .installation-guide,
-        .setup-complete,
-        .optional-setup {
-            background-color: #111827;
-            border: 1px solid #374151;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-        }
-
-        .installation-guide h2,
-        .setup-complete h2,
-        .optional-setup h2 {
-            color: #3b82f6;
-            margin-top: 0;
-            border-bottom: 1px solid #374151;
-            padding-bottom: 12px;
-        }
-
-        .installation-guide h3 {
-            color: #60a5fa;
-            font-size: 1rem;
-            margin-top: 25px;
-        }
-
-        .installation-guide p,
-        .setup-complete p,
-        .optional-setup p {
-            color: #d1d5db;
-        }
-
-        .info-box,
-        .video-box,
-        .optional-note,
-        .zip-info,
-        .quick-check {
-            background-color: #0f172a;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            padding: 18px;
-            margin-top: 18px;
-        }
-
-        .info-box strong,
-        .video-box strong,
-        .zip-info strong {
-            color: #60a5fa;
-        }
-
-        .quick-check h3 {
-            color: #34d399;
-            margin-top: 0;
-        }
-
-        .quick-check ul {
-            padding-left: 20px;
-            color: #d1d5db;
-        }
-
-        .quick-check li {
-            margin-bottom: 8px;
-        }
-
-        /* ABOUT THE DEVELOPER */
-
-        .developer-story {
-            padding: 40px 25px;
-            margin: 50px 0;
-            background: linear-gradient(145deg, #111827, #0f172a);
-            color: #fff;
-            border: 1px solid #374151;
-            border-top: 4px solid #ffcc00;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-        }
-
-        .developer-story h2 {
-            color: #ffcc00;
-            font-size: 2rem;
-            margin: 0 0 25px;
-            text-align: center;
-        }
-
-        .developer-content {
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.7;
-            color: #d1d5db;
-        }
-
-        .developer-content p {
-            margin-bottom: 18px;
-        }
-
-        .developer-content strong {
-            color: #f3f4f6;
-        }
-
-        /* CTA & FOOTER */
-
-        .cta-section {
-            text-align: center;
-            margin: 60px 0;
-            background-color: #111827;
-            padding: 40px 20px;
-            border-radius: 12px;
-            border: 1px solid #1f2937;
-        }
-
-        .cta-btn-green {
-            display: inline-block;
-            background-color: #059669;
-            color: white;
-            font-size: 1.3rem;
-            font-weight: bold;
-            padding: 18px 45px;
-            text-decoration: none;
-            border-radius: 8px;
-            box-shadow: 0 0 25px rgba(5, 150, 105, 0.4);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 40px;
-            border: 2px solid #34d399;
-        }
-
-        .cta-btn-green:hover {
-            background-color: #047857;
-            box-shadow: 0 0 35px rgba(52, 211, 153, 0.6);
-            transform: translateY(-2px);
-        }
-
-        .link-heading {
-            font-size: 1.1rem;
-            color: #9ca3af;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            margin-top: 25px;
-        }
-
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .shop-btn {
-            background-color: #1f2937;
-            color: #f3f4f6;
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            border: 1px solid #4b5563;
-            transition: all 0.2s;
-            font-size: 0.95rem;
-        }
-
-        .shop-btn:hover {
-            background-color: #374151;
-            border-color: #3b82f6;
-            color: #3b82f6;
-        }
-
-        .social-btn {
-            background-color: #0f172a;
-            color: #9ca3af;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
-            border: 1px solid #334155;
-            transition: all 0.2s;
-            font-size: 0.9rem;
-        }
-
-        .social-btn:hover {
-            background-color: #1e293b;
-            border-color: #ef4444;
-            color: #ef4444;
-        }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .technical-box {
-                padding: 22px;
-            }
-
-            .developer-story {
-                padding: 30px 20px;
-            }
-
-            .developer-story h2 {
-                font-size: 1.6rem;
-            }
-
-            .cta-btn-green {
-                font-size: 1rem;
-                padding: 15px 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DISKARTE TECH PH | Old Devices. New Possibilities.</title>
+  <meta name="description" content="Independent technology projects, Android development, DIY hardware experiments, custom software, and practical solutions by DiskarteTechPH.">
+  <meta name="theme-color" content="#080b0e">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #080b0e;
+      --panel: #0e1318;
+      --panel2: #111920;
+      --border: #202b32;
+      --text: #edf3f4;
+      --muted: #8a9ba3;
+      --green: #b6ff57;
+      --cyan: #55e6e6;
+      --mono: "DM Mono", monospace;
+      --font: "Space Grotesk", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: .22;
+      background-image:
+        linear-gradient(rgba(85,230,230,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(85,230,230,.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,11,14,.91);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .brand span {
+      color: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 570px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 0 95px;
+      position: relative;
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      color: var(--green);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 88px);
+      line-height: .98;
+      letter-spacing: -4px;
+      max-width: 850px;
+      font-weight: 700;
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .hero-description {
+      max-width: 570px;
+      color: var(--muted);
+      font-size: 16px;
+      margin-top: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border: 1px solid var(--green);
+      color: var(--bg);
+      background: var(--green);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .5px;
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: var(--green);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .button.secondary:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    .hero-status {
+      position: absolute;
+      right: 0;
+      bottom: 55px;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+
+    .hero-status span {
+      color: var(--green);
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 85px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 35px;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--green);
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(28px, 5vw, 43px);
+      letter-spacing: -1.5px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 350px;
+      font-size: 13px;
+    }
+
+    /* FEATURED PROJECT */
+
+    .featured {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      min-height: 310px;
+    }
+
+    .featured-content {
+      padding: 42px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--green);
+      border: 1px solid rgba(182,255,87,.3);
+      padding: 5px 9px;
+      margin-bottom: 22px;
+    }
+
+    .featured h3 {
+      font-size: clamp(26px, 4vw, 38px);
+      line-height: 1.15;
+      margin-bottom: 17px;
+    }
+
+    .featured p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 510px;
+    }
+
+    .featured-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      margin-top: 25px;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .featured-meta span::before {
+      content: "• ";
+      color: var(--green);
+    }
+
+    .featured-visual {
+      border-left: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse at center, rgba(85,230,230,.12), transparent 65%),
+        linear-gradient(135deg, #101c20, #0b1015);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .visual-frame {
+      width: 72%;
+      aspect-ratio: 16 / 10;
+      border: 1px solid rgba(85,230,230,.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 0 45px rgba(85,230,230,.08);
+    }
+
+    .visual-frame::before,
+    .visual-frame::after {
+      content: "";
+      position: absolute;
+      background: var(--cyan);
+      opacity: .7;
+    }
+
+    .visual-frame::before {
+      width: 30px;
+      height: 1px;
+      top: -1px;
+      left: 20px;
+    }
+
+    .visual-frame::after {
+      height: 30px;
+      width: 1px;
+      right: -1px;
+      bottom: 20px;
+    }
+
+    .visual-text {
+      text-align: center;
+      font-family: var(--mono);
+      color: var(--cyan);
+    }
+
+    .visual-text strong {
+      display: block;
+      font-size: clamp(28px, 5vw, 48px);
+      letter-spacing: 4px;
+    }
+
+    .visual-text small {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--muted);
+    }
+
+    /* PROJECT GRID */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .project-card {
+      min-height: 220px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
+      transition: .25s;
+    }
+
+    .project-card:hover {
+      border-color: rgba(182,255,87,.6);
+      transform: translateY(-3px);
+      background: var(--panel2);
+    }
+
+    .project-number {
+      font-family: var(--mono);
+      color: var(--green);
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .project-card h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 440px;
+    }
+
+    .project-link {
+      margin-top: auto;
+      padding-top: 24px;
+      color: var(--cyan);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .project-link span {
+      display: inline-block;
+      transition: .2s;
+    }
+
+    .project-card:hover .project-link span {
+      transform: translateX(5px);
+    }
+
+    .coming {
+      color: #77858a;
+      font-family: var(--mono);
+      font-size: 10px;
+      margin-top: auto;
+      padding-top: 24px;
+      letter-spacing: 1px;
+    }
+
+    /* PHILOSOPHY */
+
+    .statement {
+      border-left: 2px solid var(--green);
+      padding: 12px 0 12px 28px;
+      max-width: 780px;
+    }
+
+    .statement h2 {
+      font-size: clamp(28px, 5vw, 46px);
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+    }
+
+    .statement h2 span {
+      color: var(--green);
+    }
+
+    .statement p {
+      color: var(--muted);
+      margin-top: 20px;
+      max-width: 600px;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 35px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
+
+    .footer-brand span {
+      color: var(--green);
+    }
+
+    .footer-note {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 10px;
+    }
+
+    .footer-copy {
+      color: #637078;
+      font-size: 10px;
+      font-family: var(--mono);
+      margin-top: 15px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 700px) {
+      .nav {
+        min-height: 64px;
+      }
+
+      .nav-links {
+        gap: 13px;
+        font-size: 9px;
+      }
+
+      .brand {
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: 510px;
+        padding: 85px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .hero-status {
+        bottom: 25px;
+        left: 0;
+        right: auto;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .featured {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-content {
+        padding: 28px;
+      }
+
+      .featured-visual {
+        border-left: 0;
+        border-top: 1px solid var(--border);
+        min-height: 210px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        min-height: 195px;
+      }
+
+      .statement {
+        padding-left: 20px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .nav-links {
+        gap: 9px;
+        font-size: 8px;
+      }
+
+      .brand {
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- 1. TOP SECTION: BRANDING & BANNERS -->
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand">DISKARTE<span>TECH</span>PH</a>
 
-    <div class="hero-section">
-
-        <div class="banner-container">
-            <img src="hero-banner.png"
-                 alt="PEP Engine Core Breakdown Blueprint"
-                 class="hero-banner-img">
-
-            <img src="comparison-banner.png"
-                 alt="PEP Engine Before vs After Comparison"
-                 class="comparison-banner-img">
-        </div>
-
-        <img src="compatibility-matrix.png"
-             alt="PEP Engine Ecosystem Compatibility Matrix"
-             class="matrix-banner-img">
-
-        <h1>Upgrade Your HY300 Unbranded Projector with PEP Player & PEP Engine</h1>
-
-        <p class="subtitle">
-            Professional calibration and software tuning made for budget projectors
-        </p>
-
+      <nav class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- FLAGSHIP TECHNICAL DATA & QUICK CHECKOUT HUBS -->
+  <main>
 
-    <div style="background-color: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 25px; max-width: 900px; margin: 25px auto 10px auto; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.4); font-family: 'Segoe UI', sans-serif;">
-
-        <h3 style="color: #34d399; margin-top: 0; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #1f2937; padding-bottom: 12px; margin-bottom: 25px; text-align: center; font-weight: 800;">
-            ⚡ SYSTEM TUNING & OPTIMIZATION
-        </h3>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-
-            <!-- COLUMN A -->
-
-            <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 18px; max-height: 420px; overflow-y: auto;">
-
-                <h4 style="color: #3b82f6; margin-top: 0; font-size: 1rem; text-transform: uppercase; border-bottom: 1px solid #334155; padding-bottom: 5px; margin-bottom: 12px;">
-                    Main Features
-                </h4>
-
-                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🎨 Color Profiles:</strong> Cycle instantly between Dynamic, Vivid, Standard, Cinematic, and Black & White Modes.</p>
-
-                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🌓 Environment Switcher:</strong> Quick-toggle presets calibrated for Ambient Daylight and Night room conditions.</p>
-
-                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">⚡ Lag-Free Performance:</strong> The system runs smoothly, ensuring no delays or interruptions in audio and video.</p>
-
-                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🔎 Clearer & Sharper:</strong> It sharpens the details of the show so the image isn't blurry.</p>
-
-                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🎬 HDR Tone-Mapping:</strong> The lighting and shadows are adjusted so that details remain visible even in dark scenes.</p>
-
-                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🔊 Audio Compressor:</strong> Boosts built-in sound up to 150% with custom soft-clipping equalization.</p>
-
-                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">💛 Subtitle Engine:</strong> Hardcoded high-contrast Yellow with solid borders for absolute readability.</p>
-
-                <p style="margin: 0 0 12px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">📐 Dynamic Keystone:</strong> Shift, pan, and zoom display coordinates dynamically using your remote control inside active video playback.</p>
-
-                <p style="margin: 0 0 5px 0; font-size: 0.88rem; color: #d1d5db;"><strong style="color: #60a5fa;">🔄 Master Reset:</strong> Instantly restores everything back to the default golden calibration setup.</p>
-
-            </div>
-
-            <!-- COLUMN B -->
-
-            <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 18px; max-height: 420px; overflow-y: auto;">
-
-                <h4 style="color: #ef4444; margin-top: 0; font-size: 1rem; text-transform: uppercase; border-bottom: 1px solid #334155; padding-bottom: 5px; margin-bottom: 12px;">
-                    Technical Details
-                </h4>
-
-                <p style="margin: 0 0 10px 0; font-size: 0.85rem; color: #9ca3af; line-height: 1.4;"><strong style="color: #f3f4f6;">📢 IMPORTANT REMINDER:</strong> This applies only to content watched via USB or streaming sites within the PEP Player. It will NOT work on the actual Netflix, YouTube, or Disney+ apps.</p>
-
-                <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: #d1d5db;"><strong style="color: #fca5a5;">🕹️ Supported Hardware:</strong> Magcubic HY Series (HY300, HY300 Pro, HY320, HY350), Coalus, Transpeed, Salange, and generic Android lifestyle panels.</p>
-
-                <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: #d1d5db;"><strong style="color: #fca5a5;">🧠 Target SOC / RAM:</strong> Allwinner H713, Amlogic S905, Rockchip RK3128 / RK3229. Fully optimized for resource-constrained 1GB setups.</p>
-
-                <p style="margin: 12px 0 6px 0; font-size: 0.85rem; color: #f3f4f6; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">🛠️ Free Apps Needed (Get on Play Store):</p>
-
-                <p style="margin: 0 0 4px 0; font-size: 0.82rem; color: #cbd5e1;">• <strong style="color: #38bdf8;">For ZIP Extraction:</strong> ZArchiver or AnExplorer (To extract the download pack).</p>
-
-                <p style="margin: 0 0 4px 0; font-size: 0.82rem; color: #cbd5e1;">• <strong style="color: #38bdf8;">For Text Viewing:</strong> FX File Explorer or QuickEdit (To select & copy your configuration code).</p>
-
-                <p style="margin: 0 0 10px 0; font-size: 0.82rem; color: #cbd5e1;">• <strong style="color: #38bdf8;">Remote Control App:</strong> Bluetooth Keyboard & Mouse by Appground IO.</p>
-
-                <p style="margin: 12px 0 0 0; font-size: 0.8rem; color: #64748b; border-top: 1px solid #334155; padding-top: 8px; font-style: italic;">
-                    Build: PEP-ENGINE v2.6-RELEASE | 100% Hardware Safe | Non-Commercial Research & Development Suite.
-                </p>
-
-            </div>
-
-        </div>
-
-        <style>
-            @media (max-width: 768px) {
-                div[style*="grid-template-columns: 1fr 1fr"] {
-                    grid-template-columns: 1fr !important;
-                    gap: 20px !important;
-                }
-            }
-        </style>
-
-        <!-- QUICK BUY BUTTONS -->
-
-        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; border-top: 2px solid #1f2937; padding-top: 22px; margin-top: 25px;">
-
-            <a href="https://raket.ph/diskartetechph"
-               target="_blank"
-               rel="noopener noreferrer"
-               style="padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; transition: all 0.2s; letter-spacing: 0.5px; text-align: center; background-color: #059669; color: white; border: 2px solid #34d399; box-shadow: 0 0 15px rgba(5, 150, 105, 0.3);">
-                🛒 Buy via Raket-PH (₱499)
-            </a>
-
-            <a href="https://ko-fi.com/diskartetechofficialpepenginestore"
-               target="_blank"
-               rel="noopener noreferrer"
-               style="padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; transition: all 0.2s; letter-spacing: 0.5px; text-align: center; background-color: #2563eb; color: white; border: 2px solid #3b82f6; box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);">
-                ☕ Buy via Ko-fi ($9.99)
-            </a>
-
-        </div>
-
-    </div>
+    <!-- HERO -->
 
     <div class="container">
+      <section class="hero" style="border-top:0;">
+        <div class="eyebrow">Independent Technology Projects / Philippines</div>
 
-        <!-- 2. LIVE HARDWARE STRESS TESTS -->
+        <h1>
+          OLD DEVICES.<br>
+          <span>NEW</span> POSSIBILITIES.
+        </h1>
 
-        <h2 style="color: #3b82f6; border-bottom: 1px solid #374151; padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px;">
-            Live Hardware Stress Tests
-        </h2>
+        <p class="hero-description">
+          Exploring what's possible with technology.
+          Android development, hardware experiments,
+          custom software, and practical solutions built
+          through curiosity and hands-on work.
+        </p>
 
-        <div class="showcase-list">
-
-            <!-- BLOCK 1 -->
-
-            <div class="test-block">
-                <div class="block-title">1. Ultra Micro-Contrast Test</div>
-
-                <div class="media-group">
-                    <div class="poster-container">
-                        <img src="poster1.png" alt="Ready or Not Movie Poster">
-                    </div>
-
-                    <div class="slide-container">
-                        <img src="slide1.png" alt="Extreme Close-Up Calibration">
-                    </div>
-                </div>
-
-                <p class="test-description">
-                    Forces hidden fine details like iris reflections and individual eyelashes to render with sharp clarity from the movie <em>Ready or Not</em>.
-                </p>
-
-                <span class="pep-badge">Sharpness Overdrive</span>
-            </div>
-
-            <!-- BLOCK 2 -->
-
-            <div class="test-block">
-                <div class="block-title">2. Teal & Orange Separation</div>
-
-                <div class="media-group">
-                    <div class="poster-container">
-                        <img src="poster2.png" alt="Ready or Not Movie Poster">
-                    </div>
-
-                    <div class="slide-container">
-                        <img src="slide2.png" alt="Teal & Orange Calibration">
-                    </div>
-                </div>
-
-                <p class="test-description">
-                    Isolates conflicting Hollywood dual color temperatures flawlessly without distorting natural skin tones.
-                </p>
-
-                <span class="pep-badge">Dual Temp Balance</span>
-            </div>
-
-            <!-- BLOCK 3 -->
-
-            <div class="test-block">
-                <div class="block-title">3. Texture Mapping Test</div>
-
-                <div class="media-group">
-                    <div class="poster-container">
-                        <img src="poster3.png" alt="The Death of Robin Hood Poster">
-                    </div>
-
-                    <div class="slide-container">
-                        <img src="slide3.png" alt="Texture Mapping Calibration">
-                    </div>
-                </div>
-
-                <p class="test-description">
-                    Recovers skin depth and fine gray-to-white hair resolution from Robinhood in <em>The Death of Robin Hood</em> that usually merges into a flat blur on default firmware.
-                </p>
-
-                <span class="pep-badge">Texture Recovery</span>
-            </div>
-
-            <!-- BLOCK 4 -->
-
-            <div class="test-block">
-                <div class="block-title">4. Chroma Isolation Test</div>
-
-                <div class="media-group">
-                    <div class="poster-container">
-                        <img src="poster4.png" alt="My Royal Nemesis Poster">
-                    </div>
-
-                    <div class="slide-container">
-                        <img src="slide4.png" alt="Chroma Isolation Calibration">
-                    </div>
-                </div>
-
-                <p class="test-description">
-                    Pushes vibrant neon blues from Shin Seo-ri's tracking suit in <em>My Royal Nemesis</em> while keeping the human face perfectly warm, lifelike, and isolated.
-                </p>
-
-                <span class="pep-badge">Chroma Separation</span>
-            </div>
-
-            <!-- BLOCK 5 -->
-
-            <div class="test-block">
-                <div class="block-title">5. Subtitle Edge Anti-Aliasing (480p Stress Test)</div>
-
-                <div class="media-group">
-                    <div class="poster-container">
-                        <img src="poster5.png" alt="SLine">
-                    </div>
-
-                    <div class="slide-container">
-                        <img src="slide5.png" alt="Subtitle Edge Calibration">
-                    </div>
-                </div>
-
-                <p class="test-description">
-                    Completely removes jagged pixel edges from yellow and white streaming text from Arin's scene in <em>SLine</em> at a low-res 480p source.
-                </p>
-
-                <span class="pep-badge">Anti-Aliasing</span>
-            </div>
-
-            <!-- BLOCK 6 -->
-
-            <div class="test-block">
-                <div class="block-title">6. Highlight Clipping Protection (480p Stress Test)</div>
-
-                <div class="media-group">
-                    <div class="poster-container">
-                        <img src="poster6.png" alt="K-Drama Poster">
-                    </div>
-
-                    <div class="slide-container">
-                        <img src="slide6.png" alt="Highlight Protection Calibration">
-                    </div>
-                </div>
-
-                <p class="test-description">
-                    Prevents bright misty and foggy daylight backdrops from washing out facial gradients in low-resolution K-Drama formats (Arin).
-                </p>
-
-                <span class="pep-badge">Highlight Control</span>
-            </div>
-
-            <!-- BLOCK 7 -->
-
-            <div class="test-block">
-                <div class="block-title">7. Moreno/Olive Skin Recovery (480p Stress Test)</div>
-
-                <div class="media-group">
-                    <div class="poster-container">
-                        <img src="poster7.png" alt="Citadel Poster">
-                    </div>
-
-                    <div class="slide-container">
-                        <img src="slide7.png" alt="Moreno Skin Recovery Calibration">
-                    </div>
-                </div>
-
-                <p class="test-description">
-                    Ensures rich, warm tan tones remain perfectly natural under harsh daylight exposure from Priyanka Chopra's close-up in <em>Citadel</em>.
-                </p>
-
-                <span class="pep-badge">Tone Restoration</span>
-            </div>
-
-            <!-- BLOCK 8 -->
-
-            <div class="test-block">
-                <div class="block-title">8. Cold Light Gradient (480p Stress Test)</div>
-
-                <div class="media-group">
-                    <div class="poster-container">
-                        <img src="poster8.png" alt="Disclosure Day Poster">
-                    </div>
-
-                    <div class="slide-container">
-                        <img src="slide8.png" alt="Cold Light Calibration">
-                    </div>
-                </div>
-
-                <p class="test-description">
-                    Maintains dynamic range separation even under a heavily blue/cyan-graded cinematic atmosphere from Margaret Fairchild's scene in <em>Disclosure Day</em>.
-                </p>
-
-                <span class="pep-badge">Micro-Contrast</span>
-            </div>
-
+        <div class="hero-actions">
+          <a href="#projects" class="button">EXPLORE PROJECTS ↗</a>
+          <a href="#about" class="button secondary">ABOUT THIS SITE</a>
         </div>
 
-        <!-- PAGE 2 NAVIGATION -->
+        <div class="hero-status">
+          <span>●</span> BUILT THROUGH EXPERIMENTATION
+        </div>
+      </section>
+    </div>
 
-        <div style="text-align: center; margin: 50px 0 20px 0;">
+    <!-- FEATURED PROJECT -->
 
-            <a href="index2.html"
-               style="display: inline-block; background-color: #2563eb; color: white; font-size: 1.2rem; font-weight: bold; padding: 15px 35px; text-decoration: none; border-radius: 8px; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); border: 2px solid #3b82f6; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">
-                ➡️ View More Hardware Stress Tests (Page 2)
-            </a>
-
+    <section id="featured">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="section-label">01 / FEATURED PROJECT</div>
+            <h2>Featured Work</h2>
+          </div>
+          <p>
+            A closer look at a project developed through
+            research, testing, and practical experimentation.
+          </p>
         </div>
 
-        <!-- TECHNICAL EXPLANATION -->
+        <a href="diy-projector.html" class="featured">
+          <div class="featured-content">
+            <span class="tag">PEP ENGINE / V2.6</span>
 
-        <div class="technical-box">
+            <h3>DIY Projector<br>Optimization</h3>
 
-            <div class="tech-heading">
-                The Secret Behind the PEP Engine
-            </div>
-
-            <div class="tech-grid">
-
-                <div class="tech-item">
-                    <h3>1. Smart Performance Boost</h3>
-                    <p>
-                        It goes beyond the HY300's factory setting limits. It directly adjusts the system to unlock the true beauty, color, and clarity hidden within your projector.
-                    </p>
-                </div>
-
-                <div class="tech-item">
-                    <h3>2. Natural Skin Tones & Colors</h3>
-                    <p>
-                        It does not alter all colors simultaneously, thereby avoiding annoying blue or green stains on the screen. It preserves natural skin tones while making background colors vivid.
-                    </p>
-                </div>
-
-                <div class="tech-item">
-                    <h3>3. Anti-Glare & Better Contrast</h3>
-                    <p>
-                        Budget projectors often suffer from glaring whites during bright scenes (such as sunlight or the sky). This feature automatically reduces excessive brightness so you can still see the details on the screen.
-                    </p>
-                </div>
-
-                <div class="tech-item">
-                    <h3>4. Smoother Text & Subtitles</h3>
-                    <p>
-                        When low-resolution video (such as 480p) is enlarged, the edges of text and subtitles become jagged or pixelated. The PEP Player cleans this up, making the characters smooth, rounded, and easy to read.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- INSTALLATION GUIDE -->
-
-        <div class="pep-installation-guide">
-
-            <section class="installation-guide">
-
-                <h2>📥 INSTALLATION GUIDE</h2>
-
-                <h3>STEP 1 — INSTALL PEP PLAYER</h3>
-                <p>
-                    Install the included <strong>PEP Player APK</strong> on your compatible Android projector or TV Box.
-                </p>
-
-                <h3>STEP 2 — OPEN PEP PLAYER</h3>
-                <p>
-                    After installation, open <strong>PEP Player</strong> and allow any required permissions.
-                </p>
-
-                <h3>STEP 3 — ADD THE PEP ENGINE INPUT CODE</h3>
-                <p>
-                    The <strong>PEP Engine Input Code</strong> is included inside the ZIP package.
-                </p>
-
-                <div class="info-box">
-                    <strong>📁 FIND THE INPUT CODE</strong>
-                    <p>
-                        Open the ZIP package and look for the file containing the <strong>Input Code</strong>.
-                    </p>
-                </div>
-
-                <div class="video-box">
-                    <strong>🎥 VIDEO INSTRUCTIONS INCLUDED</strong>
-                    <p>
-                        A step-by-step video is included inside the ZIP file showing exactly how to copy and enter the Input Code into PEP Player.
-                    </p>
-                    <p>
-                        <strong>Tip:</strong> Follow the video while entering the code to avoid missing or changing any characters.
-                    </p>
-                </div>
-
-                <h3>STEP 4 — APPLY THE CODE</h3>
-                <p>
-                    Follow the included video instructions and enter the complete <strong>PEP Engine Input Code</strong> into PEP Player.
-                </p>
-
-                <h3>STEP 5 — RESTART PEP PLAYER</h3>
-                <p>
-                    After applying the Input Code, close and reopen PEP Player so the settings can load properly.
-                </p>
-
-            </section>
-
-            <section class="setup-complete">
-
-                <h2>✅ SETUP COMPLETE</h2>
-
-                <p>Your PEP Player is now ready.</p>
-
-                <div class="quick-check">
-
-                    <h3>🔍 QUICK CHECK</h3>
-
-                    <ul>
-                        <li>✅ PEP Player opens normally</li>
-                        <li>✅ Input Code has been applied</li>
-                        <li>✅ Video playback works</li>
-                        <li>✅ Projected image is displayed normally</li>
-                    </ul>
-
-                </div>
-
-            </section>
-
-            <section class="optional-setup">
-
-                <h2>⚙️ OPTIONAL SETUP</h2>
-
-                <div class="optional-note">
-
-                    <strong>💡 OPTIONAL LANG</strong>
-
-                    <p>
-                        This section is only for users who need additional setup on an <strong>Android TV Box or Smart Projector</strong>.
-                    </p>
-
-                    <p>
-                        If PEP Player is already working properly on your device,
-                        <strong>you can skip this section.</strong>
-                    </p>
-
-                </div>
-
-                <div class="zip-info">
-
-                    <strong>📦 ADVANCED DOCUMENTATION</strong>
-
-                    <p>
-                        Additional technical documentation, advanced instructions, and creator information are included inside the ZIP package.
-                    </p>
-
-                </div>
-
-            </section>
-
-        </div>
-
-        <!-- ABOUT THE DEVELOPER SECTION -->
-
-        <section id="developer-story" class="developer-story">
-
-            <h2>👑 Meet the Developer</h2>
-
-            <div class="developer-content">
-
-                <p>
-                    The <strong>PEP Engine</strong> is the result of more than
-                    eight months of research, development, and testing,
-                    built on a decade of hands-on Android development experience.
-                </p>
-
-                <p>
-                    The journey began in <strong>2015</strong>, when the developer
-                    started working as an independent Android Custom ROM modder
-                    on the well-known <strong>XDA Developers Forums</strong>.
-                    This included porting and optimizing Android frameworks,
-                    such as <strong>CyanogenMod 11</strong> and
-                    <strong>Sony Xperia SystemUI</strong>, for resource-constrained
-                    Broadcom devices with as little as <strong>256MB of RAM</strong>.
-                </p>
-
-                <p>
-                    That experience in system optimization, framework modification,
-                    and resource management continues to influence the development
-                    of the <strong>PEP Engine</strong> today.
-                    Its goal is to improve the capabilities and usability of
-                    budget projector hardware beyond the limitations of
-                    standard factory firmware.
-                </p>
-
-            </div>
-
-        </section>
-
-        <!-- COMMERCIAL FOOTER -->
-
-        <div class="cta-section">
-
-            <h2>Ready to Unlock Your Projector's True Potential?</h2>
-
-            <p style="margin-bottom: 30px; color: #9ca3af;">
-                Stop putting up with a blurry, washed-out screen. Turn your room into a real home theater today!
+            <p>
+              A software and calibration project for compatible
+              Android projectors. Explore PEP Engine, its
+              features, hardware tests, development background,
+              and installation documentation.
             </p>
 
-            <a href=""
-               class="cta-btn-green"
-               target="_blank">
-                Get PEP Player & PEP Engine Optimization Pack For HY300 Projector Now
-            </a>
-
-            <!-- OFFICIAL SHOPS -->
-
-            <div class="link-heading"
-                 style="font-size: 1.5rem; font-weight: 800; color: #f3f4f6; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; margin-top: 35px; border-bottom: 1px solid #1f2937; padding-bottom: 8px; display: inline-block; width: 100%; max-width: 400px;">
-                Official Digital DISKARTETECHPH Store Shops
+            <div class="featured-meta">
+              <span>Android Projectors</span>
+              <span>Software Tuning</span>
+              <span>Hardware Testing</span>
             </div>
 
-            <div class="btn-group">
-
-                <a href="https://raket.ph/diskartetechph"
-                   class="shop-btn"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Raket-PH Shop
-                </a>
-
-                <a href="https://ko-fi.com/diskartetechofficialpepenginestore"
-                   class="shop-btn"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Ko-fi Shop
-                </a>
-
+            <div class="project-link">
+              VIEW PROJECT <span>→</span>
             </div>
+          </div>
 
-            <!-- SOCIAL MEDIA -->
-
-            <div class="link-heading"
-                 style="font-size: 1.5rem; font-weight: 800; color: #f3f4f6; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; margin-top: 35px; border-bottom: 1px solid #1f2937; padding-bottom: 8px; display: inline-block; width: 100%; max-width: 400px;">
-                Connect With Us
+          <div class="featured-visual">
+            <div class="visual-frame">
+              <div class="visual-text">
+                <strong>PEP</strong>
+                <small>ENGINE / PROJECT ARCHIVE</small>
+              </div>
             </div>
+          </div>
+        </a>
+      </div>
+    </section>
 
-            <div class="btn-group">
+    <!-- PROJECT ARCHIVE -->
 
-                <a href=""
-                   class="social-btn"
-                   target="_blank">
-                </a>
-
-                <a href=""
-                   class="social-btn"
-                   target="_blank">
-                </a>
-
-                <a href="https://youtube.com/@diskartetechph"
-                   class="social-btn"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    YouTube Channel
-                </a>
-
-            </div>
-
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="section-label">02 / PROJECT ARCHIVE</div>
+            <h2>Explore the Work</h2>
+          </div>
+          <p>
+            Different ideas. Different technologies.
+            One place to document the process.
+          </p>
         </div>
 
+        <div class="project-grid">
+
+          <a href="diy-projector.html" class="project-card">
+            <div class="project-number">PROJECT / 001</div>
+            <h3>DIY Projector</h3>
+            <p>
+              Projector experiments, PEP Engine development,
+              image processing, calibration, and technical
+              documentation.
+            </p>
+            <div class="project-link">EXPLORE PROJECT <span>→</span></div>
+          </a>
+
+          <div class="project-card">
+            <div class="project-number">PROJECT / 002</div>
+            <h3>ZGMobile</h3>
+            <p>
+              Android customization, mobile software experiments,
+              device modifications, and practical Android solutions.
+            </p>
+            <div class="coming">ARCHIVE IN DEVELOPMENT</div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-number">PROJECT / 003</div>
+            <h3>Electronics & DIY</h3>
+            <p>
+              Hardware experiments, repurposed components,
+              electronics projects, and hands-on builds.
+            </p>
+            <div class="coming">ARCHIVE IN DEVELOPMENT</div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-number">PROJECT / 004</div>
+            <h3>Software & Tools</h3>
+            <p>
+              Custom configurations, software experiments,
+              useful tools, and independent development projects.
+            </p>
+            <div class="coming">ARCHIVE IN DEVELOPMENT</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+      <div class="container">
+        <div class="section-label">03 / THE IDEA</div>
+
+        <div class="statement">
+          <h2>
+            Technology isn't just about buying something new.
+            It's about discovering what you can <span>build</span>
+            with what you already have.
+          </h2>
+
+          <p>
+            DiskarteTechPH is an independent project archive
+            documenting experiments, ideas, development work,
+            and practical technology solutions.
+
+            From modifying Android devices to building custom
+            software and exploring DIY hardware, every project
+            starts with curiosity and the willingness to try.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          DISKARTE<span>TECH</span>PH
+        </div>
+
+        <div class="footer-note">
+          OLD DEVICES. NEW POSSIBILITIES.
+        </div>
+      </div>
+
+      <div class="footer-copy">
+        © 2026 DISKARTE TECH PH. INDEPENDENT TECHNOLOGY PROJECTS.
+      </div>
     </div>
+  </footer>
 
 </body>
 </html>
