@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Android Into Walkman PC Tutorial | DISKARTE TECH PH</title>
-  <meta name="description" content="Android Into Walkman PC Tutorial — Android customization project using Sony Music and ADB AppControl.">
+
+  <meta name="description" content="My 2023 Android PC tutorial demonstrating how I used ADB AppControl to manage and remove selected preinstalled Android applications.">
+
+  <meta name="theme-color" content="#080b0d">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +34,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 30px;
     }
 
     body {
@@ -95,7 +99,7 @@
 
     .hero p {
       color: var(--muted);
-      max-width: 650px;
+      max-width: 680px;
       margin-top: 22px;
       font-size: 16px;
     }
@@ -156,22 +160,32 @@
       border: 0;
     }
 
-    .resource-group {
-      margin-top: 30px;
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 24px;
     }
 
-    .resource-group h3 {
+    .detail-card {
+      padding: 20px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+    }
+
+    .detail-card h3 {
       color: var(--cyan);
       font-family: 'DM Mono', monospace;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
       letter-spacing: 1px;
-      margin-bottom: 12px;
+      margin-bottom: 9px;
     }
 
-    .resource-list {
-      display: grid;
-      gap: 9px;
+    .detail-card p {
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .resource {
@@ -179,10 +193,11 @@
       justify-content: space-between;
       align-items: center;
       gap: 15px;
-      padding: 14px 16px;
+      padding: 17px 18px;
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 5px;
+      margin-top: 22px;
       transition: .2s ease;
     }
 
@@ -193,7 +208,7 @@
 
     .resource strong {
       display: block;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 500;
     }
 
@@ -202,25 +217,13 @@
       color: var(--muted);
       font-family: 'DM Mono', monospace;
       font-size: 10px;
-      margin-top: 3px;
+      margin-top: 4px;
     }
 
     .arrow {
       color: var(--green);
       font-size: 18px;
       flex-shrink: 0;
-    }
-
-    .credit {
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 15px;
-    }
-
-    .credit a {
-      color: var(--cyan);
-      text-decoration: underline;
-      text-underline-offset: 3px;
     }
 
     .note {
@@ -262,8 +265,12 @@
         font-size: 22px;
       }
 
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
       .resource {
-        padding: 13px;
+        padding: 14px;
       }
     }
   </style>
@@ -279,226 +286,201 @@
 
   <main class="container">
 
-    <div class="hero">
-      <div class="eyebrow">ANDROID PROJECT / ZGMOBILE</div>
+    <!-- HERO -->
 
-      <h1>ANDROID INTO <span>WALKMAN</span></h1>
+    <div class="hero">
+
+      <div class="eyebrow">
+        MY ANDROID WORK / 2023
+      </div>
+
+      <h1>
+        ANDROID INTO <span>WALKMAN</span><br>
+        PC TUTORIAL
+      </h1>
 
       <p>
-        A personal Android customization project featuring
-        Sony Music integration, modified applications,
-        and additional music features.
+        A PC tutorial I created in 2023, showing how I used
+        ADB AppControl to manage preinstalled applications
+        on an Android device. This tutorial documents my
+        own process and the steps I demonstrated.
       </p>
 
       <div class="meta">
-        <span>2022</span>
-        <span>ANDROID CUSTOMIZATION</span>
-        <span>PC TUTORIAL</span>
+        <span>2023</span>
+        <span>MY TUTORIAL</span>
+        <span>ADB APPCONTROL</span>
+        <span>ANDROID</span>
       </div>
+
     </div>
 
-    <section>
-      <div class="section-label">01 / ABOUT THE PROJECT</div>
+    <!-- ABOUT -->
 
-      <h2>Android Into Walkman</h2>
+    <section>
+
+      <div class="section-label">01 / ABOUT MY WORK</div>
+
+      <h2>What I Did</h2>
 
       <p class="description">
-        I modified existing Android applications using APKTool M
-        and integrated Sony Music as the main music interface.
-        Additional features included browser access and
-        YouTube Music integration.
+        I created this tutorial to demonstrate how I managed
+        selected preinstalled applications on an Android
+        smartphone using ADB AppControl through a PC.
+
+        I installed applications directly on the phone.
+        I used ADB AppControl for a different purpose:
+        managing system applications that I no longer needed.
       </p>
+
+      <div class="detail-grid">
+
+        <div class="detail-card">
+          <h3>APPLICATION INSTALLATION</h3>
+          <p>
+            I installed the applications directly on the
+            Android device, not through ADB AppControl.
+          </p>
+        </div>
+
+        <div class="detail-card">
+          <h3>SYSTEM APP MANAGEMENT</h3>
+          <p>
+            I used ADB AppControl on a PC to disable or
+            uninstall selected preinstalled applications.
+          </p>
+        </div>
+
+      </div>
+
     </section>
 
-    <section>
-      <div class="section-label">02 / VIDEO TUTORIAL</div>
+    <!-- VIDEO -->
 
-      <h2>PC Tutorial</h2>
+    <section>
+
+      <div class="section-label">02 / MY VIDEO TUTORIAL</div>
+
+      <h2>ADB AppControl in Action</h2>
 
       <p class="description">
-        The video demonstrates how I used ADB AppControl
-        on a PC to disable or uninstall selected preinstalled
-        Android system applications.
+        In this video, I demonstrate my own process of
+        managing preinstalled Android applications using
+        ADB AppControl. I also show the option to disable
+        applications for users who are unsure about removing
+        them.
       </p>
 
       <div class="video-wrap">
         <iframe
           src="https://www.youtube.com/embed/-SRa9E0wabI"
-          title="Android Into Walkman PC Tutorial"
+          title="My Android Into Walkman PC Tutorial - ADB AppControl"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
       </div>
+
     </section>
 
+    <!-- PROCESS -->
+
     <section>
-      <div class="section-label">03 / APPS & DOWNLOADS</div>
 
-      <h2>Applications & Resources</h2>
+      <div class="section-label">03 / THE PROCESS</div>
 
-      <div class="resource-group">
-        <h3>WALKMAN APPLICATIONS</h3>
+      <h2>How I Used ADB AppControl</h2>
 
-        <div class="resource-list">
+      <p class="description">
+        I connected the Android device to a PC and used
+        ADB AppControl to manage selected preinstalled
+        applications. In the demonstration, I showed
+        how applications could be disabled or uninstalled.
+      </p>
 
-          <a class="resource" href="https://mega.nz/file/kQAVHJqZ#A7xpQiJM17nhTNHwVOGYbLb7Hhd9-8FOD30A3bQk5LA" target="_blank" rel="noopener">
-            <div>
-              <strong>Walkman Launcher</strong>
-              <small>MEGA DOWNLOAD</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
+      <div class="detail-grid">
 
-          <a class="resource" href="https://mega.nz/file/IRwCwSrB#gHKYNXq04XXToAkRnRIcIrCEut7L5v9mcfcEkL3i0z8" target="_blank" rel="noopener">
-            <div>
-              <strong>Walkman Player</strong>
-              <small>MEGA DOWNLOAD</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-
-          <a class="resource" href="https://rexdl.com/android/spotify-premium-apk.html/" target="_blank" rel="noopener">
-            <div>
-              <strong>Spotify Premium Version</strong>
-              <small>REXDL</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-
+        <div class="detail-card">
+          <h3>DISABLE</h3>
+          <p>
+            An option I demonstrated for applications
+            that users may prefer to keep without actively
+            running them.
+          </p>
         </div>
-      </div>
 
-      <div class="resource-group">
-        <h3>YOUTUBE MUSIC & PLUGINS</h3>
-
-        <div class="resource-list">
-
-          <a class="resource" href="https://github.com/vancedapps/vanced.to/releases/download/2025-24/vanced.to_vanced_gms_microg_v0.3.1.4.240913.apk" target="_blank" rel="noopener">
-            <div>
-              <strong>MicroG</strong>
-              <small>GITHUB · UPDATED 2025</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-
-          <a class="resource" href="https://vanced.to/revanced-youtube-music" target="_blank" rel="noopener">
-            <div>
-              <strong>YouTube Music Premium</strong>
-              <small>ANDROID 8–15 · 2025</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-
-          <a class="resource" href="https://mega.nz/file/ldpFEBpR#DnD0tr342oBE5YHwZAhWaADJ922xDcJ421wVgjjWA9c" target="_blank" rel="noopener">
-            <div>
-              <strong>YouTube Music Plugin ReVanced</strong>
-              <small>MEGA · 2025</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-
-          <a class="resource" href="https://mega.nz/file/dYBFybgQ#yiL_rFmW7x3MgIVeFqYuTEfHMARDthBD0DacNe4MIsE" target="_blank" rel="noopener">
-            <div>
-              <strong>Browser Plugin</strong>
-              <small>MEGA DOWNLOAD</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-
-          <a class="resource" href="https://mega.nz/file/0JImRabK#HJXHVFOQPBVAaU2CMfKse0xqBB_GGUcXh8o59AmtXVk" target="_blank" rel="noopener">
-            <div>
-              <strong>Music Downloader</strong>
-              <small>MEGA DOWNLOAD</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-
+        <div class="detail-card">
+          <h3>UNINSTALL</h3>
+          <p>
+            I demonstrated uninstalling selected
+            preinstalled applications that I no longer
+            needed on the device.
+          </p>
         </div>
-      </div>
 
-      <div class="resource-group">
-        <h3>ALL-IN-ONE DOWNLOADS</h3>
-
-        <div class="resource-list">
-
-          <a class="resource" href="https://drive.google.com/file/d/1-RfN7g_L8oeltFhTQuIObzf2Mr9lJ56x/view?usp=drivesdk" target="_blank" rel="noopener">
-            <div>
-              <strong>All Smartphone Apps in One ZIP</strong>
-              <small>GOOGLE DRIVE</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-
-          <a class="resource" href="https://mega.nz/file/AdAU1A6S#tQFyt0qpyFg0UZcRvIshI8IkCyrRq_tBiITdvT6noe4" target="_blank" rel="noopener">
-            <div>
-              <strong>All Smartphone Apps in One ZIP</strong>
-              <small>MEGA DOWNLOAD</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-
-        </div>
-      </div>
-
-      <div class="resource-group">
-        <h3>SONY MUSIC & FIXES</h3>
-
-        <div class="resource-list">
-
-          <a class="resource" href="https://mega.nz/file/xIAiFKKS#URBFo0NjgERTTagZOqUWkor336BROLM_W0gt30YXwCQ" target="_blank" rel="noopener">
-            <div>
-              <strong>Sony Walkman Force Close Fix</strong>
-              <small>MEGA DOWNLOAD</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-
-          <a class="resource" href="https://forum.xda-developers.com/t/app-4-2-latest-sony-music-9-4-8-a-0-13-updated-9-march-2021.2728110/" target="_blank" rel="noopener">
-            <div>
-              <strong>Sony Music Walkman Universal Mod</strong>
-              <small>XDA DEVELOPERS</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-
-          <a class="resource" href="https://mega.nz/file/AAZmwYbA#tl7NrcEnjwzMCfT6xuqWopOkypUox-nQ5sQh-MXlXZg" target="_blank" rel="noopener">
-            <div>
-              <strong>Sony Music for Sony Smartphones</strong>
-              <small>MEGA DOWNLOAD</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-
-          <a class="resource" href="https://www.apkmirror.com/apk/sony-mobile-communications-inc/walkman-music/" target="_blank" rel="noopener">
-            <div>
-              <strong>Sony Music Walkman</strong>
-              <small>APKMirror</small>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-
-        </div>
-      </div>
-
-      <div class="resource-group">
-        <h3>CREDITS</h3>
-
-        <p class="credit">
-          Original Spotify Launcher project by
-          <a href="https://github.com/joshmcarthur/spotify-launcher" target="_blank" rel="noopener">
-            Josh McArthur ↗
-          </a>
-        </p>
       </div>
 
       <div class="note">
-        Android compatibility depends on the device and application version.
-        Check compatibility before installing third-party applications.
+        Disabling an application is the safer choice when
+        you are unsure whether it is needed. Removing
+        essential system applications may affect device
+        functions.
       </div>
 
     </section>
 
-    <a class="back" href="index.html">← BACK TO PROJECT ARCHIVE</a>
+    <!-- TOOL -->
+
+    <section>
+
+      <div class="section-label">04 / TOOL USED</div>
+
+      <h2>ADB AppControl</h2>
+
+      <p class="description">
+        This is the PC tool I used in my tutorial to manage
+        selected Android applications through ADB.
+      </p>
+
+      <a
+        class="resource"
+        href="https://adbappcontrol.com/en/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div>
+          <strong>ADB AppControl — Official Website</strong>
+          <small>TOOL USED IN MY 2023 TUTORIAL</small>
+        </div>
+
+        <span class="arrow">↗</span>
+      </a>
+
+    </section>
+
+    <!-- PROJECT CREDIT -->
+
+    <section>
+
+      <div class="section-label">05 / PROJECT CREDIT</div>
+
+      <h2>My Work</h2>
+
+      <p class="description">
+        Tutorial demonstration and documentation:
+        <strong style="color: var(--text);">
+          DISKARTE TECH PH
+        </strong>.
+        <br><br>
+        This page documents the process I demonstrated
+        in my 2023 video. ADB AppControl is the third-party
+        tool I used; the tutorial and demonstration are my own.
+      </p>
+
+    </section>
+
+    <a class="back" href="index.html">
+      ← BACK TO MY PROJECT ARCHIVE
+    </a>
 
   </main>
 
@@ -509,5 +491,4 @@
   </footer>
 
 </body>
-  </html>
-          
+</html>
