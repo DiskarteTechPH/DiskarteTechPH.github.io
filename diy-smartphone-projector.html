@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b10">
+  <meta name="description" content="DIY Smartphone Projector - Hardware and Software Re-engineering by DISKARTE TECH PH.">
+  <title>DIY Smartphone Projector | DISKARTE TECH PH</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:#080b10;
+      --panel:#0d121a;
+      --line:#202c38;
+      --text:#e8eef4;
+      --muted:#9aa9b7;
+      --green:#a3ff5f;
+      --cyan:#55e6ff;
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Space Grotesk',sans-serif;
+      line-height:1.7;
+    }
+
+    a { color:var(--cyan); text-decoration:none; }
+
+    .container {
+      max-width:1000px;
+      margin:auto;
+      padding:30px 22px;
+    }
+
+    .eyebrow {
+      color:var(--green);
+      font-family:'DM Mono',monospace;
+      font-size:12px;
+      letter-spacing:2px;
+    }
+
+    h1 {
+      font-size:clamp(36px,7vw,68px);
+      line-height:1.05;
+      letter-spacing:-2px;
+    }
+
+    h1 span { color:var(--green); }
+
+    h2 {
+      font-size:25px;
+      margin-top:45px;
+      border-bottom:1px solid var(--line);
+      padding-bottom:12px;
+    }
+
+    h3 { color:var(--cyan); }
+
+    p { color:#b8c6d2; }
+
+    .hero {
+      border-bottom:1px solid var(--line);
+      padding-bottom:35px;
+    }
+
+    .tags {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:22px 0;
+    }
+
+    .tag {
+      border:1px solid #33434f;
+      padding:5px 11px;
+      border-radius:30px;
+      color:var(--muted);
+      font:11px 'DM Mono',monospace;
+    }
+
+    .project-image {
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:12px;
+      margin-top:20px;
+    }
+
+    .caption {
+      color:var(--muted);
+      font:11px 'DM Mono',monospace;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:15px;
+    }
+
+    .card {
+      background:var(--panel);
+      border:1px solid var(--line);
+      padding:20px;
+      border-radius:12px;
+    }
+
+    .callout {
+      border-left:3px solid var(--green);
+      background:#111a18;
+      padding:18px;
+      margin:25px 0;
+    }
+
+    .code {
+      background:#0d121a;
+      padding:15px;
+      border:1px solid var(--line);
+      border-radius:8px;
+      font-family:'DM Mono',monospace;
+      overflow-wrap:anywhere;
+    }
+
+    footer {
+      margin-top:60px;
+      border-top:1px solid var(--line);
+      padding-top:25px;
+      color:var(--muted);
+      font:11px 'DM Mono',monospace;
+    }
+
+    @media(max-width:650px) {
+      .grid { grid-template-columns:1fr; }
+      .container { padding:22px 16px; }
+    }
+  </style>
+</head>
+
+<body>
+<main class="container">
+
+  <header class="hero">
+    <div class="eyebrow">
+      DISKARTE TECH PH / EXPERIMENTAL HARDWARE
+    </div>
+
+    <h1>
+      DIY SMARTPHONE<br>
+      <span>PROJECTOR.</span>
+    </h1>
+
+    <p>
+      A ground-up optical experiment built around a salvaged
+      5-inch smartphone LCD, combining physical display
+      modification, Fresnel lens alignment, thermal management,
+      and customized software rendering.
+    </p>
+
+    <div class="tags">
+      <span class="tag">SALVAGED LCD</span>
+      <span class="tag">DIY OPTICS</span>
+      <span class="tag">HARDWARE</span>
+      <span class="tag">SOFTWARE</span>
+      <span class="tag">INDEPENDENT R&D</span>
+    </div>
+
+    <img
+      class="project-image"
+      src="assets/diy-smartphone-projector-prototype.jpg"
+      alt="DIY Smartphone Projector Prototype">
+
+    <div class="caption">
+      ORIGINAL PROJECT PROTOTYPE
+    </div>
+  </header>
+
+  <section>
+    <h2>01 / PROJECT OVERVIEW</h2>
+
+    <p>
+      This project explores the possibility of repurposing
+      a salvaged smartphone LCD panel into a DIY projection
+      system.
+    </p>
+
+    <p>
+      Instead of treating the smartphone as a finished device,
+      the experiment focused on the LCD panel itself, its
+      optical path, and the software pipeline used to render
+      the image.
+    </p>
+
+    <div class="callout">
+      <strong>CORE IDEA</strong>
+      <p>
+        Recover useful components from older hardware and
+        re-engineer them into an experimental display system.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>02 / HARDWARE FRAMEWORK</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Salvaged LCD Panel</h3>
+        <p>
+          A 5.0-inch LCD panel from a 2016 Android smartphone
+          was modified by stripping its reflective layers
+          to make the display matrix transparent.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Light Engine</h3>
+        <p>
+          The modified LCD was integrated into a light-engine
+          arrangement so the display matrix could be illuminated
+          and projected through the optical path.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>03 / OPTICAL ALIGNMENT</h2>
+
+    <p>
+      A parallel twin Fresnel lens array was aligned to project
+      the bare LCD matrix onto a matte, high-gain surface.
+    </p>
+
+    <div class="code">
+      Modified LCD Matrix → Light Engine →
+      Twin Fresnel Lens Array → Projection Surface
+    </div>
+  </section>
+
+  <section>
+    <h2>04 / THERMAL MANAGEMENT</h2>
+
+    <p>
+      The build used a dual-stage isolated fan configuration
+      described in the original project notes as a 12V
+      induction loop.
+    </p>
+
+    <p>
+      The cooling arrangement was designed as a separate
+      component of the physical assembly to manage
+      thermal load.
+    </p>
+  </section>
+
+  <section>
+    <h2>05 / SOFTWARE INTEGRATION</h2>
+
+    <p>
+      The software side focused on media rendering and
+      image processing through a customized libmpv-based
+      media-engine wrapper.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Rendering Backend</h3>
+        <p>
+          Customized libmpv-based media engine wrapper
+          for playback and rendering.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Image Processing</h3>
+        <p>
+          Modified GLSL shader configurations and
+          OpenGL ES image filtering.
+        </p>
+      </div>
+    </div>
+
+    <h3>Rendering Configuration</h3>
+
+    <div class="code">
+      scale=ewa_lanczossharp
+    </div>
+
+    <p>
+      Additional processing included custom unsharp-mask
+      matrices and GLSL shader configurations.
+    </p>
+
+    <p>
+      The goal was to improve edge-to-edge text legibility
+      and color-profile calibration while overriding
+      the legacy platform's default blurry hardware filtering.
+    </p>
+  </section>
+
+  <section>
+    <h2>06 / DEVELOPMENT NOTES</h2>
+
+    <div class="card">
+      <h3>Display Modification</h3>
+      <p>
+        Prepared the salvaged LCD by removing its
+        reflective layers.
+      </p>
+
+      <h3>Optical Integration</h3>
+      <p>
+        Aligned the LCD matrix with the twin Fresnel
+        lens array and projection surface.
+      </p>
+
+      <h3>Thermal and Software Integration</h3>
+      <p>
+        Combined the cooling configuration with the
+        customized media-rendering setup.
+      </p>
+
+      <h3>Prototype Documentation</h3>
+      <p>
+        Recorded the physical setup and projected output
+        as part of the project archive.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>07 / RELATED WORK</h2>
+
+    <p>
+      This experimental hardware project is part of a wider
+      archive of Android modification, software development,
+      and practical work with older or low-spec devices.
+    </p>
+
+    <p>
+      <a href="index.html">← BACK TO PROJECT ARCHIVE</a>
+    </p>
+
+    <p>
+      PEP Engine is a separate software-tuning project
+      for budget Android projectors. It is not the same
+      hardware build documented on this page.
+    </p>
+  </section>
+
+  <footer>
+    DISKARTE TECH PH<br>
+    OLD DEVICES. NEW POSSIBILITIES.<br><br>
+    © 2026 DISKARTE TECH PH
+  </footer>
+
+</main>
+</body>
+</html>
