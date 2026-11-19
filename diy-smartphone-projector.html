@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#080b10">
   <meta name="description" content="DIY Smartphone Projector - Hardware and Software Re-engineering by DISKARTE TECH PH.">
   <title>DIY Smartphone Projector | DISKARTE TECH PH</title>
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -20,7 +21,9 @@
       --cyan:#55e6ff;
     }
 
-    * { box-sizing:border-box; }
+    * {
+      box-sizing:border-box;
+    }
 
     body {
       margin:0;
@@ -30,7 +33,14 @@
       line-height:1.7;
     }
 
-    a { color:var(--cyan); text-decoration:none; }
+    a {
+      color:var(--cyan);
+      text-decoration:none;
+    }
+
+    a:hover {
+      color:var(--green);
+    }
 
     .container {
       max-width:1000px;
@@ -51,7 +61,9 @@
       letter-spacing:-2px;
     }
 
-    h1 span { color:var(--green); }
+    h1 span {
+      color:var(--green);
+    }
 
     h2 {
       font-size:25px;
@@ -60,9 +72,13 @@
       padding-bottom:12px;
     }
 
-    h3 { color:var(--cyan); }
+    h3 {
+      color:var(--cyan);
+    }
 
-    p { color:#b8c6d2; }
+    p {
+      color:#b8c6d2;
+    }
 
     .hero {
       border-bottom:1px solid var(--line);
@@ -89,11 +105,14 @@
       border:1px solid var(--line);
       border-radius:12px;
       margin-top:20px;
+      display:block;
     }
 
     .caption {
       color:var(--muted);
       font:11px 'DM Mono',monospace;
+      margin-top:10px;
+      letter-spacing:1px;
     }
 
     .grid {
@@ -125,6 +144,25 @@
       overflow-wrap:anywhere;
     }
 
+    .video-container {
+      position:relative;
+      width:100%;
+      aspect-ratio:16 / 9;
+      margin-top:20px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#000;
+    }
+
+    .video-container iframe {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
     footer {
       margin-top:60px;
       border-top:1px solid var(--line);
@@ -134,8 +172,13 @@
     }
 
     @media(max-width:650px) {
-      .grid { grid-template-columns:1fr; }
-      .container { padding:22px 16px; }
+      .grid {
+        grid-template-columns:1fr;
+      }
+
+      .container {
+        padding:22px 16px;
+      }
     }
   </style>
 </head>
@@ -143,7 +186,9 @@
 <body>
 <main class="container">
 
+  <!-- HERO -->
   <header class="hero">
+
     <div class="eyebrow">
       DISKARTE TECH PH / EXPERIMENTAL HARDWARE
     </div>
@@ -176,9 +221,13 @@
     <div class="caption">
       ORIGINAL PROJECT PROTOTYPE
     </div>
+
   </header>
 
+
+  <!-- PROJECT OVERVIEW -->
   <section>
+
     <h2>01 / PROJECT OVERVIEW</h2>
 
     <p>
@@ -201,14 +250,49 @@
         re-engineer them into an experimental display system.
       </p>
     </div>
+
   </section>
 
+
+  <!-- PROJECT MONTAGE -->
   <section>
-    <h2>02 / HARDWARE FRAMEWORK</h2>
+
+    <h2>02 / PROJECT MONTAGE</h2>
+
+    <p>
+      A visual walkthrough of the DIY smartphone projector
+      prototype, showcasing the physical build, optical setup,
+      and sample projected output.
+    </p>
+
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+        title="DIY Smartphone Projector - Project Montage"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="caption">
+      DIY SMARTPHONE PROJECTOR / SAMPLE VIDEO MONTAGE
+    </div>
+
+  </section>
+
+
+  <!-- HARDWARE -->
+  <section>
+
+    <h2>03 / HARDWARE FRAMEWORK</h2>
 
     <div class="grid">
+
       <div class="card">
         <h3>Salvaged LCD Panel</h3>
+
         <p>
           A 5.0-inch LCD panel from a 2016 Android smartphone
           was modified by stripping its reflective layers
@@ -218,17 +302,23 @@
 
       <div class="card">
         <h3>Light Engine</h3>
+
         <p>
           The modified LCD was integrated into a light-engine
           arrangement so the display matrix could be illuminated
           and projected through the optical path.
         </p>
       </div>
+
     </div>
+
   </section>
 
+
+  <!-- OPTICAL ALIGNMENT -->
   <section>
-    <h2>03 / OPTICAL ALIGNMENT</h2>
+
+    <h2>04 / OPTICAL ALIGNMENT</h2>
 
     <p>
       A parallel twin Fresnel lens array was aligned to project
@@ -239,10 +329,14 @@
       Modified LCD Matrix → Light Engine →
       Twin Fresnel Lens Array → Projection Surface
     </div>
+
   </section>
 
+
+  <!-- THERMAL MANAGEMENT -->
   <section>
-    <h2>04 / THERMAL MANAGEMENT</h2>
+
+    <h2>05 / THERMAL MANAGEMENT</h2>
 
     <p>
       The build used a dual-stage isolated fan configuration
@@ -255,33 +349,41 @@
       component of the physical assembly to manage
       thermal load.
     </p>
+
   </section>
 
+
+  <!-- SOFTWARE INTEGRATION -->
   <section>
-    <h2>05 / SOFTWARE INTEGRATION</h2>
+
+    <h2>06 / SOFTWARE INTEGRATION</h2>
 
     <p>
-      The software side focused on media rendering and
-      image processing through a customized libmpv-based
-      media-engine wrapper.
+      The software side focused on customized image rendering
+      and processing, with adjustments made to the rendering
+      pipeline and graphics configuration.
     </p>
 
     <div class="grid">
+
       <div class="card">
-        <h3>Rendering Backend</h3>
+        <h3>Rendering Configuration</h3>
+
         <p>
-          Customized libmpv-based media engine wrapper
-          for playback and rendering.
+          Custom rendering adjustments designed to improve
+          image output and display performance.
         </p>
       </div>
 
       <div class="card">
         <h3>Image Processing</h3>
+
         <p>
           Modified GLSL shader configurations and
           OpenGL ES image filtering.
         </p>
       </div>
+
     </div>
 
     <h3>Rendering Configuration</h3>
@@ -300,40 +402,54 @@
       and color-profile calibration while overriding
       the legacy platform's default blurry hardware filtering.
     </p>
+
   </section>
 
+
+  <!-- DEVELOPMENT NOTES -->
   <section>
-    <h2>06 / DEVELOPMENT NOTES</h2>
+
+    <h2>07 / DEVELOPMENT NOTES</h2>
 
     <div class="card">
+
       <h3>Display Modification</h3>
+
       <p>
         Prepared the salvaged LCD by removing its
         reflective layers.
       </p>
 
       <h3>Optical Integration</h3>
+
       <p>
         Aligned the LCD matrix with the twin Fresnel
         lens array and projection surface.
       </p>
 
       <h3>Thermal and Software Integration</h3>
+
       <p>
         Combined the cooling configuration with the
-        customized media-rendering setup.
+        customized image-rendering setup.
       </p>
 
       <h3>Prototype Documentation</h3>
+
       <p>
         Recorded the physical setup and projected output
         as part of the project archive.
       </p>
+
     </div>
+
   </section>
 
+
+  <!-- RELATED WORK -->
   <section>
-    <h2>07 / RELATED WORK</h2>
+
+    <h2>08 / RELATED WORK</h2>
 
     <p>
       This experimental hardware project is part of a wider
@@ -350,12 +466,17 @@
       for budget Android projectors. It is not the same
       hardware build documented on this page.
     </p>
+
   </section>
 
+
+  <!-- FOOTER -->
   <footer>
+
     DISKARTE TECH PH<br>
     OLD DEVICES. NEW POSSIBILITIES.<br><br>
     © 2026 DISKARTE TECH PH
+
   </footer>
 
 </main>
