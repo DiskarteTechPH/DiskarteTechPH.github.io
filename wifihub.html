@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DISKARTE TECH PH — Wi-Fi Media Hub Tutorial</title>
+
+<meta name="description" content="DISKARTE TECH PH DIY tutorial: Build a personal Wi-Fi Media Hub using Android, Termux, Python and a Wi-Fi extender.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #080b09;
+  --panel: #101713;
+  --panel2: #151f19;
+  --green: #a5ff78;
+  --cyan: #70e9d2;
+  --white: #e9f1eb;
+  --muted: #89978d;
+  --border: rgba(165,255,120,.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(165,255,120,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(165,255,120,.025) 1px, transparent 1px);
+  background-size: 35px 35px;
+  color: var(--white);
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1080px, 90%);
+  margin: auto;
+}
+
+.mono {
+  font-family: 'DM Mono', monospace;
+}
+
+header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(8,11,9,.94);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  min-height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--white);
+}
+
+.brand span {
+  color: var(--green);
+}
+
+.nav-label {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.hero {
+  padding: 90px 0 65px;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 8vw, 82px);
+  line-height: .98;
+  letter-spacing: -4px;
+  max-width: 850px;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--green);
+}
+
+.hero-description {
+  color: var(--muted);
+  max-width: 650px;
+  font-size: 16px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.tag {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--cyan);
+  padding: 7px 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .5px;
+}
+
+.section {
+  padding: 45px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.section-number {
+  color: var(--green);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+}
+
+.section-heading h2 {
+  font-size: 25px;
+  letter-spacing: -.5px;
+}
+
+.intro {
+  color: var(--muted);
+  max-width: 760px;
+}
+
+.toc {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 25px;
+  margin-top: 35px;
+}
+
+.toc-title {
+  color: var(--green);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.toc a {
+  color: var(--muted);
+  font-size: 13px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  transition: .2s;
+}
+
+.toc a:hover {
+  color: var(--green);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 22px;
+}
+
+.card h3 {
+  color: var(--green);
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.step {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 25px;
+  margin: 18px 0;
+}
+
+.step h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.step p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.step-number {
+  color: var(--green);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+pre {
+  background: #050806;
+  border: 1px solid rgba(112,233,210,.18);
+  padding: 18px;
+  overflow-x: auto;
+  margin: 15px 0;
+  color: var(--cyan);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  line-height: 1.8;
+  white-space: pre;
+}
+
+.note {
+  border-left: 3px solid var(--green);
+  background: rgba(165,255,120,.055);
+  padding: 15px 18px;
+  margin: 18px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.note strong {
+  color: var(--green);
+}
+
+.warning {
+  border-left-color: #e9c56c;
+  background: rgba(233,197,108,.055);
+}
+
+.warning strong {
+  color: #e9c56c;
+}
+
+.resource {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 18px;
+  margin: 12px 0;
+}
+
+.resource strong {
+  color: var(--white);
+  font-size: 14px;
+}
+
+.resource span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.resource .file-label {
+  color: var(--cyan);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+}
+
+.status {
+  display: inline-block;
+  color: var(--green);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 30px 0;
+  margin-top: 40px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.footer-brand {
+  color: var(--green);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@media(max-width: 650px) {
+  .hero {
+    padding: 65px 0 45px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .toc-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading h2 {
+    font-size: 21px;
+  }
+
+  .step {
+    padding: 18px;
+  }
+
+  .nav-label {
+    font-size: 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="brand">
+      DISKARTE <span>TECH PH</span>
+    </a>
+
+    <div class="nav-label mono">
+      DIY TECH PROJECT / 001
+    </div>
+  </div>
+</header>
+
+<main>
+
+<div class="container">
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="eyebrow mono">
+      DISKARTE TECH PH / DIY PROJECT
+    </div>
+
+    <h1>
+      WI-FI MEDIA
+      <span>HUB.</span>
+    </h1>
+
+    <p class="hero-description">
+      Build your own personal media server using an Android phone,
+      Termux and Python. Access your music, videos and documents
+      through another device connected to the same Wi-Fi network.
+    </p>
+
+    <div class="meta">
+      <div class="tag">ANDROID PROJECT</div>
+      <div class="tag">TERMUX</div>
+      <div class="tag">PYTHON SERVER</div>
+      <div class="tag">LOCAL WI-FI</div>
+    </div>
+
+    <div class="toc">
+      <div class="toc-title">TUTORIAL CONTENTS</div>
+
+      <div class="toc-grid">
+        <a href="#overview">01 / Project Overview</a>
+        <a href="#requirements">02 / Requirements</a>
+        <a href="#termux">03 / Install Termux</a>
+        <a href="#folder">04 / Create Folders</a>
+        <a href="#website">05 / Create Website</a>
+        <a href="#media">06 / Add Media Files</a>
+        <a href="#server">07 / Start Server</a>
+        <a href="#iphone">08 / Connect iPhone</a>
+        <a href="#troubleshoot">09 / Troubleshooting</a>
+        <a href="#summary">10 / Project Summary</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- OVERVIEW -->
+
+  <section class="section" id="overview">
+
+    <div class="section-heading">
+      <div class="section-number">01</div>
+      <h2>Project Overview</h2>
+    </div>
+
+    <p class="intro">
+      Ang Wi-Fi Media Hub ay isang simpleng local website na
+      naka-host mismo sa Android phone. Gagamit tayo ng Python
+      HTTP server para ma-access ang files gamit ang ibang device
+      na nakakonekta sa parehong local network.
+    </p>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>Android Host</h3>
+        <p>
+          Ang Samsung Galaxy Note 3 ang magsisilbing host device
+          kung saan naka-save ang website at media files.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Python Server</h3>
+        <p>
+          Si Python ang magse-serve ng website at files sa local
+          network gamit ang HTTP.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Wi-Fi Network</h3>
+        <p>
+          Gagamit ng Xiaomi Wi-Fi Extender para makakonekta
+          ang host at client devices sa parehong network.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Client Device</h3>
+        <p>
+          Maaaring gumamit ng compatible browser sa iPhone,
+          Android phone, tablet o computer.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="note">
+      <strong>IMPORTANT:</strong>
+      Local network project ito. Hindi kailangan ng public hosting
+      para ma-access ang website sa parehong Wi-Fi network.
+    </div>
+
+  </section>
+
+  <!-- REQUIREMENTS -->
+
+  <section class="section" id="requirements">
+
+    <div class="section-heading">
+      <div class="section-number">02</div>
+      <h2>Requirements</h2>
+    </div>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>01. Android Phone</h3>
+        <p>
+          Samsung Galaxy Note 3 o compatible Android device
+          na kayang magpatakbo ng Termux.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>02. Termux</h3>
+        <p>
+          Terminal application para makapag-install at
+          makapagpatakbo ng Python.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>03. Wi-Fi Extender</h3>
+        <p>
+          Xiaomi Wi-Fi Extender o router na nagbibigay
+          ng local network connection.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>04. Client Device</h3>
+        <p>
+          iPhone, Android phone o computer na may
+          compatible web browser.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TERMUX -->
+
+  <section class="section" id="termux">
+
+    <div class="section-heading">
+      <div class="section-number">03</div>
+      <h2>Install Termux and Python</h2>
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">STEP 01</div>
+      <h3>Update Termux Packages</h3>
+
+      <p>
+        Buksan ang Termux at i-update muna ang package list
+        at installed packages.
+      </p>
+
+      <pre>pkg update && pkg upgrade -y</pre>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">STEP 02</div>
+      <h3>Install Python</h3>
+
+      <p>
+        I-install ang Python na gagamitin para sa local web server.
+      </p>
+
+      <pre>pkg install python -y</pre>
+
+    </div>
+
+    <div class="note">
+      <strong>TIP:</strong>
+      Hintaying matapos ang installation bago magpatuloy
+      sa susunod na steps.
+    </div>
+
+  </section>
+
+  <!-- FOLDER -->
+
+  <section class="section" id="folder">
+
+    <div class="section-heading">
+      <div class="section-number">04</div>
+      <h2>Create Project Folders</h2>
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">STEP 01</div>
+      <h3>Create Main Folder</h3>
+
+      <p>
+        Gagawa tayo ng main folder na tatawaging wifihub.
+      </p>
+
+      <pre>mkdir -p ~/wifihub/files</pre>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">STEP 02</div>
+      <h3>Enter Project Directory</h3>
+
+      <pre>cd ~/wifihub</pre>
+
+    </div>
+
+    <div class="note">
+      <strong>FOLDER LOCATION:</strong>
+      Ang project ay nasa Termux home directory,
+      hindi sa Android system root folder.
+    </div>
+
+  </section>
+
+  <!-- WEBSITE -->
+
+  <section class="section" id="website">
+
+    <div class="section-heading">
+      <div class="section-number">05</div>
+      <h2>Create the Media Hub Website</h2>
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">STEP 01</div>
+      <h3>Create index.html</h3>
+
+      <p>
+        Gamitin ang nano para gumawa ng HTML file.
+      </p>
+
+      <pre>nano index.html</pre>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">STEP 02</div>
+      <h3>Insert Your Website Code</h3>
+
+      <p>
+        Ilagay ang HTML code ng iyong Media Hub website.
+        Maaari mong gamitin ang sariling design, navigation,
+        music player, video player at document links.
+      </p>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">STEP 03</div>
+      <h3>Save the File</h3>
+
+      <p>
+        Sa nano editor, gamitin ang sumusunod:
+      </p>
+
+      <pre>CTRL + O
+ENTER
+CTRL + X</pre>
+
+    </div>
+
+    <div class="note">
+      <strong>FILE NAME:</strong>
+      Dapat eksaktong index.html ang pangalan ng main website file.
+    </div>
+
+  </section>
+
+  <!-- MEDIA -->
+
+  <section class="section" id="media">
+
+    <div class="section-heading">
+      <div class="section-number">06</div>
+      <h2>Add Your Media Files</h2>
+    </div>
+
+    <p class="intro">
+      Ilagay ang mga media file sa loob ng files folder.
+      Panatilihing tama ang filename at extension para
+      tumugma sa links na nasa HTML.
+    </p>
+
+    <div class="resource">
+      <div>
+        <strong>music.mp3</strong><br>
+        <span>Music file</span>
+      </div>
+      <div class="file-label">MP3</div>
+    </div>
+
+    <div class="resource">
+      <div>
+        <strong>sample-video.mp4</strong><br>
+        <span>Video file</span>
+      </div>
+      <div class="file-label">MP4</div>
+    </div>
+
+    <div class="resource">
+      <div>
+        <strong>reviewer.pdf</strong><br>
+        <span>Document file</span>
+      </div>
+      <div class="file-label">PDF</div>
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">FOLDER STRUCTURE</div>
+      <h3>Expected Project Layout</h3>
+
+      <pre>wifihub/
+│
+├── index.html
+│
+└── files/
+    ├── music.mp3
+    ├── sample-video.mp4
+    └── reviewer.pdf</pre>
+
+    </div>
+
+    <div class="note">
+      <strong>REMINDER:</strong>
+      Dapat eksaktong magkapareho ang filename sa HTML link
+      at sa aktuwal na file sa folder.
+    </div>
+
+  </section>
+
+  <!-- SERVER -->
+
+  <section class="section" id="server">
+
+    <div class="section-heading">
+      <div class="section-number">07</div>
+      <h2>Start the Python Web Server</h2>
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">STEP 01</div>
+      <h3>Start the Server</h3>
+
+      <p>
+        Siguraduhing nasa wifihub directory ka bago
+        patakbuhin ang command.
+      </p>
+
+      <pre>cd ~/wifihub
+python -m http.server 8080 --directory ~/wifihub</pre>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">STEP 02</div>
+      <h3>Check the Server Message</h3>
+
+      <p>
+        Kapag gumagana na, makikita ang ganitong message:
+      </p>
+
+      <pre>Serving HTTP on 0.0.0.0 port 8080</pre>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">STEP 03</div>
+      <h3>Find Your Android Local IP</h3>
+
+      <p>
+        Tingnan ang Wi-Fi network details ng Android phone
+        para malaman ang local IP address nito.
+      </p>
+
+      <p>
+        Halimbawa ng local address:
+      </p>
+
+      <pre>192.168.1.17</pre>
+
+    </div>
+
+    <div class="note">
+      <strong>SERVER ADDRESS:</strong>
+      Palitan ang example IP ng aktuwal na IP address
+      ng iyong Android phone.
+      Gamitin ang port 8080.
+    </div>
+
+  </section>
+
+  <!-- IPHONE -->
+
+  <section class="section" id="iphone">
+
+    <div class="section-heading">
+      <div class="section-number">08</div>
+      <h2>Connect Your iPhone</h2>
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">STEP 01</div>
+      <h3>Connect to the Same Wi-Fi</h3>
+
+      <p>
+        Ikonekta ang iPhone sa parehong Wi-Fi network
+        na ginagamit ng Android host device.
+      </p>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">STEP 02</div>
+      <h3>Open a Compatible Browser</h3>
+
+      <p>
+        Buksan ang browser na available sa iyong device.
+        Sa setup na ito, ginamit ang iDNS mini-browser
+        para ma-access ang local website.
+      </p>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-number">STEP 03</div>
+      <h3>Enter the Local Website Address</h3>
+
+      <p>
+        I-type ang local IP address ng Android host
+        kasama ang port number.
+      </p>
+
+      <pre>http://192.168.1.17:8080</pre>
+
+      <p>
+        Palitan ang 192.168.1.17 kung iba ang IP address
+        ng iyong Android phone.
+      </p>
+
+    </div>
+
+    <div class="note">
+      <strong>EXPECTED RESULT:</strong>
+      Lalabas ang Media Hub website kung parehong connected
+      sa network ang devices at tumatakbo ang server.
+    </div>
+
+    <div class="note warning">
+      <strong>COMPATIBILITY NOTE:</strong>
+      Hindi lahat ng lumang browser ay kayang mag-play ng
+      lahat ng MP4 codec. Kung hindi gumana ang video,
+      maaaring browser o video format compatibility ang dahilan.
+    </div>
+
+  </section>
+
+  <!-- TROUBLESHOOTING -->
+
+  <section class="section" id="troubleshoot">
+
+    <div class="section-heading">
+      <div class="section-number">09</div>
+      <h2>Troubleshooting</h2>
+    </div>
+
+    <div class="step">
+
+      <h3>Website Not Loading</h3>
+
+      <p>
+        • Tingnan kung tumatakbo pa ang Python server.<br>
+        • I-check kung tama ang local IP address.<br>
+        • Siguraduhing parehong network ang ginagamit ng devices.<br>
+        • Tiyaking tama ang port number na 8080.
+      </p>
+
+    </div>
+
+    <div class="step">
+
+      <h3>Music Not Playing</h3>
+
+      <p>
+        • Tingnan kung tama ang MP3 filename.<br>
+        • Siguraduhing nasa files folder ang audio.<br>
+        • I-check ang audio link sa HTML.<br>
+        • Subukan ang ibang compatible browser.
+      </p>
+
+    </div>
+
+    <div class="step">
+
+      <h3>Video Not Playing</h3>
+
+      <p>
+        • I-check kung tama ang MP4 filename.<br>
+        • Tingnan kung suportado ng browser ang video codec.<br>
+        • Maaaring mas compatible ang MP4 na may H.264 video
+        at AAC audio, pero hindi ito garantiya sa lumang browser.
+      </p>
+
+    </div>
+
+    <div class="step">
+
+      <h3>Server Stopped</h3>
+
+      <p>
+        Kapag naisara ang Termux o natigil ang Python server,
+        kailangan itong patakbuhin ulit.
+      </p>
+
+      <pre>cd ~/wifihub
+python -m http.server 8080 --directory ~/wifihub</pre>
+
+    </div>
+
+  </section>
+
+  <!-- SUMMARY -->
+
+  <section class="section" id="summary">
+
+    <div class="section-heading">
+      <div class="section-number">10</div>
+      <h2>Project Summary</h2>
+    </div>
+
+    <p class="intro">
+      Sa proyektong ito, ginamit natin ang isang Android phone
+      bilang local media server. Sa tulong ng Termux at Python,
+      nakagawa tayo ng simpleng website na maaaring buksan
+      mula sa ibang device sa parehong Wi-Fi network.
+    </p>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>LOCAL WEBSITE</h3>
+        <p>
+          Sariling website na naka-host sa Android device.
+        </p>
+        <div class="status">READY</div>
+      </div>
+
+      <div class="card">
+        <h3>MEDIA ACCESS</h3>
+        <p>
+          Access sa supported music, videos at documents.
+        </p>
+        <div class="status">LOCAL NETWORK</div>
+      </div>
+
+    </div>
+
+    <div class="note">
+      <strong>PROJECT BY DISKARTE TECH PH</strong><br>
+      DIY technology, practical experiments and creative
+      ways to make use of available devices.
+    </div>
+
+  </section>
+
+</div>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+
+    <div>
+      <div class="footer-brand">DISKARTE TECH PH</div>
+      <div>DIY • TECH • INNOVATION</div>
+    </div>
+
+    <div class="mono">
+      © 2026 DISKARTE TECH PH
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
