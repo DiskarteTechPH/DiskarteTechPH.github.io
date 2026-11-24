@@ -73,6 +73,17 @@
       color: var(--cyan);
     }
 
+    /* HIDDEN DEVELOPER SIGNATURE */
+
+    .signature-letter {
+      display: inline-block;
+      color: var(--green);
+      font-size: 1.65em;
+      font-weight: 700;
+      line-height: .85;
+      vertical-align: baseline;
+    }
+
     /* NAVIGATION */
 
     header {
@@ -166,7 +177,19 @@
       color: var(--muted);
       font-size: 17px;
       line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    /* DEVELOPER MOTTO */
+
+    .developer-motto {
+      color: var(--green);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
       margin-bottom: 36px;
+      line-height: 1.8;
     }
 
     .hero-actions {
@@ -556,6 +579,10 @@
         font-size: 15px;
       }
 
+      .developer-motto {
+        font-size: 11px;
+      }
+
       section {
         padding: 72px 0;
       }
@@ -667,11 +694,19 @@
           </h1>
 
           <p class="hero-description">
-            I mod Android systems, tweak apps, and build custom software
-            for old or low-spec devices. My focus is finding practical
-            ways to improve hardware limitations and make older
-            technology useful again.
+            I mod <span class="signature-letter">A</span>ndroid systems,
+            tweak apps, and build custom software
+            for <span class="signature-letter">L</span>ow-spec devices.
+            My focus is finding practical
+            <span class="signature-letter">W</span>ays to improve
+            hardware limitations and make older
+            technolog<span class="signature-letter">I</span>es useful
+            agai<span class="signature-letter">N</span>.
           </p>
+
+          <div class="developer-motto">
+            NO EASY IDEAS. NO ORDINARY PROJECTS.
+          </div>
 
           <div class="hero-actions">
             <a href="#projects" class="button">
@@ -724,10 +759,13 @@
             <h3>PEP Engine</h3>
 
             <p>
-              A custom software tuning suite built for budget projectors
-              such as the Magcubic HY300. Designed to address
-              washed-out colors, performance limitations on
-              1GB RAM devices, and low-resolution video quality.
+              <span class="signature-letter">A</span> custom software tuning suite
+              built for budget projectors such as the Magcubic HY300.
+              Desig<span class="signature-letter">N</span>ed to address
+              washed-out col<span class="signature-letter">O</span>rs,
+              performance limitations on
+              <span class="signature-letter">L</span>GB RAM devices,
+              and low-resolut<span class="signature-letter">I</span>o<span class="signature-letter">N</span> video quality.
             </p>
 
             <div class="project-meta">
